@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
@@ -33,8 +35,16 @@ public class loginController {
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login_post(){
+    public String login_post(@RequestParam(value = "loginemail")String loginemail,
+                             @RequestParam(value = "Password")String Password){
         logger.info("login post 跳转");
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserName("666");
+        userInfo.setMobilePhone("25334");
+        userInfo.setUserEmail(loginemail);
+        userInfo.setPassword(Password);
+        logger.info("login"+userInfo.toString());
+        userService.addUserInfo(userInfo);
         return "success";
     }
 

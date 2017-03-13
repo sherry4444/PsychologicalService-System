@@ -48,7 +48,7 @@
 
                 <!-- Login Form userName,Password -->
                 <div class="login form-peice switched">
-                    <form class="login-form" action="/login" enctype="multipart/form-data" method="post">
+                    <form class="login-form" action="/login"  method="post">
                         <div class="form-group">
                             <label for="loginemail">Email Adderss</label>
                             <input type="email" name="loginemail" id="loginemail" required>
@@ -70,7 +70,7 @@
 
                 <!-- Signup Form  userName,Password,salt,mobilePhone,userEmail, -->
                 <div class="signup form-peice">
-                    <form class="signup-form" action="/signup" enctype="multipart/form-data" method="post">
+                    <form class="signup-form" action="<c:url value='/signup'/>"   method="post">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" name="userName" id="name" class="name">
@@ -102,7 +102,7 @@
                         </div>
 
                         <div class="CTA">
-                            <input type="submit" value="Signup Now" >
+                            <input type="submit" value="Signup Now" id="sugnup_submit">
                             <a href="#" class="switch">I have an account</a>
                         </div>
                     </form>

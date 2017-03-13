@@ -1,7 +1,8 @@
 package com.test.domain;
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
+
 
 /*
 userId	int

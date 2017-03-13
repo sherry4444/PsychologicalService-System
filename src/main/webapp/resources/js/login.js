@@ -9,12 +9,14 @@ $(document).ready(function() {
     var usernameError = true,
         emailError = true,
         passwordError = true,
+        isError=false,
         passConfirm = true;
 
     // Detect browser for css purpose
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
         $('.form form label').addClass('fontSwitch');
     }
+
 
     // Label effect
     $('input').focus(function() {
@@ -24,7 +26,7 @@ $(document).ready(function() {
 
     // Form validation
     $('input').blur(function() {
-
+         isError=false;
         // User Name
         if ($(this).hasClass('name')) {
             if ($(this).val().length === 0) {
@@ -36,6 +38,7 @@ $(document).ready(function() {
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
                 usernameError = false;
+                isError=true;
             }
         }
         // Email
@@ -46,6 +49,7 @@ $(document).ready(function() {
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
                 emailError = false;
+                isError=true;
             }
         }
 
@@ -57,6 +61,7 @@ $(document).ready(function() {
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
                 passwordError = false;
+                isError=true;
             }
         }
 
@@ -67,6 +72,7 @@ $(document).ready(function() {
         } else {
             $('.passConfirm').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
             passConfirm = false;
+            isError=true;
         }
 
         // label effect
@@ -75,6 +81,11 @@ $(document).ready(function() {
         } else {
             $(this).siblings('label').removeClass('active');
         }
+
+          if(!isError)
+         {
+         $('form.signup-form').submit();
+         }
     });
 
 
@@ -97,6 +108,11 @@ $(document).ready(function() {
 
         if (usernameError == true || emailError == true || passwordError == true || passConfirm == true) {
             $('.name, .email, .pass, .passConfirm').blur();
+
+          /*  if(!isError)
+            {
+                $('form.signup-form').submit();
+            }*/
         } else {
             $('.signup, .login').addClass('switched');
 

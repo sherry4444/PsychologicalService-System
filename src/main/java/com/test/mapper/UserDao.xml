@@ -25,8 +25,8 @@
         <result column="salt" property="salt"/>
         <result column="mobilePhone" property="mobilePhone"/>
         <result column="userEmail" property="userEmail"/>
-       <!-- <result column="createTime" property="createTime"/>-->
-       <!-- <result column="modifyTime" property="modifyTime"/>-->
+        <result column="createTime" property="createTime"/>
+        <result column="modifyTime" property="modifyTime"/>
         <result column="state" property="state"/>
         <result column="role" property="role"/>
     </resultMap>
