@@ -44,18 +44,19 @@
 	</context:component-scan>
 
 	<!--视图解析-->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
-	</bean>
+	</bean>-->
 
 	<!-- 使用thymeleaf解析 -->
-	<!--<bean id="templateResolver"
+	<bean id="templateResolver"
 		  class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".html" />
 		<property name="templateMode" value="HTML" />
 		<property name="cacheable" value="false" />
+		<property name="characterEncoding" value="UTF-8"/><!--不加会乱码-->
 	</bean>
 
 	<bean id="templateEngine"
@@ -65,7 +66,7 @@
 
 	<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="templateEngine" />
-		&lt;!&ndash;解决中文乱码&ndash;&gt;
+		<!--解决中文乱码-->
 		<property name="characterEncoding" value="UTF-8"/>
-	</bean>-->
+	</bean>
 </beans>

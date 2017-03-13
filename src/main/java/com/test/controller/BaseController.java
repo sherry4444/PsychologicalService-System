@@ -28,7 +28,7 @@ public class BaseController {
 	public String goURL(@PathVariable String folder,@PathVariable String file) {
 		//System.out.println("goURL.folder|file===" + folder+"/"+file);
 		logger.info("goURL.folder|file===" + folder+"/"+file);
-		return "forward:/"+folder+"/"+file+".jsp";
+		return folder+"/"+file;
 	}
 
 	/**
@@ -38,6 +38,6 @@ public class BaseController {
 	public String goURL(@PathVariable String file){
 		//System.out.println("goURL.folder|file===" + "/"+file);
 		logger.info("goURL.folder|file===" + "/"+file);
-		return "forward:/"+file+".jsp";
+		return file;
 	}
 }
