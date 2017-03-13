@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.UserDao">
+
+
+    <!--/*
+    userId	int
+    userName	varchar
+    Password	varchar
+    salt	varchar
+    mobilePhone	varchar
+    userEmail	varchar
+    createTime	timestamp
+    modifyTime	timestamp
+    state	bit
+    role	int
+    */-->
+
+    <resultMap type="com.test.domain.UserInfo" id="UserResultMap">
+        <id column="userId" property="userId"/>
+        <result column="userName" property="userName"/>
+        <result column="Password" property="Password"/>
+        <result column="salt" property="salt"/>
+        <result column="mobilePhone" property="mobilePhone"/>
+        <result column="userEmail" property="userEmail"/>
+       <!-- <result column="createTime" property="createTime"/>-->
+       <!-- <result column="modifyTime" property="modifyTime"/>-->
+        <result column="state" property="state"/>
+        <result column="role" property="role"/>
+    </resultMap>
+
+    <sql id="userColumns"> userId,userName,Password,salt,mobilePhone,userEmail,modifyTime,state,role </sql>
+
+    <select id="login" resultMap="UserResultMap" parameterType="com.test.domain.UserInfo">
+        SELECT userName FROM user WHERE Password=#{Password} AND userName=#{userName}
+    </select>
+
+    <insert id="addUser" parameterType="com.test.domain.UserInfo">
+       insert into user(userName,Password,userEmail,mobilePhone) value(#{userName},#{Password},#{userEmail},#{mobilePhone})
+    </insert>
+
+    <select id="finduserAll" resultMap="UserResultMap" parameterMap="java.util.Map" >
+        SELECT <include refid="userColumns"/> FROM USER
+    </select>
+</mapper>
