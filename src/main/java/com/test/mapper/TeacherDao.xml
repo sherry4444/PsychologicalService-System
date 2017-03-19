@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.TeacherDao">
+
+
+    <!--/*
+      private Integer teacherId;
+    private String  teacherName;
+    private Integer tc_userId;
+    private UserInfo userInfo;
+    private String mobilePhone;
+	private String userEmail;
+    */-->
+
+    <resultMap type="com.test.domain.Teacher" id="TeacherResultMap">
+        <id column="teacherId" property="teacherId"/>
+        <result column="teacherName" property="teacherName"/>
+        <result column="tc_userId" property="tc_userId"/>
+        <result column="mobilePhone" property="userInfo.mobilePhone"/>
+        <result column="userEmail" property="userInfo.userEmail"/>
+    </resultMap>
+
+    <sql id="teacherColumns"> a.teacherId,a.teacherName,b.mobilePhone,b.userEmail</sql>
+
+
+    <select id="findteacherAll" resultMap="TeacherResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="teacherColumns"/> FROM ps_teacher a
+        LEFT JOIN ps_user b on a.tc_userId = b.userId
+        <where>
+            <if test="title != null">
+                and a.teacherId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.teacherName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.mobilePhone like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.userEmail like '%${title}%'
+            </if>
+        </where>
+        GROUP BY a.teacherId
+        <if test="flag == '4'.toString()">
+            ORDER BY a.teacherId ASC
+        </if>
+        <if test="flag == '5'.toString()">
+            ORDER BY a.teacherId DESC
+        </if>
+        <if test="flag == '2'.toString()">
+            ORDER BY a.teacherName ASC
+        </if>
+        <if test="flag == '3'.toString()">
+            ORDER BY a.teacherName DESC
+        </if>
+        <if test="flag == '1'.toString()">
+            ORDER BY b.mobilePhone ASC
+        </if>
+        <if test="flag == '0'.toString()">
+            ORDER BY b.mobilePhone DESC
+        </if>
+        <if test="flag == '6'.toString()">
+            ORDER BY b.userEmail ASC
+        </if>
+        <if test="flag == '7'.toString()">
+            ORDER BY b.userEmail DESC
+        </if>
+        limit #{page.dbIndex},#{page.dbNumber}
+    </select>
+
+    <select id="countTeacher" parameterType="java.lang.String" resultType="int">
+        select count(*) from ps_teacher a
+        LEFT JOIN ps_user b on a.tc_userId = b.userId
+        <where>
+            <if test="title != null">
+                and a.teacherId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.teacherName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.mobilePhone like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.userEmail like '%${title}%'
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <title>manager&home</title>
+
+</head>
+
+<body>
+<div class="navbar navbar-inverse" th:replace="fragments/header :: header">
+    heah
+</div>
+
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div th:replace="fragments/leftmanager :: leftmanager"></div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-default">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h3 data-th-text="|你好 ,你当前身份为:管理员|"></h3>
+                    </div>
+
+                    <div class="heading-elements hidden">
+                        <div class="heading-btn-group">
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-calculator text-primary"></i> <span>Invoices</span></a>
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb" style="float: left;">
+                        <li class="active"><a href="#"><i class="icon-home2 position-left"></i>左侧侧边栏选择</a></li>
+                        <!--<li><a href="#">Alpaca</a></li>-->
+                        <!--<li >Advanced inputs</li>-->
+                    </ul>
+
+                    <!-- <ul class="breadcrumb-elements">
+                         <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+                         <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                 <i class="icon-gear position-left"></i>
+                                 Settings
+                                 <span class="caret"></span>
+                             </a>
+
+                             <ul class="dropdown-menu dropdown-menu-right">
+                                 <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+                                 <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
+                                 <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
+                                 <li class="divider"></li>
+                                 <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+                             </ul>
+                         </li>
+                     </ul>-->
+                </div>
+            </div>
+            <!-- /page header -->
+
+            <div class="content">
+                <div class="panel">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <!--强势喂鱼-->
+                        <!-- <object type="application/x-shockwave-flash" style="outline:none;float: right;position: fixed;margin-left: -30px;"
+                         data="http://cdn.abowman.com/widgets/fish/fish.swf?up_fishColor1=F45540&up_foodColor=FCB347&up_fishColor7=40F4BE&up_fishName=Fish&up_numFish=10&up_fishColor9=7C40F4&up_fishColor2=F45540&up_backgroundImage=http://&up_fishColor5=F4BB40&up_fishColor10=F440A3&up_fishColor4=F45540&up_fishColor6=D0F440&up_backgroundColor=FFFFFF&up_fishColor3=F45540&up_fishColor8=4097F4&" width=100% height=100%>
+                         <param name="movie" value="http://cdn.abowman.com/widgets/fish/fish.swf?up_fishColor1=F45540&up_foodColor=FCB347&up_fishColor7=40F4BE&up_fishName=Fish&up_numFish=10&up_fishColor9=7C40F4&up_fishColor2=F45540&up_backgroundImage=http://&up_fishColor5=F4BB40&up_fishColor10=F440A3&up_fishColor4=F45540&up_fishColor6=D0F440&up_backgroundColor=FFFFFF&up_fishColor3=F45540&up_fishColor8=4097F4&"></param>
+                         <param name="AllowScriptAccess" value="always"></param>
+                         <param name="wmode" value="opaque"></param>
+                         <param name="scale" value="noscale"/>
+                         <param name="salign" value="tl"/>
+                         </object>-->
+                    </div>
+                </div>
+
+            </div>
+            <!--页脚-->
+            <div th:replace="fragments/footer :: footer" class="col-lg-12">
+                &copy; 2013 The Static Templates
+            </div>
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+</body>
+</html>

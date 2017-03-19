@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<!-- mybatis的配置总文件 -->
+<configuration>
+	<typeAliases>
+		<!-- 直接扫描指定包下的实体，自动生成默认为类名首字母小写的别名 -->
+		<package name="com.test.domain"/>
+	</typeAliases>
+
+
+</configuration>

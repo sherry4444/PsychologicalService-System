@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+
+    <link href="../../../resources/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/core.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/components.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/colors.css" rel="stylesheet" type="text/css">
+
+    <script src="../../../resources/js/manager.js" th:src="@{/resources/js/manager.js}"></script>
+    <script type="text/javascript" src="../../../resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/app.js"></script>
+</head>
+
+<body>
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content" th:fragment="leftmanager">
+
+                <!-- User menu -->
+                <div class="sidebar-user hidden">
+                    <div class="category-content">
+                        <div class="media">
+                            <a href="#" class="media-left"><img src=""
+                                                                class="img-circle img-sm" alt=""></a>
+                            <div class="media-body">
+                                <span class="media-heading text-semibold">Victoria Baker</span>
+                                <div class="text-size-mini text-muted">
+                                    <i class="icon-pin text-size-small"></i> &nbsp;Santa Ana, CA
+                                </div>
+                            </div>f
+
+                            <div class="media-right media-middle">
+                                <ul class="icons-list">
+                                    <li>
+                                        <a href="#user-nav" data-toggle="collapse" class="legitRipple"><i
+                                                class="caret"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="navigation-wrapper collapse" id="user-nav" aria-expanded="true">
+                                <ul class="navigation">
+                                    <li><a href="#" class="legitRipple"><i class="icon-user-plus"></i> <span>我的余额</span></a>
+                                    </li>
+                                    <li><a href="#" class="legitRipple"><i class="icon-coins"></i> <span>我的信息</span></a>
+                                    </li>
+                                    <li><a href="#" class="legitRipple"><i class="icon-comment-discussion"></i>
+                                        <span><span class="badge bg-teal-400 pull-right">58</span>消息</span></a></li>
+                                    <li><a href="#" class="legitRipple"><i class="icon-cog5"></i> <span>充值/提现</span></a>
+                                    </li>
+                                    <li><a href="/logout" th:href="@{#}" onclick="$('#form').submit();"><i
+                                            class="icon-switch2"></i> <span>登出</span></a>
+                                        <form style="visibility: hidden" id="form" method="post" action="#"
+                                              th:action="@{/logout}"></form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /user menu -->
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main -->
+                            <li class="navigation-header"><span>管理</span> <i class="icon-menu" title="Main pages"></i>
+                            </li>
+                            <li><a th:href="@{/}"><i class="icon-home4"></i>
+                                <span>首页</span></a></li>
+                            <li>
+                                <a href="#"><i class="icon-stack2"></i> <span>审核</span></a>
+                                <ul>
+                                    <li><a th:href="@{/audit}">资质审核</a></li>
+                                    <li><a th:href="@{/brand}">品牌审核</a></li>
+                                    <li><a th:href="@{/productaudit}">商品审核</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-triangle"></i> <span>模型管理</span></a>
+                                <ul>
+                                    <li th:class="${url} == 'modeling'?'active':''"><a th:href="@{/modeling}">制作模型</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-people "></i> <span>用户管理</span></a>
+                                <ul>
+                                    <li><a th:href="@{/userList}">用户列表</a></li>
+                                    <li><a th:href="@{/planList}">方案列表</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-list-unordered"></i><span>商品管理</span></a>
+                                <ul>
+                                    <li><a th:href="@{/queryAllProduct}" class="hidden">商品列表</a></li>
+                                    <li><a href="#">推荐位展示</a></li>
+                                    <li><a href="#">推荐位列表</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#" name="countAll"><i class="icon-pen"></i><span>统计</span></a></li>
+                            <!-- /main -->
+
+                            <li>  <!--返回顶部-->
+                                <a id="BacktoTop" style=" text-underline: none; visibility: hidden;position: fixed;z-index: 9999;margin-top: 60px;color: #6bbe6b;"
+                                   class="icon-arrow-up15" href="javascript:scroll(0,50)">
+                                    <span>回到顶部</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+</body>
+</html>

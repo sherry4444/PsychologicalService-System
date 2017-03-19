@@ -34,6 +34,13 @@ public class UserInfo implements Serializable {
 	public UserInfo() {
 	}
 
+	public UserInfo(String userName, String password, String userEmail, Integer role) {
+		this.userName = userName;
+		Password = password;
+		this.userEmail = userEmail;
+		this.role = role;
+	}
+
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}

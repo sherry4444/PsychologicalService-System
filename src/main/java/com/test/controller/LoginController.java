@@ -10,22 +10,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.annotation.Resource;
 
 
 /**
  * Created by Administrator on 2017/3/13.
  */
 @Controller
-public class loginController {
+public class LoginController {
 
 
     @Autowired
     private UserService userService;
 
-    private Logger logger = LoggerFactory.getLogger(loginController.class);
+    private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String login_get(){
@@ -37,12 +34,9 @@ public class loginController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login_post(@RequestParam(value = "loginemail")String loginemail,
                              @RequestParam(value = "Password")String Password){
-        logger.info("login post 跳转");
+        logger.info("login post 跳转"+loginemail+"/"+Password);
         UserInfo userInfo = new UserInfo();
-        userInfo.setUserName("666");
-        userInfo.setMobilePhone("25334");
-        userInfo.setUserEmail(loginemail);
-        userInfo.setPassword(Password);
+
         logger.info("login"+userInfo.toString());
         userService.addUserInfo(userInfo);
         return "success";

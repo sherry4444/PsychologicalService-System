@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.ManagerDao">
+
+
+    <!--/*
+    private Integer managerId;
+    private String  managerName;
+    private Integer mg_userId;
+    private UserInfo userInfo;
+    */-->
+
+    <resultMap type="com.test.domain.Manager" id="ManagerResultMap">
+        <id column="managerId" property="managerId"/>
+        <result column="managerName" property="managerName"/>
+        <result column="mg_userId" property="mg_userId"/>
+        <result column="mobilePhone" property="userInfo.mobilePhone"/>
+        <result column="userEmail" property="userInfo.userEmail"/>
+    </resultMap>
+
+    <sql id="managerColumns"> a.managerId,a.managerName,b.mobilePhone,b.userEmail</sql>
+
+
+    <select id="findmanagerAll" resultMap="ManagerResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="managerColumns"/> FROM ps_manager a
+        LEFT JOIN ps_user b on a.mg_userId = b.userId
+        <where>
+            <if test="title != null">
+                and a.managerId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.managerName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.mobilePhone like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.userEmail like '%${title}%'
+            </if>
+        </where>
+        GROUP BY a.managerId
+        <if test="flag == '4'.toString()">
+            ORDER BY a.managerId ASC
+        </if>
+        <if test="flag == '5'.toString()">
+            ORDER BY a.managerId DESC
+        </if>
+        <if test="flag == '2'.toString()">
+            ORDER BY a.managerName ASC
+        </if>
+        <if test="flag == '3'.toString()">
+            ORDER BY a.managerName DESC
+        </if>
+        <if test="flag == '1'.toString()">
+            ORDER BY b.mobilePhone ASC
+        </if>
+        <if test="flag == '0'.toString()">
+            ORDER BY b.mobilePhone DESC
+        </if>
+        <if test="flag == '6'.toString()">
+            ORDER BY b.userEmail ASC
+        </if>
+        <if test="flag == '7'.toString()">
+            ORDER BY b.userEmail DESC
+        </if>
+        limit #{page.dbIndex},#{page.dbNumber}
+    </select>
+
+    <select id="countManager" parameterType="java.lang.String" resultType="int">
+        select count(*) FROM ps_manager a
+        LEFT JOIN ps_user b on a.mg_userId = b.userId
+        <where>
+            <if test="title != null">
+                and a.managerId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.managerName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.mobilePhone like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.userEmail like '%${title}%'
+            </if>
+        </where>
+    </select>
+</mapper>

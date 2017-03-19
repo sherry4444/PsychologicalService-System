@@ -1,0 +1,67 @@
+.nav-tabs > li {
+    float: left !important;
+    padding-bottom: 0;
+}
+
+.nav-tabs {
+    margin-bottom: 0 !important;
+}
+
+.middlebar {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+.page {
+    padding-top: 20px;
+    align-self: center;
+}
+
+body {
+    font-family: 微软雅黑 !important;
+}
+
+.BacktoTop {
+    text-underline: none;
+    visibility: hidden;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+}
+
+.header-wrap {
+    width: 100%;
+}
+
+.header-bd {
+    width: 450px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 20px;
+
+
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(92, 184, 92, 0.90);
+}
+
+.fixed .header-hd {
+    display: none;
+}
+
+.searchbox{
+    margin-bottom: 20px;
+}
+
+.middlebody{
+    /*padding-right: 50px;padding-left: 50px;*/
+}

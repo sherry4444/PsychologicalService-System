@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.StudentDao">
+
+
+    <!--/*
+      private Integer studentId;
+    private String studentName;
+    private String studentNumber;
+    private Integer stu_userId;
+    private Integer collegeId;
+    private Integer majorId;
+    */-->
+
+    <resultMap type="com.test.domain.Student" id="StudentResultMap">
+        <id column="studentId" property="studentId"/>
+        <result column="studentName" property="studentName"/>
+        <result column="studentNumber" property="studentNumber"/>
+        <result column="stu_userId" property="stu_userId"/>
+        <result column="collegeId" property="collegeId"/>
+        <result column="majorId" property="majorId"/>
+        <result column="collegeName" property="collegeName"/>
+        <result column="majorName" property="majorName"/>
+    </resultMap>
+
+    <sql id="studentColumns">a.studentId,a.studentName,a.studentNumber,a.stu_userId,b.collegeName,d.majorName</sql>
+    <sql id="insertColumns">studentName,studentNumber,stu_userId,collegeId,majorId</sql>
+
+
+
+    <insert id="StudentoUser" parameterType="com.test.domain.UserInfo" >
+       insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
+    </insert>
+
+    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="int">
+        SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
+    </select>
+
+    <insert id="addstudent" parameterType="com.test.domain.Student">
+        INSERT INTO ps_student(studentName,studentNumber,stu_userId,collegeId,majorId)
+        VALUE (#{studentName},#{studentNumber},#{stu_userId},#{collegeId},#{majorId})
+    </insert>
+
+    <select id="findstudentAll" resultMap="StudentResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="studentColumns"/> FROM ps_student a
+        LEFT JOIN ps_college b on a.collegeId = b.collegeId
+        LEFT JOIN ps_major d on a.majorId = d.majorId
+        <where>
+            <if test="title != null">
+                and a.studentId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.studentName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.studentNumber like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.collegeName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or d.majorName like '%${title}%'
+            </if>
+        </where>
+        GROUP BY a.studentId
+        <if test="flag == '4'.toString()">
+            ORDER BY a.studentName ASC
+        </if>
+        <if test="flag == '5'.toString()">
+            ORDER BY a.studentName DESC
+        </if>
+        <if test="flag == '2'.toString()">
+            ORDER BY a.studentNumber ASC
+        </if>
+        <if test="flag == '3'.toString()">
+            ORDER BY a.studentNumber DESC
+        </if>
+        <if test="flag == '1'.toString()">
+            ORDER BY b.collegeName ASC
+        </if>
+        <if test="flag == '0'.toString()">
+            ORDER BY b.collegeName DESC
+        </if>
+        <if test="flag == '6'.toString()">
+            ORDER BY d.majorName ASC
+        </if>
+        <if test="flag == '7'.toString()">
+            ORDER BY d.majorName DESC
+        </if>
+        limit #{page.dbIndex},#{page.dbNumber}
+    </select>
+
+    <select id="countStudent" parameterType="java.lang.String" resultType="int">
+        select count(*) from ps_student a
+        LEFT JOIN ps_college b on a.collegeId = b.collegeId
+        LEFT JOIN ps_major c on a.majorId = c.majorId
+        <where>
+            <if test="title != null">
+                and a.studentId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.studentName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or a.studentNumber like '%${title}%'
+            </if>
+            <if test="title != null">
+                or b.collegeName like '%${title}%'
+            </if>
+            <if test="title != null">
+                or c.majorName like '%${title}%'
+            </if>
+        </where>
+    </select>
+
+</mapper>

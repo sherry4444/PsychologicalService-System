@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <title>manager&teacherList</title>
+</head>
+
+<body>
+<div class="navbar navbar-inverse" th:replace="fragments/header :: header">
+    heah
+</div>
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div th:replace="fragments/leftmanager :: leftmanager"></div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-default">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h3 data-th-text="管理员页面"></h3>
+                    </div>
+
+                    <div class="heading-elements">
+                        <div class="heading-btn-group hidden">
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-calculator text-primary"></i> <span>Invoices</span></a>
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb" style="float: left;">
+                        <li class="active"><a href="#"><i class="icon-arrow-right8 position-left"></i>教师列表</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <!-- /page header -->
+
+            <div class="content">
+                <div class="panel">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <div class="middlebody col-md-12 column">
+
+
+                            <!--上面搜索栏+排序-->
+                            <form  th:href="@{/managerList}" method="post" name="searchform" th:replace="fragments/searchbox :: searchbox"></form>
+
+                            <!--teacher列表表格-->
+                            <div class="col-md-12 column">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab1" data-toggle="tab">管理员列表</a></li>
+                                </ul>
+                                <div class="tab-content col-lg-12 col-xs-12 col-sm-12 col-md-12">
+                                    <div class="tab-pane fade in active" id="tab1">
+                                        <div class="row clearfix">
+                                            <div class="col-md-12 column">
+                                            <table class="table table-striped table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        <a th:href="@{/managerList?(flag=(${flag} != 4)?4:5,title=${title},num=${num})}"
+                                                           class="label label-success">姓名</a>
+                                                        <i th:class="${flag} == 4?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 5?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <th>
+                                                        <a th:href="@{/managerList?(flag=(${flag} != 2)?2:3,title=${title},num=${num})}"
+                                                           class="label label-success">电话</a>
+                                                        <i th:class="${flag} == 2?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 3?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <th>
+                                                        <a th:href="@{/managerList?(flag=(${flag} != 0)?0:1,title=${title},num=${num})}"
+                                                           class="label label-success">邮箱</a>
+                                                        <i th:class="${flag} == 1?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 0?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <!--<th>
+                                                        <a th:href="@{/managerList?(flag=(${flag} != 6)?6:7,title=${title},num=${num})}"
+                                                           class="label label-success">学院</a>
+                                                        <i th:class="${flag} == 6?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 7?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>-->
+                                                    <th>操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="user,userStat:${managerList}">
+                                                    <td th:text="${user.teacherName}">userID</td>
+                                                    <td th:text="${user.userInfo.mobilePhone}">2016-11-22</td>
+                                                    <td th:text="${user.userInfo.userEmail}">45</td>
+                                                    <td><a class="label label-warning"
+                                                           th:href="@{/managerList?(title=${user.teacherName})}">查看方案</a></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </div>
+                                        <!--楼下分页-->
+                                        <div class="page row clearfix">
+                                            <div class="col-md-offset-4 column">
+                                                <ul class="pagination pagination-sm">
+                                                    <!--前一页-->
+                                                    <li><a th:if="${page.currentPage} gt 1"
+                                                           th:href="@{/managerList?(currentPage=${page.currentPage-1},flag=${flag},num=${num},title=${title})}">&laquo;</a>
+                                                    </li>
+                                                    <!--首页-->
+                                                    <li th:class="${page.currentPage le 1} ? 'disabled' : ''">
+                                                        <a th:if="${page.currentPage != 1}"
+                                                           th:href="@{${keywords != null? '/managerList' : '/managerList'}(currentPage=1,keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">首页</a>
+                                                        <a th:if="${page.currentPage == 1}" href="javascript:void(0);">首页</a>
+                                                    </li>
+                                                    <!--动态生成中间的页码格子-->
+                                                    <li th:each="pageNo : ${#numbers.sequence(page.currentPage - 3 < 0 ? 0 : page.currentPage - 3, (page.currentPage + 3 > page.totalPage - 3 ? page.totalPage - 1: page.currentPage + 3))}"
+                                                        th:class="${page.currentPage eq (pageNo+1)}? 'active' : ''">
+                                                        <a th:if="${page.currentPage  eq (pageNo+1)}"
+                                                           href="javascript:void(0);">
+                                                            <text th:text="${pageNo+1}"></text>
+                                                        </a>
+                                                        <a th:if="${not (page.currentPage eq (pageNo+1))}"
+                                                           th:href="@{${keywords != null ? '/managerList' : '/managerList'}(currentPage=${pageNo+1},keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">
+                                                            <text th:text="${pageNo+1}"></text>
+                                                        </a>
+                                                    </li>
+                                                    <!--尾页-->
+                                                    <li th:class="${page.currentPage ge page.totalPage} ? 'disabled' : ''">
+                                                        <a th:if="${page.currentPage != page.totalPage}"
+                                                           th:href="@{${keywords != null? '/managerList' : '/managerList'}(currentPage=${page.totalPage},keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">末页</a>
+                                                        <a th:if="${page.currentPage == page.totalPage}"
+                                                           href="javascript:void(0);">末页</a>
+                                                    </li>
+                                                    <!--下一页-->
+                                                    <li><a th:if="${page.currentPage} lt ${page.totalPage}"
+                                                           th:href="@{/managerList?(currentPage=${page.nextPage},flag=${flag},num=${num},title=${title})}">&raquo;</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- </form>-->
+                        </div>
+
+                    </div><!-- panel-body-->
+                </div> <!--panel-->
+            </div><!-- content-->
+
+            <!--页脚-->
+            <div th:replace="fragments/footer :: footer" class="col-lg-12">
+                &copy; 2013 The Static Templates
+            </div>
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+</div>
+<!-- /page container -->
+
+</body>
+</html>
+</body>
+</html>
