@@ -30,6 +30,7 @@
 
 
 function addstudent() {
+    debugger;
     var formData = new FormData();
     formData.append("studentName",document.getElementById("exampleInput1").value);
     formData.append("studentNumber",document.getElementById("exampleInput2").value);

@@ -34,7 +34,7 @@
        insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
     </insert>
 
-    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="int">
+    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">
         SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
     </select>
 

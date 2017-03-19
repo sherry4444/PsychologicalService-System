@@ -2,163 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3af9c938-50e3-48be-a70c-31dfc036e51c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/BaseController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/StudentController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/TeacherController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/UserController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/loginController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/managerController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/ManagerDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/StudentDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/TeacherDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/UserDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/UserDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/College.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Major.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Manager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Page.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Search.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Student.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Teacher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/UserInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/ManagerDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/StudentDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/TeacherDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/UserDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/ManagerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/StudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/TeacherService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/ManagerServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/StudentServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/TeacherServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/UserServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/logback.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/mybatis.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/spring-mvc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/spring.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/jsp/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/jsp/login/login.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/jsp/success.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/jsp/test.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/aspectjweaver-1.8.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/attoparser-2.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/c3p0-0.9.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/cal10n-api-0.7.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/cdi-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/commons-logging-1.1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/google-collections-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javassist-3.11.0.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javax.annotation-3.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javax.ejb-3.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javax.servlet-3.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/javax.transaction-3.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/jboss-interceptor-1.0.0-CR11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/jboss-interceptor-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/jcl-over-slf4j-1.7.12.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/logback-classic-1.1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/logback-core-1.1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/logback-ext-spring-0.1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/mchange-commons-java-0.2.3.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/mybatis-3.2.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/mybatis-spring-1.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/mysql-connector-java-5.1.26.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/ognl-3.1.12.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/slf4j-api-1.7.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/slf4j-ext-1.5.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/slf4j-log4j12-1.7.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-aop-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-beans-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-context-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-core-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-expression-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-jdbc-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-test-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-tx-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-web-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/spring-webmvc-4.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/standard-1.1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/thymeleaf-3.0.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/thymeleaf-extras-java8time-3.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/thymeleaf-extras-springsecurity4-3.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/thymeleaf-spring4-3.0.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/unbescape-1.1.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/validation-api-1.1.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/weld-api-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/weld-core-1.0.1-SP3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/weld-osgi-bundle-1.0.1-SP3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/lib/weld-spi-1.0-SP1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragements/footer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragements/header.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragements/leftmanager.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragements/resourceLink.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragments/footer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragments/header.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragments/leftmanager.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragments/resourceLink.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/fragments/searchbox.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/login/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/managerList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/manager_home.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/studentList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/teacherList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/userList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/success.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/colors.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/components.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/core.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/fonts/icomoon.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/fonts/icomoon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/fonts/icomoon.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/fonts/icomoon.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/login/fontawesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/login/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/manager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/pagination.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/css/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/images/lighten2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/blockui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/jquery-1.11.2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/jquery-3.1.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/jquery-latest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/jquery.pagination.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/login/flame.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/manager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/studentList.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/StudentController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/StudentDao.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/StudentDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/impl/StudentServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/hellospring_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/hellospring_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hellospring.iml" afterPath="$PROJECT_DIR$/hellospring.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/mapper/StudentDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/test/mapper/StudentDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/studentList.js" afterPath="$PROJECT_DIR$/target/hellospring/resources/js/studentList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -174,18 +29,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ManagerDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-              <folding>
-                <marker date="1489916844197" expanded="true" signature="949:2359" ph="SELECT FROM ps_manager" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ManagerDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -196,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+            <state relative-caret-position="82">
+              <caret line="72" column="1" lean-forward="false" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -222,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+              <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -232,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -258,8 +101,8 @@
       <file leaf-file-name="studentList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+            <state relative-caret-position="409">
+              <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc;n#addstudent#0" expanded="false" />
               </folding>
@@ -267,14 +110,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManagerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="71" column="40" lean-forward="false" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="347">
+              <caret line="223" column="28" lean-forward="true" selection-start-line="223" selection-start-column="28" selection-end-line="223" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="studentList.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="77" column="99" lean-forward="false" selection-start-line="77" selection-start-column="99" selection-end-line="77" selection-end-column="99" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -282,7 +133,7 @@
       <file leaf-file-name="managerList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/managerList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
+            <state relative-caret-position="17">
               <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
               <folding />
             </state>
@@ -310,6 +161,7 @@
       <find>a.userId</find>
       <find>teacher</find>
       <find>studentList</find>
+      <find>studentlist.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -323,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" />
         <option value="$USER_HOME$/Desktop/赛意JAVA培训2017-3-6/jsp/ex/webAdvance.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/controller/loginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/domain/Page.java" />
@@ -356,7 +207,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/teacherList.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/resourceLink.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/domain/Student.java" />
@@ -369,11 +219,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/managerList.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1052,7 +904,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="E:/biyesheji" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1470,6 +1322,7 @@
       <method />
     </configuration>
     <configuration default="false" name="SSM_hellospring" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.72" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="hellospring:war exploded">
@@ -1560,12 +1413,20 @@
       <workItem from="1489625479864" duration="20177000" />
       <workItem from="1489712520624" duration="27214000" />
       <workItem from="1489902508154" duration="13922000" />
-      <workItem from="1489928678351" duration="3514000" />
+      <workItem from="1489928678351" duration="10034000" />
     </task>
+    <task id="LOCAL-00001" summary="学生列表 findid 改为返回Integer类型，studentList采用数据绑定接收前台信息 都是null,前台显示添加成功？？？ 后台无报错信息，就很迷">
+      <created>1489932447239</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1489932447239</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88890000" />
+    <option name="totallyTimeSpent" value="95410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1584,7 +1445,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5755627" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5080386" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1592,10 +1453,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26688102" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35209003" sideWeight="0.88426626" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5498392" sideWeight="0.88426626" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2859304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17246597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1634,10 +1495,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26688102" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4067524" sideWeight="0.88426626" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28456593" sideWeight="0.88426626" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17246597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1669,9 +1530,21 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="学生列表 findid 改为返回Integer类型，studentList采用数据绑定接收前台信息 都是null,前台显示添加成功？？？ 后台无报错信息，就很迷" />
+    <option name="LAST_COMMIT_MESSAGE" value="学生列表 findid 改为返回Integer类型，studentList采用数据绑定接收前台信息 都是null,前台显示添加成功？？？ 后台无报错信息，就很迷" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1680,13 +1553,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-697">
@@ -1797,6 +1663,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1830,14 +1697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3672">
-          <caret line="216" column="41" lean-forward="false" selection-start-line="216" selection-start-column="41" selection-end-line="216" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1856,6 +1715,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1901,14 +1761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="111" column="97" lean-forward="false" selection-start-line="111" selection-start-column="97" selection-end-line="111" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="142" column="53" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="142" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1997,14 +1849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/managerList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -2039,30 +1883,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc;n#addstudent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2080,21 +1906,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/managerList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="77" column="99" lean-forward="false" selection-start-line="77" selection-start-column="99" selection-end-line="77" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+        <state relative-caret-position="82">
+          <caret line="72" column="1" lean-forward="false" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc;n#addstudent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="223" column="28" lean-forward="true" selection-start-line="223" selection-start-column="28" selection-end-line="223" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
