@@ -28,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     public void addStudent(Student student){
         studentDao.StudentoUser(student.getUserInfo());
-        student.setStu_userId(Integer.valueOf(studentDao.finduserid(student.getUserInfo())));
+        student.setStu_userId(studentDao.finduserid(student.getUserInfo()));
         studentDao.addstudent(student);
     }
 

@@ -70,22 +70,22 @@ public class StudentController {
     @RequestMapping(value = "/addstudent",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
     public String addStudent(
-//            @ModelAttribute Student student
+            @ModelAttribute Student student
 //            @RequestParam("studentName") String studentName,
 //            @RequestParam("studentNumber") String studentNumber,
 //            @RequestParam("collegeId") String collegeId,
 //            @RequestParam("majorId") String  majorId
     ) {
        // logger.info(studentName+"/"+studentNumber+"/"+collegeId+"/"+majorId);
-        Student student = new Student();
+//        Student student = new Student();
 //        student.setStudentName(studentName);
 //        student.setStudentNumber(studentNumber);
 //        student.setCollegeId(Integer.valueOf(collegeId));
 //        student.setMajorId(Integer.valueOf(majorId));
-        student.setStudentName("学生1");
-        student.setStudentNumber("123452017");
-        student.setCollegeId(2);
-        student.setMajorId(4);
+//        student.setStudentName("学生1");
+//        student.setStudentNumber("123452017");
+//        student.setCollegeId(2);
+//        student.setMajorId(4);
         logger.info(student.toString());
         try {
             student.setUserInfo(new UserInfo(student.getStudentName(), "12345678", student.getStudentNumber() + "@ps.com", 1));

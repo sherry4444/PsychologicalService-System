@@ -40,7 +40,7 @@ function addstudent() {
         url: "/addstudent",
         type: "post",
         data: formData,
-        //async: true,
+        //async: false,
         cache:false,
         contentType: false,
         processData: false,

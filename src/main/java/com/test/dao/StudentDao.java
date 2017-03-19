@@ -17,7 +17,7 @@ public interface StudentDao {
     List<Student> findstudentAll(Map<String, Object> parameter);
     int countStudent(@Param("title") String title);
     void StudentoUser(UserInfo userInfo);
-    int finduserid(UserInfo userInfo);
+    Integer finduserid(UserInfo userInfo);
     void addstudent(Student student);
 
  }
