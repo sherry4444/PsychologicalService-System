@@ -27,4 +27,12 @@ public class TeacherServiceImpl implements TeacherService {
     @Transactional
     public int countTeacher(String title){ return teacherDao.countTeacher(title);}
 
+
+    @Transactional
+    public void addTeacher(Teacher teacher){
+        teacherDao.TeachertoUser(teacher.getUserInfo());
+        teacher.setTc_userId(teacherDao.finduserid(teacher.getUserInfo()));
+        teacherDao.addteacher(teacher);
+    }
+
 }

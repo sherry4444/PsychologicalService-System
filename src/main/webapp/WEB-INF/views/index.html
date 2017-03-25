@@ -7,26 +7,69 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <link rel='stylesheet' href='../../resources/css/indextest.css'/>
+
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- 可选的Bootstrap主题文件（一般不使用） -->
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
     <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <!--&lt;!&ndash;[if lt IE 9]>-->
+    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+    <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
 </head>
 <body>
-<h2>Hello World!</h2>
+<div class="navbar navbar-inverse" th:replace="fragments/header :: header">
+    heah
+</div>
+
+<div class="content-container">
+<div class="content-block">
+          <h2>Hello World!</h2>
+        <a th:href="@{/base/goURL/test}">测试跳转静态页面</a>
+        <a href="/login">登录</a>
+        <a href="/managerhome">管理页面</a>
+    </div>
+</div>
+
+
+
+
+
+<div class="content-container">
+    <div class="content-block">
+        <div class="afb one">
+        </div>
+        <div class="text">
+            <h1>Lion & Dragon</h1>
+            <p>Coffee is a brewed drink with a distinct aroma and flavor, prepared from roasted coffee beans, the seeds found inside "berries" of the Coffea plant. Coffee plants are cultivated in over 70 countries, primarily in the equatorial regions of
+                the Americas, Southeast Asia, India and Africa. </p>
+            <a href="#">More about this</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="content-container">
+    <div class="content-block">
+        <div class="afb two">
+        </div>
+        <div class="text">
+            <h1>Lion & Dragon</h1>
+            <p>Coffee is a brewed drink with a distinct aroma and flavor, prepared from roasted coffee beans, the seeds found inside "berries" of the Coffea plant. Coffee plants are cultivated in over 70 countries, primarily in the equatorial regions of
+                the Americas, Southeast Asia, India and Africa. </p>
+            <a href="#">More about this</a>
+        </div>
+    </div>
+</div>
+</div>
+
 </body>
-    <a th:href="@{/base/goURL/test}">测试跳转静态页面</a>
-    <a href="/login">登录</a>
-    <a href="/managerhome">管理页面</a>
 
 </html>

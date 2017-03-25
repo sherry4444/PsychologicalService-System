@@ -15,4 +15,6 @@ public interface TeacherService {
     List<Teacher> findteacherAll(Map<String, Object> parameter);
 
     int countTeacher(String title);
+
+    void addTeacher(Teacher teacher);
 }

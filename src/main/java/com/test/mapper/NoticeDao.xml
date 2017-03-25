@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.NoticeDao">
+
+
+    <!--/*
+      private Integer noticeId;
+    private String noticeTitle;
+    private String noticeContent;
+    private String noticeImage;
+
+    */-->
+
+    <resultMap type="com.test.domain.Notice" id="NoticeResultMap">
+        <id column="noticeId" property="noticeId"/>
+        <result column="noticeTitle" property="noticeTitle"/>
+        <result column="noticeContent" property="noticeContent"/>
+        <result column="noticeImage" property="noticeImage"/>
+    </resultMap>
+
+    <sql id="noticeColumns"> noticeId,noticeTitle,noticeContent,noticeImage</sql>
+
+
+    <select id="findnoticeAll" resultMap="NoticeResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="noticeColumns"/> FROM ps_notice
+        <where>
+            <if test="title != null">
+                and noticeId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or noticeTitle like '%${title}%'
+            </if>
+        </where>
+        GROUP BY noticeId
+        <if test="flag == '2'.toString()">
+            ORDER BY noticeId ASC
+        </if>
+        <if test="flag == '3'.toString()">
+            ORDER BY noticeId DESC
+        </if>
+        <if test="flag == '1'.toString()">
+            ORDER BY noticeTitle ASC
+        </if>
+        <if test="flag == '0'.toString()">
+            ORDER BY noticeTitle DESC
+        </if>
+        limit #{page.dbIndex},#{page.dbNumber}
+    </select>
+
+    <select id="countNotice" parameterType="java.lang.String" resultType="int">
+        select count(*) from ps_notice
+        <where>
+            <if test="title != null">
+                and noticeId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or noticeTitle like '%${title}%'
+            </if>
+        </where>
+    </select>
+
+    <insert id="addnotice" parameterType="com.test.domain.Notice">
+        INSERT INTO ps_notice(noticeTitle,noticeContent,noticeImage)
+        VALUES (#{noticeTitle},#{noticeContent},#{noticeImage})
+    </insert>
+</mapper>

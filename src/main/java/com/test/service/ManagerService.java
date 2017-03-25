@@ -1,5 +1,6 @@
 package com.test.service;
 
+import com.test.domain.Manager;
 import com.test.domain.Teacher;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface ManagerService {
     List<Teacher> findmanagerAll(Map<String, Object> parameter);
 
     int countManager(String title);
+
+    void addManager(Manager manager);
 }

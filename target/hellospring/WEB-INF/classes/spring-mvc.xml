@@ -69,4 +69,30 @@
 		<!--解决中文乱码-->
 		<property name="characterEncoding" value="UTF-8"/>
 	</bean>
+
+	<!--  文件上传   -->
+	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 指定所上传文件的总大小不能超过200000KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+		<property name="maxUploadSize" value="200000000"/>
+	</bean>
+
+	<!-- 该异常是SpringMVC在检查上传的文件信息时抛出来的，而且此时还没有进入到Controller方法中 -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/views/error/error.jsp页面 -->
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error/FileUploadError</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 拦截器配置 -->
+	<!--<mvc:interceptors>-->
+		<!--&lt;!&ndash; 配置Token拦截器，防止用户重复提交数据 &ndash;&gt;-->
+		<!--<mvc:interceptor>-->
+			<!--<mvc:mapping path="/**"/>&lt;!&ndash;这个地方时你要拦截得路径 我这个意思是拦截所有得URL&ndash;&gt;-->
+			<!--<bean class="com.test.config.TokenInterceptor"/>&lt;!&ndash;class文件路径改成你自己写得拦截器路径！！ &ndash;&gt;-->
+		<!--</mvc:interceptor>-->
+	<!--</mvc:interceptors>-->
 </beans>

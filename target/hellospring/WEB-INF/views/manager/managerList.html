@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div th:replace="fragments/resourceLink :: resourceLink"></div>
-    <title>manager&teacherList</title>
+    <script type="text/javascript" src="../../../resources/js/managerList.js"></script>
+    <title>manager&managerList</title>
 </head>
 
 <body>
@@ -50,7 +51,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb" style="float: left;">
-                        <li class="active"><a href="#"><i class="icon-arrow-right8 position-left"></i>教师列表</a></li>
+                        <li class="active"><a href="#"><i class="icon-arrow-right8 position-left"></i>管理员列表</a></li>
 
                     </ul>
 
@@ -64,6 +65,35 @@
                     <div class="panel-body">
                         <div class="middlebody col-md-12 column">
 
+                            <div class="col-md-12 column">
+                                <div class="panel-group" id="panel-567310">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a class="panel-title collapsed" data-toggle="collapse"
+                                               data-parent="#panel-567310" href="#panel-element-650746">添加</a>
+                                        </div>
+                                        <div id="panel-element-650746" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <form id="add" class="form-inline row" >
+                                                    <div class="form-group">
+                                                        <label for="exampleInput1">姓名</label>
+                                                        <input type="text" class="form-control" id="exampleInput1" name="teacherName"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput2">邮箱</label>
+                                                        <input type="text" class="form-control" id="exampleInput2" name="userEmail"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput2">电话</label>
+                                                        <input type="text" class="form-control" id="exampleInput3" name="mobilePhone"/>
+                                                    </div>
+                                                    <button type="button" onclick="addmanager()" class="btn btn-default">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!--上面搜索栏+排序-->
                             <form  th:href="@{/managerList}" method="post" name="searchform" th:replace="fragments/searchbox :: searchbox"></form>
@@ -109,11 +139,11 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr th:each="user,userStat:${managerList}">
-                                                    <td th:text="${user.teacherName}">userID</td>
+                                                    <td th:text="${user.managerName}">userID</td>
                                                     <td th:text="${user.userInfo.mobilePhone}">2016-11-22</td>
                                                     <td th:text="${user.userInfo.userEmail}">45</td>
                                                     <td><a class="label label-warning"
-                                                           th:href="@{/managerList?(title=${user.teacherName})}">查看方案</a></td>
+                                                           th:href="@{/managerList?(title=${user.managerName})}">查看方案</a></td>
                                                 </tr>
                                                 </tbody>
                                             </table>

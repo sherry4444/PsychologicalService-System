@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <script src="../../../resources/js/teacherList.js"></script>
     <title>manager&teacherList</title>
 </head>
 
@@ -64,6 +65,31 @@
                     <div class="panel-body">
                         <div class="middlebody col-md-12 column">
 
+                            <div class="col-md-12 column">
+                                <div class="panel-group" id="panel-567310">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a class="panel-title collapsed" data-toggle="collapse"
+                                               data-parent="#panel-567310" href="#panel-element-650746">添加</a>
+                                        </div>
+                                        <div id="panel-element-650746" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <form id="add" class="form-inline row" >
+                                                    <div class="form-group">
+                                                        <label for="exampleInput1">姓名</label>
+                                                        <input type="text" class="form-control" id="exampleInput1" name="teacherName"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput2">邮箱</label>
+                                                        <input type="text" class="form-control" id="exampleInput2" name="userEmail"/>
+                                                    </div>
+                                                    <button type="button" onclick="addteacher()" class="btn btn-default">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!--上面搜索栏+排序-->
                             <form  th:href="@{/teacherList}" method="post" name="searchform" th:replace="fragments/searchbox :: searchbox"></form>

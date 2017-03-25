@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.CollegeMajorDao">
+
+
+    <!--/*
+      private Integer collegeId;
+    private String collegeName;
+     private Integer majorId;
+    private String majorName;
+
+    */-->
+
+    <resultMap type="com.test.domain.College" id="CollegeResultMap">
+        <id column="collegeId" property="collegeId"/>
+        <result column="collegeName" property="collegeName"/>
+    </resultMap>
+
+    <resultMap type="com.test.domain.Major" id="MajorResultMap">
+        <result column="majorId" property="majorId"/>
+        <result column="majorName" property="majorName"/>
+    </resultMap>
+
+
+    <select id="findcollegeAll" resultMap="CollegeResultMap" parameterType="String" >
+        SELECT collegeId,collegeName FROM ps_college
+        <where>
+        <if test="title != null">
+            and collegeName like '%${title}%'
+        </if>
+        </where>
+    </select>
+
+    <insert id="addcollege" parameterType="com.test.domain.College">
+        INSERT INTO ps_college(collegeName) VALUES (#{collegeName})
+    </insert>
+
+    <update id="updatecollege" parameterType="com.test.domain.College">
+       UPDATE ps_college SET collegeName = #{collegeName} WHERE collegeId = #{collegeId}
+    </update>
+
+    <select id="findmajorAll" resultMap="MajorResultMap" parameterType="String" >
+        SELECT majorId,majorName FROM ps_major
+        <where>
+            <if test="title != null">
+                and majorName like '%${title}%'
+            </if>
+        </where>
+    </select>
+
+    <insert id="addmajor" parameterType="com.test.domain.Major">
+        INSERT INTO ps_major(majorName) VALUES (#{majorName})
+    </insert>
+
+    <update id="updatemajor" parameterType="com.test.domain.Major">
+        UPDATE ps_major SET majorName = #{majorName} WHERE majorId = #{majorId}
+    </update>
+</mapper>

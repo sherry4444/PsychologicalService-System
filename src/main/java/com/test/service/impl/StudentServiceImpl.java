@@ -19,10 +19,10 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDao studentDao;
 
-
+    @Transactional
     public List<Student> findstudentAll(Map<String,Object> parameter){ return studentDao.findstudentAll(parameter);}
 
-
+    @Transactional
     public int countStudent(String title){ return studentDao.countStudent(title);}
 
     @Transactional

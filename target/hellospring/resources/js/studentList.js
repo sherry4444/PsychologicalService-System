@@ -47,12 +47,11 @@ function addstudent() {
         processData: false,
         success: function (data) {
             alert(data);
-            console.log("over..");
+            console.log("添加学生信息成功");
             //setTimeout("location.reload()",100);//页面刷新
         },
         error: function (data) {
             alert("错误！！"+data);
         }
     });
-
 }

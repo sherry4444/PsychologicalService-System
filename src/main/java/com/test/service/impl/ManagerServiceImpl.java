@@ -3,6 +3,7 @@ package com.test.service.impl;
 
 import com.test.dao.ManagerDao;
 import com.test.dao.TeacherDao;
+import com.test.domain.Manager;
 import com.test.domain.Teacher;
 import com.test.service.ManagerService;
 import com.test.service.TeacherService;
@@ -27,5 +28,12 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Transactional
     public int countManager(String title){ return managerDao.countManager(title);}
+
+    @Transactional
+    public void addManager(Manager manager){
+        managerDao.ManagertoUser(manager.getUserInfo());
+        manager.setMg_userId(managerDao.findmanagerid(manager.getUserInfo()));
+        managerDao.addmanager(manager);
+    }
 
 }

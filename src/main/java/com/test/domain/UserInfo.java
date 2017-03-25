@@ -30,6 +30,7 @@ public class UserInfo implements Serializable {
 	private Timestamp modifyTime;
 	private Integer state;
 	private Integer role;
+	private String rolename;
 
 	public UserInfo() {
 	}
@@ -150,7 +151,22 @@ public class UserInfo implements Serializable {
 		return role;
 	}
 
-	public void setRole(Integer role) {
+	public void setRole(Integer role)
+	{
+		switch (role){
+			case 0:rolename="普通用户";break;
+			case 1:rolename="学生";break;
+			case 2:rolename="教师";break;
+			case 3:rolename="管理员";break;
+		}
 		this.role = role;
+	}
+
+	public String getRolename() {
+		return rolename;
+	}
+
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
 	}
 }

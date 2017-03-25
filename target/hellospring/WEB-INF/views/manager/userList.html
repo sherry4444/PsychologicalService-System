@@ -161,10 +161,10 @@
                                                     <td th:text="${user.userId}">userID</td>
                                                     <td th:text="${user.userName}">jack</td>
                                                     <td th:text="${user.createTime}">2016-11-22</td>
-                                                    <td th:text="${user.role} == null?'0':${user.planNum}">45</td>
+                                                    <td th:text="${user.rolename} == null?'0':${user.rolename}">45</td>
                                                     <td><a onclick="" th:userId="${user.userId}" id="userId"
                                                            class="label label-warning"
-                                                           th:href="@{/planList?(title=${user.userName})}">查看方案</a></td>
+                                                           th:href="@{/userList?(title=${user.userName})}">查看方案</a></td>
                                                 </tr>
                                                 </tbody>
                                             </table>

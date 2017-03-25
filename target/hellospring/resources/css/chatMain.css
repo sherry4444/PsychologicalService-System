@@ -1,0 +1,82 @@
+body
+{
+    font-size:11px;
+    background: #f1f0f0;
+}
+h3
+{
+    margin:0px;
+}
+.divShow
+{
+    border:solid 1px #ccc;
+    height:300px;
+    padding:5px;
+    font-size:12px;
+    overflow-y:scroll
+}
+#divMain
+{
+    border:soild 5px #ccc
+}
+#divMain .divTop
+{
+    padding:10px
+}
+#divMain .divTop .divL
+{
+    float:left;
+    width:78%
+}
+#divMain .divTop .divR
+{
+    float:right;
+    width:20%
+}
+#divMain .divBot
+{
+    clear:both;
+    padding:10px
+}
+#divMain .divBot .pb
+{
+    padding-bottom:3px
+}
+#divMain .divBot .pl
+{
+    padding-left:12px
+}
+#divMain .divBot .pt
+{
+    padding-top:3px;
+    color:#555
+}
+.clsTip
+{
+    position:absolute;
+    width:160px;
+    text-align:center;
+    font-size:13px;
+    border:soild 1px #cc3300;
+    margin-top:5px;
+    padding:2px;
+    margin-bottom:5px;
+    backgroudn-color:#ffe0a3;
+    display:none
+}
+.btn
+{
+    border:soild 1px #666;
+    padding:2px;
+    width:135px;
+    height:54px;
+    font-size:16px;
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,
+    EndColorStr=#ECE9D8)
+}
+.txt
+{
+    border:#666 1px solid;
+    padding:2px;
+    margin-right:3px
+}

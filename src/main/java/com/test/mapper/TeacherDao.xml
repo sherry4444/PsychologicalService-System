@@ -24,7 +24,6 @@
 
     <sql id="teacherColumns"> a.teacherId,a.teacherName,b.mobilePhone,b.userEmail</sql>
 
-
     <select id="findteacherAll" resultMap="TeacherResultMap" parameterType="java.util.Map" >
         SELECT <include refid="teacherColumns"/> FROM ps_teacher a
         LEFT JOIN ps_user b on a.tc_userId = b.userId
@@ -88,4 +87,17 @@
             </if>
         </where>
     </select>
+
+    <insert id="TeachertoUser" parameterType="com.test.domain.UserInfo" >
+        insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
+    </insert>
+
+    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">
+        SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
+    </select>
+
+    <insert id="addteacher" parameterType="com.test.domain.Teacher">
+        INSERT INTO ps_teacher(teacherName,tc_userId)
+        VALUE (#{teacherName},#{tc_userId})
+    </insert>
 </mapper>

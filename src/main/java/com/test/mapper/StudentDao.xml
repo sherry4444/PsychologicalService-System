@@ -57,7 +57,7 @@
             <if test="title != null">
                 or a.studentNumber like '%${title}%'
             </if>
-            <if test="title != null">
+            <if test="title != null">s
                 or b.collegeName like '%${title}%'
             </if>
             <if test="title != null">

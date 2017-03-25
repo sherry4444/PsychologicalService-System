@@ -25,4 +25,12 @@ public class College {
     public void setCollegeName(String collegeName) {
         this.collegeName = collegeName;
     }
+
+    @Override
+    public String toString() {
+        return "College{" +
+                "collegeId=" + collegeId +
+                ", collegeName='" + collegeName + '\'' +
+                '}';
+    }
 }

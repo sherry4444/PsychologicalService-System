@@ -35,11 +35,11 @@
     <sql id="findByName"> userName,Password,salt,role</sql>
 
     <select id="finduserByName" resultMap="UserResultMap" parameterType="com.test.domain.UserInfo">
-        SELECT <include refid="findByName"/> FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
+        SELECT <include refid="findByName"/> FROM ps_user WHERE userEmail=#{userEmail}
     </select>
 
     <insert id="addUser" parameterType="com.test.domain.UserInfo">
-       insert into ps_user(userName,Password,userEmail,mobilePhone) value(#{userName},#{Password},#{userEmail},#{mobilePhone})
+       insert into ps_user(userName,Password,userEmail,mobilePhone,salt,role) value(#{userName},#{Password},#{userEmail},#{mobilePhone},#{salt},#{role})
     </insert>
 
     <select id="finduserAll" resultMap="UserResultMap" parameterType="java.util.Map" >

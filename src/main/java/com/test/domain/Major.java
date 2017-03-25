@@ -26,4 +26,12 @@ public class Major {
     public void setMajorName(String majorName) {
         this.majorName = majorName;
     }
+
+    @Override
+    public String toString() {
+        return "Major{" +
+                "majorId=" + majorId +
+                ", majorName='" + majorName + '\'' +
+                '}';
+    }
 }

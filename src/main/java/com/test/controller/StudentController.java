@@ -1,10 +1,12 @@
 package com.test.controller;
 
 
+import com.test.config.PasswordUtil;
 import com.test.domain.Page;
 import com.test.domain.Search;
 import com.test.domain.Student;
 import com.test.domain.UserInfo;
+import com.test.service.CollegeMajorService;
 import com.test.service.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +30,11 @@ public class StudentController {
     @Resource
     private StudentService studentService;
 
+    @Resource
+    private CollegeMajorService collegeMajorService;
+
     private int totalNumber;
+
 
     @RequestMapping(value = "/studentList",produces = "text/html;charset=UTF-8")
     public String showStudentList(Model model, Page page, Search search,
@@ -64,31 +70,19 @@ public class StudentController {
         model.addAttribute("flag",flag);
         model.addAttribute("title",title);
         model.addAttribute("keywords","studentList");
+
+        String collegemajor = null;
+        model.addAttribute("college",collegeMajorService.findcollegeAll(collegemajor));
+        model.addAttribute("major",collegeMajorService.findmajorAll(collegemajor));
         return "manager/studentList";
     }
 
     @RequestMapping(value = "/addstudent",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String addStudent(
-            @ModelAttribute Student student
-//            @RequestParam("studentName") String studentName,
-//            @RequestParam("studentNumber") String studentNumber,
-//            @RequestParam("collegeId") String collegeId,
-//            @RequestParam("majorId") String  majorId
-    ) {
-       // logger.info(studentName+"/"+studentNumber+"/"+collegeId+"/"+majorId);
-//        Student student = new Student();
-//        student.setStudentName(studentName);
-//        student.setStudentNumber(studentNumber);
-//        student.setCollegeId(Integer.valueOf(collegeId));
-//        student.setMajorId(Integer.valueOf(majorId));
-//        student.setStudentName("学生1");
-//        student.setStudentNumber("123452017");
-//        student.setCollegeId(2);
-//        student.setMajorId(4);
+    public String addStudent(@ModelAttribute Student student) {
         logger.info(student.toString());
         try {
-            student.setUserInfo(new UserInfo(student.getStudentName(), "12345678", student.getStudentNumber() + "@ps.com", 1));
+            student.setUserInfo(new UserInfo(student.getStudentName(),PasswordUtil.generate("12345678"), student.getStudentNumber() + "@ps.com", 1));
             logger.info("after: " + student.toString());
             studentService.addStudent(student);
         }catch (Exception e)

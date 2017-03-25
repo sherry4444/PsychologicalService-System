@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <title>PS&Modifydata</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        信息完善
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">信息完善</a></li>
+                        <li><a href="#ios" data-toggle="tab">修改密码</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <form role="form">
+                                <input type="hidden" name="token" value="${token}"/>
+                                <div class="form-group">
+                                    <label for="name">名字</label>
+                                    <input type="text" name="userName" id="name" th:text="${user.userName}"
+                                           class="name">
+                                    <span class="error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">邮箱地址</label>
+                                    <input type="email" name="userEmail" id="email" th:text="${user.userEmail}"
+                                           class="email">
+                                    <span class="error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">手机号码
+                                        <small>Optional</small>
+                                    </label>
+                                    <input type="text" name="mobilePhone" th:text="${user.mobilePhone}" id="phone">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">学号（学生必填）</label>
+                                    <input type="text" name="studentNumber">
+                                </div>
+
+                                <div class="CTA">
+                                    <input type="submit" value="修改信息" onclick="modify();">
+                                </div>
+                            </form>
+                            <!-- End Signup Form -->
+
+                        </div>
+                        <div class="tab-pane fade" id="ios">
+                            <form role="form">
+                                <input type="hidden" name="token" value="${token}"/>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static" name="userEmail" th:text="${user.userEmail}">email@example.com</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">密码</label>
+                                    <input type="password" name="Password" id="password" class="pass">
+                                    <span class="error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="passwordCon">确认密码</label>
+                                    <input type="password" name="passwordCon" id="passwordCon" class="passConfirm">
+                                    <span class="error"></span>
+                                </div>
+
+                                <div class="CTA">
+                                    <input type="submit" value="修改信息" onclick="modifyPassword();">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End Signup Form -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>

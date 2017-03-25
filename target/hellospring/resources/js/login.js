@@ -95,7 +95,7 @@ $(document).ready(function() {
     // Form submit
     $('form.signup-form').submit(function(event) {
        // event.preventDefault();  //默认不执行submit
-
+        console.log("注册跳转 JS ");
         if (usernameError == true || emailError == true || passwordError == true || passConfirm == true) {
             $('.name, .email, .pass, .passConfirm').blur();
 
@@ -131,6 +131,5 @@ $(document).ready(function() {
   /*  $('a.profile').on('click', function() {
         location.reload(true);
     });*/
-
 
 });

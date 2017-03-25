@@ -86,4 +86,16 @@
             </if>
         </where>
     </select>
+
+    <insert id="ManagertoUser" parameterType="com.test.domain.UserInfo" >
+        insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
+    </insert>
+
+    <select id="findmanagerid" parameterType="com.test.domain.UserInfo" resultType="Integer">
+        SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
+    </select>
+
+    <insert id="addmanager" parameterType="com.test.domain.Manager">
+        INSERT INTO ps_manager(managerName,mg_userId)VALUE (#{managerName},#{mg_userId})
+    </insert>
 </mapper>

@@ -1,7 +1,7 @@
 package com.test.controller;
 
-import com.test.domain.Page;
-import com.test.domain.Search;
+import com.test.config.PasswordUtil;
+import com.test.domain.*;
 import com.test.service.ManagerService;
 import com.test.service.TeacherService;
 import org.slf4j.Logger;
@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -34,7 +32,6 @@ public class ManagerController {
     @RequestMapping(value = "/managerhome",method = RequestMethod.GET)
     public String managerhome(){
         logger.info("userList get 跳转");
-
         return "/manager/manager_home";
     }
 
@@ -73,5 +70,21 @@ public class ManagerController {
         model.addAttribute("title",title);
         model.addAttribute("keywords","managerList");
         return "manager/managerList";
+    }
+
+    @RequestMapping(value = "/addmanager",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String addTeacher(@ModelAttribute Manager manager) {
+        logger.info("before:"+manager.toString());
+        try {
+            manager.setUserInfo(new UserInfo(manager.getManagerName(), PasswordUtil.generate("12345678"),manager.getUserInfo().getUserEmail() , 3));
+            logger.info("after: " + manager.toString());
+            managerService.addManager(manager);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            return "添加失败";
+        }
+        return "添加成功";
     }
 }

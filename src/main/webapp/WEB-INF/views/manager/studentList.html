@@ -75,7 +75,7 @@
                                         </div>
                                         <div id="panel-element-650746" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <form id="add" class="form-inline row addstudent" >
+                                                <form id="add" class="form-inline row addstudent " >
                                                     <div class="form-group">
                                                         <label for="exampleInput1">姓名</label>
                                                         <input type="text" class="form-control" id="exampleInput1" name="studentName"/>
@@ -84,13 +84,23 @@
                                                         <label for="exampleInput2">学号</label>
                                                         <input type="text" class="form-control" id="exampleInput2" name="studentNumber"/>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="exampleInput3">Major</label>
-                                                        <input type="text" class="form-control" id="exampleInput3" name="majorId"/>
+                                                    <div class="form-group md-col row">
+                                                        <label for="exampleInput3" >专业</label>
+                                                            <div>
+                                                                <select   id="exampleInput3"  class="form-control" >
+                                                                    <option data-th-each="tag,tagsIndex:${college}" data-th-value="${tag.collegeId}" data-th-text="${tag.collegeName}" >地面</option>
+                                                                </select>
+                                                            </div>
+                                                        <!--<input type="text" class="form-control" id="exampleInput3" name="majorId"/>-->
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="exampleInput4">College</label>
-                                                        <input type="text" class="form-control" id="exampleInput4" name="collegeId"/>
+                                                    <div class="form-group md-col">
+                                                        <label for="exampleInput4" class="col-md-2">学院</label>
+                                                        <div class="col-md-10">
+                                                            <select id="exampleInput4" class="form-control" >
+                                                                <option data-th-each="tag,tagsIndex:${major}" data-th-value="${tag.majorId}" data-th-text="${tag.majorName}" >地面</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--<input type="text" class="form-control" id="exampleInput4" name="collegeId"/>-->
                                                     </div>
                                                     <button type="button" onclick="addstudent()" class="btn btn-default">Submit</button>
                                                 </form>
