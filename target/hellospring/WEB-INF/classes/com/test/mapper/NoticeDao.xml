@@ -62,7 +62,7 @@
     </select>
 
     <insert id="addnotice" parameterType="com.test.domain.Notice">
-        INSERT INTO ps_notice(<include refid="noticeColumns"/>)
+        INSERT INTO ps_notice(noticeTitle,noticeContent,noticeImage)
         VALUES (#{noticeTitle},#{noticeContent},#{noticeImage})
     </insert>
 </mapper>

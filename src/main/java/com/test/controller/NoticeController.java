@@ -85,13 +85,24 @@ public class NoticeController {
                 System.out.println("文件名称: " + myfile.getName());
                 System.out.println("文件原名: " + myfile.getOriginalFilename());
                 System.out.println("========================================");
+                // 获取图片的文件名
+                String fileName = myfile.getOriginalFilename();
+                // 获取图片的扩展名
+                String extensionName = fileName.substring(fileName.lastIndexOf(".") + 1);
+                // 新的图片文件名 = 获取时间戳+"."图片扩展名
+                imgPath = String.valueOf(System.currentTimeMillis()) + "." + extensionName;
+
                 //如果用的是Tomcat服务器，则文件会上传到\\%TOMCAT_HOME%\\webapps\\YourWebProject\\WEB-INF\\upload\\文件夹中
                 String realPath = request.getSession().getServletContext().getRealPath("/WEB-INF/upload");
-                imgPath = myfile.getOriginalFilename();
+                //imgPath = myfile.getOriginalFilename();
                 //这里不必处理IO流关闭的问题，因为FileUtils.copyInputStreamToFile()方法内部会自动把用到的IO流关掉，我是看它的源码才知道的
                 FileUtils.copyInputStreamToFile(myfile.getInputStream(), new File(realPath,imgPath));
+
+                FileUtils.deleteQuietly(new File(realPath+"/1.jpg"));
             }
-            notice.setNoticeImage("/WEB-INF/upload"+imgPath);
+
+
+            notice.setNoticeImage("/WEB-INF/upload/"+imgPath);
             noticeService.addnotice(notice);
 
         }catch (Exception e)

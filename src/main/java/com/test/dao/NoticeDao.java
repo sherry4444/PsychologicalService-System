@@ -15,5 +15,5 @@ public interface NoticeDao {
 
     List<Notice> findnoticeAll(Map<String, Object> parameter);
     int countNotice(@Param("title") String title);
-    Notice addnotice(Notice notice);
+    void addnotice(Notice notice);
  }
