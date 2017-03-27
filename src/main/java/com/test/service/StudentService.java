@@ -1,6 +1,7 @@
 package com.test.service;
 
 import com.test.domain.Student;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -16,4 +17,8 @@ public interface StudentService {
     int countStudent(String title);
 
     void addStudent(Student student);
+
+    void deletestudent(Student student);
+
+    void updatestudent(Student student);
 }

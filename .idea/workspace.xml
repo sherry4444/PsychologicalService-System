@@ -2,17 +2,100 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3af9c938-50e3-48be-a70c-31dfc036e51c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/test/commons/Fileupload.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/commons/Fileupload.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/upload/8ebd322286a841e9b5b551f98109c591.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/NoticeController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/NoticeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/StudentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/TeacherController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/TeacherController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/managerController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/managerController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/ManagerDao.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/ManagerDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/NoticeDao.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/NoticeDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/StudentDao.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/StudentDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/TeacherDao.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/TeacherDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/UserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/domain/Manager.class" afterPath="$PROJECT_DIR$/target/classes/com/test/domain/Manager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/domain/UserInfo.class" afterPath="$PROJECT_DIR$/target/classes/com/test/domain/UserInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/ManagerService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/ManagerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/NoticeService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/NoticeService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/StudentService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/StudentService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/TeacherService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/TeacherService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/impl/ManagerServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/impl/ManagerServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/impl/NoticeServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/impl/NoticeServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/impl/StudentServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/impl/TeacherServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/impl/TeacherServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/impl/UserServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/NoticeController.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/NoticeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/StudentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/TeacherController.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/TeacherController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/UserController.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/managerController.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/controller/managerController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/ManagerDao.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/ManagerDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/NoticeDao.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/NoticeDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/StudentDao.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/StudentDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/TeacherDao.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/TeacherDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/dao/UserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Manager.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/Manager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/UserInfo.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/domain/UserInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/ManagerService.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/ManagerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/NoticeService.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/NoticeService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/StudentService.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/StudentService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/TeacherService.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/TeacherService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/UserService.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/ManagerServiceImpl.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/ManagerServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/NoticeServiceImpl.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/NoticeServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/StudentServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/TeacherServiceImpl.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/TeacherServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/NoticeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/NoticeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/TeacherController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/TeacherController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/NoticeDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/NoticeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/TeacherDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/TeacherDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/domain/Manager.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/domain/Manager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/mapper/NoticeDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/test/mapper/NoticeDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/mapper/TeacherDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/test/mapper/TeacherDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/mapper/UserDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/test/mapper/UserDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/ManagerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/ManagerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/NoticeService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/NoticeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/TeacherService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/TeacherService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/impl/ManagerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/impl/ManagerServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/impl/NoticeServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/impl/NoticeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/impl/TeacherServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/impl/TeacherServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/noticeList.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/noticeList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/mapper/ManagerDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/test/mapper/ManagerDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/mapper/NoticeDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/test/mapper/NoticeDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/mapper/StudentDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/test/mapper/StudentDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/mapper/TeacherDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/test/mapper/TeacherDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/mapper/UserDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/test/mapper/UserDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/ManagerDao.xml" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/ManagerDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/NoticeDao.xml" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/NoticeDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/StudentDao.xml" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/StudentDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/TeacherDao.xml" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/TeacherDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/UserDao.xml" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/classes/com/test/mapper/UserDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/noticeList.html" afterPath="$PROJECT_DIR$/target/hellospring/WEB-INF/views/manager/noticeList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hellospring/resources/js/noticeList.js" afterPath="$PROJECT_DIR$/target/hellospring/resources/js/noticeList.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/test/commons/Fileupload.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/commons/Filefunction.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,25 +108,129 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ssm" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <file leaf-file-name="StudentDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="197">
+              <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoticeService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/NoticeService.java">
+      <file leaf-file-name="StudentDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="1013">
+              <caret line="167" column="45" lean-forward="true" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+              <folding>
+                <marker date="1490622701837" expanded="true" signature="1293:2881" ph="SELECT FROM ps_student" />
+                <marker date="1490622701837" expanded="true" signature="3797:3902" ph="insert into ps_user... " />
+                <marker date="1490622701837" expanded="true" signature="4017:4095" ph="SELECT userI... ps_user" />
+                <marker date="1490622701837" expanded="true" signature="4188:4352" ph="INSERT INTO ps_student... " />
+                <marker date="1490622701837" expanded="true" signature="4448:4501" ph="DELETE FROM " />
+                <marker date="1490622701837" expanded="true" signature="4603:4658" ph="DELETE FROM " />
+                <marker date="1490622701837" expanded="true" signature="4760:4808" ph="DELETE FROM " />
+                <marker date="1490622701837" expanded="true" signature="4912:5297" ph="UPDATE ps_us... " />
+                <marker date="1490622701837" expanded="true" signature="5393:5898" ph="UPDATE ps_no... " />
+                <marker date="1490622701837" expanded="true" signature="6000:6195" ph="UPDATE ps_st... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139">
+              <caret line="142" column="54" lean-forward="true" selection-start-line="142" selection-start-column="54" selection-end-line="142" selection-end-column="54" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManagerDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="35" />
+              <folding>
+                <marker date="1490622702725" expanded="true" signature="949:2359" ph="SELECT FROM ps_manager" />
+                <marker date="1490622702725" expanded="true" signature="3107:3239" ph="insert into ps_user... " />
+                <marker date="1490622702725" expanded="true" signature="3357:3435" ph="SELECT userI... ps_user" />
+                <marker date="1490622702725" expanded="true" signature="3528:3608" ph="INSERT INTO ps_manager... " />
+                <marker date="1490622702725" expanded="true" signature="3704:3757" ph="DELETE FROM " />
+                <marker date="1490622702725" expanded="true" signature="3859:3907" ph="DELETE FROM " />
+                <marker date="1490622702725" expanded="true" signature="4009:4062" ph="DELETE FROM " />
+                <marker date="1490622702725" expanded="true" signature="4166:4551" ph="UPDATE ps_us... " />
+                <marker date="1490622702725" expanded="true" signature="4647:4840" ph="UPDATE ps_ma... " />
+                <marker date="1490622702725" expanded="true" signature="4942:5135" ph="UPDATE ps_ma... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManagerDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeacherDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/TeacherDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeacherDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/TeacherDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-353">
+              <caret line="108" column="55" lean-forward="true" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
+              <folding>
+                <marker date="1490623797369" expanded="true" signature="1009:2419" ph="SELECT FROM ps_teacher" />
+                <marker date="1490623797369" expanded="true" signature="3167:3272" ph="insert into ps_user... " />
+                <marker date="1490623797369" expanded="true" signature="3387:3465" ph="SELECT userI... ps_user" />
+                <marker date="1490623797369" expanded="true" signature="3558:3647" ph="INSERT INTO ps_teacher... " />
+                <marker date="1490623797369" expanded="true" signature="3743:3796" ph="DELETE FROM " />
+                <marker date="1490623797369" expanded="true" signature="3898:3945" ph="DELETE FROM " />
+                <marker date="1490623797369" expanded="true" signature="4047:4100" ph="DELETE FROM " />
+                <marker date="1490623797369" expanded="true" signature="4204:4589" ph="UPDATE ps_us... " />
+                <marker date="1490623797369" expanded="true" signature="4685:4878" ph="UPDATE ps_te... " />
+                <marker date="1490623797369" expanded="true" signature="4980:5173" ph="UPDATE ps_te... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,82 +238,23 @@
       <file leaf-file-name="noticeList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="83" column="75" lean-forward="true" selection-start-line="83" selection-start-column="75" selection-end-line="83" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoticeDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/NoticeDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="77" column="68" lean-forward="false" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
               <folding>
-                <marker date="1490425883068" expanded="true" signature="873:1613" ph="SELECT FROM ps_notice" />
-                <marker date="1490425883068" expanded="true" signature="2079:2203" ph="INSERT INTO ps_notice... " />
+                <element signature="e#10104#10111#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoticeDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/NoticeDao.java">
+      <file leaf-file-name="studentList.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noticeList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/noticeList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fileupload.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/commons/Fileupload.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoticeServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/NoticeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoticeController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/NoticeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="100" column="60" lean-forward="false" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="60" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="94" column="58" lean-forward="true" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
+              <folding>
+                <element signature="e#11095#11102#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +268,8 @@
         <option value="spring-beans.schema" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -152,7 +280,6 @@
       <find>navigation-main</find>
       <find>userLis</find>
       <find>a.userId</find>
-      <find>teacher</find>
       <find>studentList</find>
       <find>studentlist.</find>
       <find>teach</find>
@@ -168,6 +295,10 @@
       <find>INFO</find>
       <find>mg_userId</find>
       <find>fileup</find>
+      <find>studen</find>
+      <find>stu</find>
+      <find>teacher</find>
+      <find>te</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,26 +312,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/TeacherController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/userList.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/teacherList.html" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/front/websocket.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/WebSocketHander.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/HandshakeInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/config/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/chatMain.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/front/knowledge.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/front/pstest.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/indextest.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/modifydata.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/front/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/chatMain.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/front/chatMain.html" />
@@ -213,25 +324,45 @@
         <option value="$PROJECT_DIR$/src/main/java/com/test/dao/CollegeMajorDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/service/CollegeMajorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/CollgeMajorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/teacherList.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/service/ManagerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/managerList.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/managerList.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/ManagerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/noticeList.js" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/FileUploadError.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/commons/Fileupload.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/2.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/NoticeDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/NoticeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/dao/NoticeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/noticeList.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/commons/HttpInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/commons/Filefunction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/controller/NoticeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/NoticeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/TeacherService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/TeacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/ManagerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/ManagerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/domain/Manager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/TeacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/UserDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/dao/TeacherDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/mapper/TeacherDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html" />
       </list>
     </option>
   </component>
@@ -358,6 +489,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hellospring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,142 +658,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="error" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -672,36 +689,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1005,16 +992,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="E:/biyesheji" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1027,6 +1014,7 @@
       <recent name="E:\ssm\src\main\webapp\WEB-INF\views" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.test.commons" />
       <recent name="com.test.service.impl" />
       <recent name="com.test.service" />
       <recent name="com.test.dao" />
@@ -1034,10 +1022,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ssm\target\hellospring\WEB-INF\upload" />
+      <recent name="E:\ssm\src\main\webapp\resources\css" />
       <recent name="E:\ssm\src\main\webapp\resources\js" />
       <recent name="E:\ssm\src\main\java\com\test\mapper" />
       <recent name="E:\ssm\src\main\webapp\WEB-INF\views\login" />
-      <recent name="E:\ssm\src\main\webapp\WEB-INF\views\front" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.SSM_hellospring">
@@ -1440,6 +1428,11 @@
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
+        <file path="$PROJECT_DIR$/target/hellospring/WEB-INF/upload">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WEB-INF/upload" />
+          </settings>
+        </file>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_ssm_4" />
@@ -1534,7 +1527,9 @@
       <workItem from="1490254400480" duration="8189000" />
       <workItem from="1490272787706" duration="7027000" />
       <workItem from="1490330903742" duration="3402000" />
-      <workItem from="1490419658407" duration="7763000" />
+      <workItem from="1490419658407" duration="33504000" />
+      <workItem from="1490579188450" duration="18838000" />
+      <workItem from="1490617906040" duration="8359000" />
     </task>
     <task id="LOCAL-00001" summary="学生列表 findid 改为返回Integer类型，studentList采用数据绑定接收前台信息 都是null,前台显示添加成功？？？ 后台无报错信息，就很迷">
       <created>1489932447239</created>
@@ -1557,11 +1552,27 @@
       <option name="project" value="LOCAL" />
       <updated>1490431346577</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修复上传公告图片BUG">
+      <created>1490433796608</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1490433796608</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184405000" />
+    <option name="totallyTimeSpent" value="237343000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1587,12 +1598,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26688102" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36495176" sideWeight="0.88426626" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19614148" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13848631" sideWeight="0.88426626" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27912253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23373677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1669,7 +1680,8 @@
     <MESSAGE value="学生列表 findid 改为返回Integer类型，studentList采用数据绑定接收前台信息 都是null,前台显示添加成功？？？ 后台无报错信息，就很迷" />
     <MESSAGE value="搞定了！是因为没有配置formdata  pom 和springmvc都要配一下就好了，扎心了" />
     <MESSAGE value="我也不知道增加了啥，反正是有个首页了" />
-    <option name="LAST_COMMIT_MESSAGE" value="我也不知道增加了啥，反正是有个首页了" />
+    <MESSAGE value="修复上传公告图片BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复上传公告图片BUG" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1682,382 +1694,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/chatMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <caret line="75" column="3" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/front/chatMain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/CollegeMajor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-          <folding>
-            <element signature="e#226#227#0" expanded="false" />
-            <element signature="e#256#257#0" expanded="false" />
-            <element signature="e#303#304#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#372#373#0" expanded="false" />
-            <element signature="e#400#401#0" expanded="false" />
-            <element signature="e#441#442#0" expanded="false" />
-            <element signature="e#475#476#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/College.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Major.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/CollegeMajorDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="29" />
-          <folding>
-            <marker date="1490262635995" expanded="true" signature="857:901" ph="SELECT FROM ps_notice" />
-            <marker date="1490262635995" expanded="true" signature="1121:1180" ph="INSERT INTO ps_notice... " />
-            <marker date="1490262635995" expanded="true" signature="1275:1356" ph="UPDATE ps_co... " />
-            <marker date="1490262635995" expanded="true" signature="1462:1500" ph="SELECT major... ps_major" />
-            <marker date="1490262635995" expanded="true" signature="1726:1779" ph="INSERT INTO ps_college... " />
-            <marker date="1490262635995" expanded="true" signature="1871:1942" ph="UPDATE ps_ma... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/CollegeMajorDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="17" selection-start-column="2" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/CollegeMajorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="21" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/CollgeMajorServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="71" lean-forward="false" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="75" column="36" lean-forward="false" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="86" column="85" lean-forward="false" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacherList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/teacherList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="91" column="34" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="91" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/TeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="82" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/TeacherDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/managerList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="43" selection-end-column="13" />
-          <folding>
-            <marker date="1490275673163" expanded="true" signature="1273:1365" ph="insert into ps_user... " />
-            <marker date="1490275673163" expanded="true" signature="1480:1558" ph="SELECT userI... ps_user" />
-            <marker date="1490275673163" expanded="true" signature="1651:1815" ph="INSERT INTO ps_student... " />
-            <marker date="1490275673163" expanded="true" signature="1932:3520" ph="SELECT FROM ps_student" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/TeacherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/ManagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding>
-            <marker date="1490281649308" expanded="true" signature="949:2359" ph="SELECT FROM ps_manager" />
-            <marker date="1490281649308" expanded="true" signature="3107:3199" ph="insert into ps_user... " />
-            <marker date="1490281649308" expanded="true" signature="3317:3395" ph="SELECT userI... ps_user" />
-            <marker date="1490281649308" expanded="true" signature="3488:3568" ph="INSERT INTO ps_manager... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/TeacherDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1490116069340" expanded="true" signature="1009:2419" ph="SELECT FROM ps_teacher" />
-            <marker date="1490116069340" expanded="true" signature="3167:3259" ph="insert into ps_user... " />
-            <marker date="1490116069340" expanded="true" signature="3374:3452" ph="SELECT userI... ps_user" />
-            <marker date="1490116069340" expanded="true" signature="3545:3634" ph="INSERT INTO ps_teacher... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/ManagerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="24" />
-          <folding>
-            <element signature="e#291#292#0" expanded="false" />
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-            <element signature="e#416#417#0" expanded="false" />
-            <element signature="e#454#455#0" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#542#543#0" expanded="false" />
-            <element signature="e#588#589#0" expanded="false" />
-            <element signature="e#646#647#0" expanded="false" />
-            <element signature="e#678#679#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#808#809#0" expanded="false" />
-            <element signature="e#839#840#0" expanded="false" />
-            <element signature="e#889#890#0" expanded="false" />
-            <element signature="e#929#930#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="71" column="46" lean-forward="true" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/leftmanager.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1071">
+        <state relative-caret-position="136">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/2.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="88" column="5" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="88" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="20" column="75" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Notice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="221" column="27" lean-forward="false" selection-start-line="221" selection-start-column="21" selection-end-line="221" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/managerList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="67" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="5" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/FileUploadError.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/NoticeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="425">
           <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
         </state>
@@ -2065,73 +1719,419 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+        <state relative-caret-position="307">
+          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/commons/Fileupload.java">
+    <entry file="jar://D:/work/maven/warehouse/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar!/javax/validation/Validation.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="53">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/NoticeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/8ebd322286a841e9b5b551f98109c591.jpg">
+    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/java.text.SimpleDateFormat@a3bf5ad8u=72335892,1523754082&amp;fm=11&amp;gp=0.jpg" />
+    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/java.text.SimpleDateFormat@a3bf5ad8下载.jpg" />
+    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/1490433246937.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/NoticeServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Notice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="94">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="30" />
+          <folding>
+            <element signature="e#289#290#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#369#370#0" expanded="false" />
+            <element signature="e#409#410#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#621#622#0" expanded="false" />
+            <element signature="e#657#658#0" expanded="false" />
+            <element signature="e#715#716#0" expanded="false" />
+            <element signature="e#765#766#0" expanded="false" />
+            <element signature="e#803#804#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
+            <element signature="e#891#892#0" expanded="false" />
+            <element signature="e#937#938#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/work/maven/warehouse/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar!/org/apache/commons/io/FileUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="540" column="41" lean-forward="true" selection-start-line="540" selection-start-column="41" selection-end-line="540" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/1490433722323.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/1490585674858.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/hellospring/WEB-INF/upload/1490433550278.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/commons/Filefunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="58" column="45" lean-forward="false" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/commons/HttpInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/noticeList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="69">
+          <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/NoticeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="83" column="75" lean-forward="true" selection-start-line="83" selection-start-column="75" selection-end-line="83" selection-end-column="75" />
+        <state relative-caret-position="224">
+          <caret line="144" column="22" lean-forward="true" selection-start-line="139" selection-start-column="12" selection-end-line="144" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/NoticeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="201">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/NoticeDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="515">
+          <caret line="85" column="34" lean-forward="false" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
           <folding>
-            <marker date="1490425883068" expanded="true" signature="873:1613" ph="SELECT FROM ps_notice" />
-            <marker date="1490425883068" expanded="true" signature="2079:2203" ph="INSERT INTO ps_notice... " />
+            <marker date="1490519105319" expanded="true" signature="873:1613" ph="SELECT FROM ps_notice" />
+            <marker date="1490519105319" expanded="true" signature="2079:2203" ph="INSERT INTO ps_notice... " />
+            <marker date="1490519105319" expanded="true" signature="2297:2347" ph="DELETE FROM " />
+            <marker date="1490519105319" expanded="true" signature="2655:3067" ph="UPDATE ps_no... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/NoticeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/ManagerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="100" column="60" lean-forward="false" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="60" />
+        <state relative-caret-position="340">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/NoticeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/NoticeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacherList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="e#787#788#0" expanded="false" />
+            <element signature="e#818#819#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/domain/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/work/maven/warehouse/org/mybatis/mybatis/3.2.6/mybatis-3.2.6.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/TeacherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="40" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="22" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="48" />
+          <folding>
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="42" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="42" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="28" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/TeacherServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="59" lean-forward="true" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/impl/ManagerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/ManagerDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="35" />
+          <folding>
+            <marker date="1490622702725" expanded="true" signature="949:2359" ph="SELECT FROM ps_manager" />
+            <marker date="1490622702725" expanded="true" signature="3107:3239" ph="insert into ps_user... " />
+            <marker date="1490622702725" expanded="true" signature="3357:3435" ph="SELECT userI... ps_user" />
+            <marker date="1490622702725" expanded="true" signature="3528:3608" ph="INSERT INTO ps_manager... " />
+            <marker date="1490622702725" expanded="true" signature="3704:3757" ph="DELETE FROM " />
+            <marker date="1490622702725" expanded="true" signature="3859:3907" ph="DELETE FROM " />
+            <marker date="1490622702725" expanded="true" signature="4009:4062" ph="DELETE FROM " />
+            <marker date="1490622702725" expanded="true" signature="4166:4551" ph="UPDATE ps_us... " />
+            <marker date="1490622702725" expanded="true" signature="4647:4840" ph="UPDATE ps_ma... " />
+            <marker date="1490622702725" expanded="true" signature="4942:5135" ph="UPDATE ps_ma... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/TeacherDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/ManagerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/UserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-820">
+          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="26" />
+          <folding>
+            <marker date="1490621219801" expanded="true" signature="1335:1413" ph="SELECT FROM ps_user" />
+            <marker date="1490621219801" expanded="true" signature="1503:1648" ph="insert into ps_user... " />
+            <marker date="1490621219801" expanded="true" signature="1763:1841" ph="SELECT userI... ps_user" />
+            <marker date="1490621219801" expanded="true" signature="1952:2955" ph="SELECT FROM ps_user" />
+            <marker date="1490621219801" expanded="true" signature="3320:3364" ph="DELETE FROM " />
+            <marker date="1490621219801" expanded="true" signature="3459:3931" ph="UPDATE ps_us... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="142" column="54" lean-forward="true" selection-start-line="142" selection-start-column="54" selection-end-line="142" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/StudentDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1013">
+          <caret line="167" column="45" lean-forward="true" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+          <folding>
+            <marker date="1490622701837" expanded="true" signature="1293:2881" ph="SELECT FROM ps_student" />
+            <marker date="1490622701837" expanded="true" signature="3797:3902" ph="insert into ps_user... " />
+            <marker date="1490622701837" expanded="true" signature="4017:4095" ph="SELECT userI... ps_user" />
+            <marker date="1490622701837" expanded="true" signature="4188:4352" ph="INSERT INTO ps_student... " />
+            <marker date="1490622701837" expanded="true" signature="4448:4501" ph="DELETE FROM " />
+            <marker date="1490622701837" expanded="true" signature="4603:4658" ph="DELETE FROM " />
+            <marker date="1490622701837" expanded="true" signature="4760:4808" ph="DELETE FROM " />
+            <marker date="1490622701837" expanded="true" signature="4912:5297" ph="UPDATE ps_us... " />
+            <marker date="1490622701837" expanded="true" signature="5393:5898" ph="UPDATE ps_no... " />
+            <marker date="1490622701837" expanded="true" signature="6000:6195" ph="UPDATE ps_st... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/mapper/TeacherDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353">
+          <caret line="108" column="55" lean-forward="true" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
+          <folding>
+            <marker date="1490623797369" expanded="true" signature="1009:2419" ph="SELECT FROM ps_teacher" />
+            <marker date="1490623797369" expanded="true" signature="3167:3272" ph="insert into ps_user... " />
+            <marker date="1490623797369" expanded="true" signature="3387:3465" ph="SELECT userI... ps_user" />
+            <marker date="1490623797369" expanded="true" signature="3558:3647" ph="INSERT INTO ps_teacher... " />
+            <marker date="1490623797369" expanded="true" signature="3743:3796" ph="DELETE FROM " />
+            <marker date="1490623797369" expanded="true" signature="3898:3945" ph="DELETE FROM " />
+            <marker date="1490623797369" expanded="true" signature="4047:4100" ph="DELETE FROM " />
+            <marker date="1490623797369" expanded="true" signature="4204:4589" ph="UPDATE ps_us... " />
+            <marker date="1490623797369" expanded="true" signature="4685:4878" ph="UPDATE ps_te... " />
+            <marker date="1490623797369" expanded="true" signature="4980:5173" ph="UPDATE ps_te... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/noticeList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="77" column="68" lean-forward="false" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
+          <folding>
+            <element signature="e#10104#10111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/manager/studentList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="94" column="58" lean-forward="true" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
+          <folding>
+            <element signature="e#11095#11102#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

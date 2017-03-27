@@ -21,4 +21,16 @@ public interface TeacherDao {
     void TeachertoUser(UserInfo userInfo);
     Integer finduserid(UserInfo userInfo);
     void addteacher(Teacher teacher);
+
+    void deleteteacher(Teacher teacher);
+
+    void deleteteacherinUser(Teacher teacher);
+
+    void updateTeachertoUser(UserInfo userInfo);
+
+    void updateteacher(Teacher teacher);
+
+    void deleteUserinTeacher(Teacher teacher);
+
+    void updateUserinTeacher(Teacher teacher);
  }

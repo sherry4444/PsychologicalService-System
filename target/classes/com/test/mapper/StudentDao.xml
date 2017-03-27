@@ -29,20 +29,6 @@
     <sql id="insertColumns">studentName,studentNumber,stu_userId,collegeId,majorId</sql>
 
 
-
-    <insert id="StudentoUser" parameterType="com.test.domain.UserInfo" >
-       insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
-    </insert>
-
-    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">
-        SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
-    </select>
-
-    <insert id="addstudent" parameterType="com.test.domain.Student">
-        INSERT INTO ps_student(studentName,studentNumber,stu_userId,collegeId,majorId)
-        VALUE (#{studentName},#{studentNumber},#{stu_userId},#{collegeId},#{majorId})
-    </insert>
-
     <select id="findstudentAll" resultMap="StudentResultMap" parameterType="java.util.Map" >
         SELECT <include refid="studentColumns"/> FROM ps_student a
         LEFT JOIN ps_college b on a.collegeId = b.collegeId
@@ -114,5 +100,75 @@
             </if>
         </where>
     </select>
+
+    <insert id="StudentoUser" parameterType="com.test.domain.UserInfo" >
+        insert into ps_user(userName,Password,userEmail,role) value(#{userName},#{Password},#{userEmail},#{role})
+    </insert>
+
+    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">
+        SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
+    </select>
+
+    <insert id="addstudent" parameterType="com.test.domain.Student">
+        INSERT INTO ps_student(studentName,studentNumber,stu_userId,collegeId,majorId)
+        VALUE (#{studentName},#{studentNumber},#{stu_userId},#{collegeId},#{majorId})
+    </insert>
+
+    <delete id="deletestudent" parameterType="com.test.domain.Student">
+        DELETE FROM ps_student WHERE studentId = #{studentId}
+    </delete>
+
+    <delete id="deleteUserinStudent" parameterType="com.test.domain.Student">
+        DELETE FROM ps_student WHERE stu_userId = #{stu_userId}
+    </delete>
+
+    <delete id="deletestudentinUser" parameterType="com.test.domain.Student">
+        DELETE FROM ps_user WHERE userId = #{stu_userId}
+    </delete>
+
+    <update id="updateStudenttoUser" parameterType="com.test.domain.UserInfo" >
+        UPDATE ps_user
+        <set>
+            <if test="userName != null">
+                userName = #{userName},
+            </if>
+            <if test="userEmail != null">
+                userEmail = #{userEmail},
+            </if>
+            <if test="mobilePhone != null">
+                mobilePhone = #{mobilePhone},
+            </if>
+        </set>
+        WHERE userId = #{userId}
+    </update>
+
+    <update id="updatestudent" parameterType="com.test.domain.Student">
+        UPDATE ps_student
+        <set>
+            <if test="studentName != null">
+                studentName = #{studentName},
+            </if>
+            <if test="studentNumber != null">
+                studentNumber = #{studentNumber},
+            </if>
+            <if test="collegeId != null">
+                collegeId = #{collegeId},
+            </if>
+            <if test="majorId != null">
+                majorId = #{majorId},
+            </if>
+        </set>
+        WHERE studentId = #{studentId}
+    </update>
+
+    <update id="updateUserinStudent" parameterType="com.test.domain.Student">
+        UPDATE ps_student
+        <set>
+            <if test="studentName != null">
+                studentName = #{studentName},
+            </if>
+        </set>
+        WHERE stu_userId = #{stu_userId}
+    </update>
 
 </mapper>

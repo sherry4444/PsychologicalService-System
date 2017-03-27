@@ -13,8 +13,13 @@ import java.util.Map;
  */
 @Repository
 public interface UserDao {
-    void addUser(UserInfo userInfo);
+
     UserInfo finduserByName(UserInfo userInfo);
     List<UserInfo> finduserAll(Map<String,Object> parameter);
     int countUser(@Param("title") String title);
+    Integer finduserid(UserInfo userInfo);
+
+    void addUser(UserInfo userInfo);
+    void deleteUser(UserInfo userInfo);
+    void updateUser(UserInfo userInfo);
  }

@@ -33,4 +33,17 @@ public class UserServiceImpl implements UserService{
     @Transactional
     public int countUser(String title){ return userDao.countUser(title);}
 
+    @Transactional
+    public void deleteUser(UserInfo userInfo){
+       userDao.deleteUser(userInfo);
+    }
+
+    @Transactional
+    public void updateUser(UserInfo userInfo){
+        userDao.updateUser(userInfo);
+    }
+
+    @Transactional
+    public Integer finduserid(UserInfo userInfo){ return userDao.finduserid(userInfo);};
+
 }

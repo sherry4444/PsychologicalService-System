@@ -29,4 +29,13 @@ public class NoticeServiceImpl implements NoticeService {
     @Transactional
     public void addnotice(Notice notice){ noticeDao.addnotice(notice);}
 
+    @Transactional
+    public void deletenotice(Notice notice){ noticeDao.deletenotice(notice);};
+
+    @Transactional
+    public void updatenotice(Notice notice){ noticeDao.updatenotice(notice);};
+
+    public void batchDeleteNotice(String[] ids){ noticeDao.batchDeleteNotice(ids);}
+
+
 }

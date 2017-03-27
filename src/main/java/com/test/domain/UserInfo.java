@@ -35,6 +35,14 @@ public class UserInfo implements Serializable {
 	public UserInfo() {
 	}
 
+	public UserInfo(String userName, String password, String mobilePhone, String userEmail, Integer role) {
+		this.userName = userName;
+		Password = password;
+		this.mobilePhone = mobilePhone;
+		this.userEmail = userEmail;
+		this.role = role;
+	}
+
 	public UserInfo(String userName, String password, String userEmail, Integer role) {
 		this.userName = userName;
 		Password = password;

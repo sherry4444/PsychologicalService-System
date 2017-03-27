@@ -42,6 +42,10 @@
        insert into ps_user(userName,Password,userEmail,mobilePhone,salt,role) value(#{userName},#{Password},#{userEmail},#{mobilePhone},#{salt},#{role})
     </insert>
 
+    <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">
+        SELECT userId FROM ps_user WHERE Password=#{Password} AND userName=#{userName}
+    </select>
+
     <select id="finduserAll" resultMap="UserResultMap" parameterType="java.util.Map" >
         SELECT <include refid="userColumns"/> FROM ps_user a
         <where>
@@ -85,4 +89,28 @@
             </if>
         </where>
     </select>
+
+
+    <delete id="deleteUser" parameterType="com.test.domain.UserInfo">
+        DELETE FROM ps_user WHERE userId = #{userId}
+    </delete>
+
+    <update id="updateUser" parameterType="com.test.domain.UserInfo" >
+        UPDATE ps_user
+        <set>
+            <if test="userName != null">
+                userName = #{userName},
+            </if>
+            <if test="userEmail != null">
+                userEmail = #{userEmail},
+            </if>
+            <if test="mobilePhone != null">
+                mobilePhone = #{mobilePhone},
+            </if>
+            <if test="role != null">
+                role = #{role},
+            </if>
+        </set>
+        WHERE userId = #{userId}
+    </update>
 </mapper>

@@ -88,7 +88,7 @@
     </select>
 
     <insert id="ManagertoUser" parameterType="com.test.domain.UserInfo" >
-        insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
+        insert into ps_user(userName,Password,userEmail,mobilePhone,role) value(#{userName},#{Password},#{userEmail},#{mobilePhone},#{role})
     </insert>
 
     <select id="findmanagerid" parameterType="com.test.domain.UserInfo" resultType="Integer">
@@ -98,4 +98,52 @@
     <insert id="addmanager" parameterType="com.test.domain.Manager">
         INSERT INTO ps_manager(managerName,mg_userId)VALUE (#{managerName},#{mg_userId})
     </insert>
+
+    <delete id="deletemanager" parameterType="com.test.domain.Manager">
+        DELETE FROM ps_manager WHERE managerId = #{managerId}
+    </delete>
+
+    <delete id="deletemanagerinUser" parameterType="com.test.domain.Manager">
+        DELETE FROM ps_user WHERE  userId = #{mg_userId}
+    </delete>
+
+    <delete id="deleteUserinManager" parameterType="com.test.domain.Manager">
+        DELETE FROM ps_manager WHERE mg_userId = #{mg_userId}
+    </delete>
+
+    <update id="updatemanagertoUser" parameterType="com.test.domain.UserInfo" >
+        UPDATE ps_user
+        <set>
+            <if test="userName != null">
+                userName = #{userName},
+            </if>
+            <if test="userEmail != null">
+                userEmail = #{userEmail},
+            </if>
+            <if test="mobilePhone != null">
+                mobilePhone = #{mobilePhone},
+            </if>
+        </set>
+        WHERE userId = #{userId}
+    </update>
+
+    <update id="updatemanager" parameterType="com.test.domain.Manager">
+        UPDATE ps_manager
+        <set>
+            <if test="managerName != null">
+                managerName = #{managerName},
+            </if>
+        </set>
+        WHERE managerId = #{managerId}
+    </update>
+
+    <update id="updateUserinManager" parameterType="com.test.domain.Manager">
+        UPDATE ps_manager
+        <set>
+            <if test="managerName != null">
+                managerName = #{managerName},
+            </if>
+        </set>
+        WHERE mg_userId = #{mg_userId}
+    </update>
 </mapper>

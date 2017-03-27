@@ -5,6 +5,7 @@ import com.test.dao.ManagerDao;
 import com.test.dao.TeacherDao;
 import com.test.domain.Manager;
 import com.test.domain.Teacher;
+import com.test.domain.UserInfo;
 import com.test.service.ManagerService;
 import com.test.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,20 @@ public class ManagerServiceImpl implements ManagerService {
         managerDao.ManagertoUser(manager.getUserInfo());
         manager.setMg_userId(managerDao.findmanagerid(manager.getUserInfo()));
         managerDao.addmanager(manager);
+    }
+
+    @Transactional
+    public void deletemanager(Manager manager){
+        managerDao.deletemanagerinUser(manager);
+        managerDao.deletemanager(manager);
+    }
+
+    @Transactional
+    public void updatemanager(Manager manager){
+        managerDao.updatemanager(manager);
+        UserInfo userInfo = manager.getUserInfo();
+        userInfo.setUserId(manager.getMg_userId());
+        managerDao.updatemanagertoUser(userInfo);
     }
 
 }

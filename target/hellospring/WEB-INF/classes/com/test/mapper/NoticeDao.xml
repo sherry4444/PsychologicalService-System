@@ -65,4 +65,32 @@
         INSERT INTO ps_notice(noticeTitle,noticeContent,noticeImage)
         VALUES (#{noticeTitle},#{noticeContent},#{noticeImage})
     </insert>
+
+    <delete id="deletenotice" parameterType="com.test.domain.Notice">
+        DELETE FROM ps_notice WHERE noticeId = #{noticeId}
+    </delete>
+
+    <delete id="batchDeleteNotice">
+        delete from ps_notice where noticeId in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="updatenotice" parameterType="com.test.domain.Notice">
+        UPDATE ps_notice
+        <set>
+            <if test="noticeTitle != null">
+                noticeTitle = #{noticeTitle},
+            </if>
+            <if test="noticeContent != null">
+                noticeContent = #{noticeContent},
+            </if>
+            <if test="noticeImage != null">
+                noticeImage = #{noticeImage},
+            </if>
+        </set>
+        WHERE noticeId = #{noticeId}
+    </update>
+
 </mapper>

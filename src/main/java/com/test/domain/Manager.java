@@ -29,7 +29,7 @@ public class Manager {
         this.managerName = managerName;
     }
 
-    public Integer getMg_userId(Integer findmanagerid) {
+    public Integer getMg_userId() {
         return mg_userId;
     }
 

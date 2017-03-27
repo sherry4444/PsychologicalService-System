@@ -18,4 +18,10 @@ public interface UserService {
     List<UserInfo> finduserAll(Map<String,Object> parameter);
 
     int countUser(String title);
+
+    void deleteUser(UserInfo userInfo);
+
+    void updateUser(UserInfo userInfo);
+
+    Integer finduserid(UserInfo userInfo);
 }

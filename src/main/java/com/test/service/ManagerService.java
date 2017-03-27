@@ -17,4 +17,8 @@ public interface ManagerService {
     int countManager(String title);
 
     void addManager(Manager manager);
+
+    void deletemanager(Manager manager);
+
+    void updatemanager(Manager manager);
 }

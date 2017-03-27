@@ -1,6 +1,8 @@
 package com.test.controller;
 
 
+import com.test.commons.Filefunction;
+import com.test.commons.HttpInfo;
 import com.test.config.PasswordUtil;
 import com.test.domain.*;
 import com.test.service.NoticeService;
@@ -13,9 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +34,8 @@ public class NoticeController {
     @Autowired
     private NoticeService noticeService;
 
+    Filefunction filefunction = new Filefunction();
+
     private int totalNumber;
 
     @RequestMapping(value = "/noticeList",produces = "text/html;charset=UTF-8")
@@ -37,7 +43,8 @@ public class NoticeController {
                                @RequestParam(value = "title",required = false)String title,
                                @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
                                @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
-                               @RequestParam(value = "num",required=false)Integer num){
+                               @RequestParam(value = "num",required=false)Integer num
+                              ,HttpServletRequest request){
 
         if (title != null) {
             try {
@@ -66,6 +73,9 @@ public class NoticeController {
         model.addAttribute("flag",flag);
         model.addAttribute("title",title);
         model.addAttribute("keywords","noticeList");
+
+        String realPath = request.getSession().getServletContext().getRealPath("");
+        model.addAttribute("realPath",realPath);
         return "manager/noticeList";
     }
 
@@ -73,43 +83,65 @@ public class NoticeController {
     @ResponseBody
     public String addTeacher(@ModelAttribute Notice notice,
                              @RequestParam(value = "Img",required = false)MultipartFile myfile
-                             , HttpServletRequest request) {
+                             ,HttpServletRequest request) {
         logger.info("before:"+notice.toString());
         String imgPath = "";
         try {
-            if(myfile.isEmpty()){
-                System.out.println("文件未上传");
-            }else{
-                System.out.println("文件长度: " + myfile.getSize());
-                System.out.println("文件类型: " + myfile.getContentType());
-                System.out.println("文件名称: " + myfile.getName());
-                System.out.println("文件原名: " + myfile.getOriginalFilename());
-                System.out.println("========================================");
-                // 获取图片的文件名
-                String fileName = myfile.getOriginalFilename();
-                // 获取图片的扩展名
-                String extensionName = fileName.substring(fileName.lastIndexOf(".") + 1);
-                // 新的图片文件名 = 获取时间戳+"."图片扩展名
-                imgPath = String.valueOf(System.currentTimeMillis()) + "." + extensionName;
-
-                //如果用的是Tomcat服务器，则文件会上传到\\%TOMCAT_HOME%\\webapps\\YourWebProject\\WEB-INF\\upload\\文件夹中
-                String realPath = request.getSession().getServletContext().getRealPath("/WEB-INF/upload");
-                //imgPath = myfile.getOriginalFilename();
-                //这里不必处理IO流关闭的问题，因为FileUtils.copyInputStreamToFile()方法内部会自动把用到的IO流关掉，我是看它的源码才知道的
-                FileUtils.copyInputStreamToFile(myfile.getInputStream(), new File(realPath,imgPath));
-
-                FileUtils.deleteQuietly(new File(realPath+"/1.jpg"));
+            if(myfile != null) {
+                imgPath = filefunction.fileupoload(myfile, request);
+                notice.setNoticeImage(HttpInfo.IMG_URL + imgPath);
             }
-
-
-            notice.setNoticeImage("/WEB-INF/upload/"+imgPath);
             noticeService.addnotice(notice);
-
+            logger.info("imgpath: "+imgPath);
+            logger.info("noticeimgpath: "+notice.toString());
         }catch (Exception e)
         {
             e.printStackTrace();
             return "添加失败"+e;
         }
         return "添加成功";
+    }
+
+    @RequestMapping(value = "/deletenotice",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deleteTeacher(@ModelAttribute Notice notice,HttpServletRequest request) {
+        logger.info("before:"+notice.toString());
+        try {
+            filefunction.filedelete(notice.getNoticeImage(),request);
+            noticeService.deletenotice(notice);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
+    }
+
+    @RequestMapping(value = "/modifynotice",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String modifyTeacher(@ModelAttribute Notice notice,
+                                @RequestParam(value = "Img",required = false)MultipartFile myfile,
+                                HttpServletRequest request) {
+        logger.info("before:"+notice.toString());
+        String imgPath = "";
+        try {
+            if (notice.getNoticeImage() != null) {
+                filefunction.filedelete(notice.getNoticeImage(), request);
+            }
+            if(myfile != null) {
+                imgPath = filefunction.fileupoload(myfile, request);
+                notice.setNoticeImage(HttpInfo.IMG_URL + imgPath);
+            }
+            noticeService.updatenotice(notice);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("修改失败"+e.toString());
+            return "修改失败"+e;
+        }
+        logger.info("修改成功");
+        return "修改成功";
     }
 }

@@ -1,16 +1,19 @@
 package com.test.controller;
 
-import com.test.domain.Page;
-import com.test.domain.Search;
-import com.test.domain.UserInfo;
+import com.test.dao.ManagerDao;
+import com.test.dao.StudentDao;
+import com.test.dao.TeacherDao;
+import com.test.domain.*;
+import com.test.service.ManagerService;
+import com.test.service.StudentService;
+import com.test.service.TeacherService;
 import com.test.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
@@ -26,6 +29,15 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private StudentDao studentDao;
+
+    @Resource
+    private TeacherDao teacherDao;
+
+    @Resource
+    private ManagerDao managerDao;
 
     private int totalNumber;
 
@@ -69,10 +81,112 @@ public class UserController {
         return "manager/userList";
     }
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public String add(UserInfo userInfo){
-        logger.info("add "+userInfo.toString());
-        userService.addUserInfo(userInfo);
-        return "success";
+    @RequestMapping(value = "/addUser",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String addUser(@ModelAttribute UserInfo userInfo){
+        logger.info("addUser"+userInfo.toString());
+        try {
+            userService.addUserInfo(userInfo);
+            Integer userid = userService.finduserid(userInfo);
+            if(userInfo.getRole() == 1)
+            {
+                Student student = new Student();
+                student.setStu_userId(userid);
+                student.setStudentName(userInfo.getUserName());
+                studentDao.addstudent(student);
+            }
+            if (userInfo.getRole() == 2)
+            {
+                Teacher teacher = new Teacher();
+                teacher.setTc_userId(userid);
+                teacher.setTeacherName(userInfo.getUserName());
+                teacherDao.addteacher(teacher);
+            }
+            if (userInfo.getRole() == 3)
+            {
+                Manager manager = new Manager();
+                manager.setMg_userId(userid);
+                manager.setManagerName(userInfo.getUserName());
+                managerDao.addmanager(manager);
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("添加失败"+e.toString());
+            return "添加失败"+e;
+        }
+        logger.info("添加成功");
+        return "添加成功";
+    }
+
+    @RequestMapping(value = "/deleteUser",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deleteUser(@ModelAttribute UserInfo userInfo) {
+        logger.info("deleteUser "+userInfo.toString());
+        try {
+            userService.deleteUser(userInfo);
+            if(userInfo.getRole() == 1)
+            {
+                Student student = new Student();
+                student.setStu_userId(userInfo.getUserId());
+                studentDao.deleteUserinStudent(student);
+            }
+            if (userInfo.getRole() == 2)
+            {
+                Teacher teacher = new Teacher();
+                teacher.setTc_userId(userInfo.getUserId());
+                teacherDao.deleteUserinTeacher(teacher);
+            }
+            if (userInfo.getRole() == 3)
+            {
+                Manager manager = new Manager();
+                manager.setMg_userId(userInfo.getUserId());
+                managerDao.deleteUserinManager(manager);
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
+    }
+
+    @RequestMapping(value = "/modifyUser",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String modifyUser(@ModelAttribute UserInfo userInfo) {
+        logger.info("modifyUser "+userInfo.toString());
+        try {
+            userService.updateUser(userInfo);
+            if(userInfo.getRole() == 1)
+            {
+                Student student = new Student();
+                student.setStudentName(userInfo.getUserName());
+                student.setStu_userId(userInfo.getUserId());
+                studentDao.updateUserinStudent(student);
+            }
+            if (userInfo.getRole() == 2)
+            {
+                Teacher teacher = new Teacher();
+                teacher.setTeacherName(userInfo.getUserName());
+                teacher.setTc_userId(userInfo.getUserId());
+                teacherDao.updateUserinTeacher(teacher);
+            }
+            if (userInfo.getRole() == 3)
+            {
+                Manager manager = new Manager();
+                manager.setManagerName(userInfo.getUserName());
+                manager.setMg_userId(userInfo.getUserId());
+                managerDao.updateUserinManager(manager);
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("修改失败"+e.toString());
+            return "修改失败"+e;
+        }
+        logger.info("修改成功");
+        return "修改成功";
     }
 }

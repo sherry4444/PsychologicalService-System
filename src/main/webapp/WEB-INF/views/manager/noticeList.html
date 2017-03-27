@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <link href="../../../resources/css/fileinput.min.css">
+    <script type="text/javascript" src="../../../resources/js/fileinput.min.js"></script>
     <script type="text/javascript" src="../../../resources/js/noticeList.js"></script>
     <title>manager&noticeList</title>
 </head>
@@ -141,10 +143,83 @@
                                                 <tr th:each="user,userStat:${noticeList}">
                                                     <td th:text="${user.noticeId}">userID</td>
                                                     <td th:text="${user.noticeTitle}">2016-11-22</td>
-                                                    <td th:text="${user.noticeImage}">45</td>
+                                                    <td>
+                                                        <img th:src="${user.noticeImage}" class="img-thumbnail">
+                                                    </td>
                                                     <td th:text="${user.noticeContent}">45</td>
-                                                    <td><a class="label label-warning"
-                                                           th:href="@{/noticeList?(title=${user.noticeId})}">查看方案</a></td>
+                                                    <td>
+                                                        <a class="label label-default" >删除</a>
+                                                        <a class="label label-info" data-toggle="modal" data-target="#myModal">修改</a>
+
+                                                        <!-- 模态框（Modal） -->
+                                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                        <h4 class="modal-title" id="myModalLabel">修改</h4>
+                                                                    </div>
+                                                                    <form enctype="multipart/form-data" method="post">
+                                                                        <div class="modal-body row">
+                                                                            <div class="md-col">
+                                                                                <label for="exampleInput1"
+                                                                                       class="control-label col-md-2">ID</label>
+                                                                                <div class="col-md-10">
+                                                                                    <input type="text"
+                                                                                           class="form-control"
+                                                                                           id="modifyInput1"
+                                                                                           th:value="${user.noticeId}"/>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="md-col">
+                                                                                <label for="exampleInput1"
+                                                                                       class="control-label col-md-2">标题</label>
+                                                                                <div class="col-md-10">
+                                                                                    <input type="text"
+                                                                                           class="form-control"
+                                                                                           id="modifyInput2"
+                                                                                           th:placeholder="${user.noticeTitle}"/>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="md-col">
+                                                                                <label for="exampleInput2"
+                                                                                       class="control-label col-md-2">内容</label>
+                                                                                <div class="col-md-10">
+                                                                                <textarea class="form-control"
+                                                                                          id="modifyInput3"
+                                                                                          th:text="${user.noticeContent}"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="md-col">
+                                                                                <label for="exampleInput2"
+                                                                                       class="control-label col-md-2">图片</label>
+                                                                                <div class="col-md-10">
+                                                                                    <input type="file"
+                                                                                           class="file col-md-12 form-control"
+                                                                                           id="modifyInput4"/>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="md-col hidden">
+                                                                                <label for="exampleInput2"
+                                                                                       class="control-label col-md-2">原图片地址</label>
+                                                                                <div class="col-md-10">
+                                                                                    <input type="text"
+                                                                                           th:value="${user.noticeImage}"
+                                                                                           class="file col-md-12 "
+                                                                                           id="modifyInput5"/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                        <button type="button" class="btn btn-primary" onclick="modifynotice();">提交更改</button>
+                                                                    </div>
+                                                                </div><!-- /.modal-content -->
+                                                            </div><!-- /.modal -->
+                                                        </div>
+
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>

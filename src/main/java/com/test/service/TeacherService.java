@@ -17,4 +17,8 @@ public interface TeacherService {
     int countTeacher(String title);
 
     void addTeacher(Teacher teacher);
+
+    void deleteteacher(Teacher teacher);
+
+    void updateteacher(Teacher teacher);
 }

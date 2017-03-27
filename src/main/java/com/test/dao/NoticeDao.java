@@ -14,6 +14,14 @@ import java.util.Map;
 public interface NoticeDao {
 
     List<Notice> findnoticeAll(Map<String, Object> parameter);
+
     int countNotice(@Param("title") String title);
+
     void addnotice(Notice notice);
- }
+
+    void deletenotice(Notice notice);
+
+    void updatenotice(Notice notice);
+
+    void batchDeleteNotice(String[] ids);
+}

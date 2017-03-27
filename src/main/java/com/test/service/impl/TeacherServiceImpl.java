@@ -2,7 +2,9 @@ package com.test.service.impl;
 
 
 import com.test.dao.TeacherDao;
+import com.test.domain.Student;
 import com.test.domain.Teacher;
+import com.test.domain.UserInfo;
 import com.test.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,20 @@ public class TeacherServiceImpl implements TeacherService {
         teacherDao.TeachertoUser(teacher.getUserInfo());
         teacher.setTc_userId(teacherDao.finduserid(teacher.getUserInfo()));
         teacherDao.addteacher(teacher);
+    }
+
+    @Transactional
+    public void deleteteacher(Teacher teacher){
+        teacherDao.deleteteacherinUser(teacher);
+        teacherDao.deleteteacher(teacher);
+    }
+
+    @Transactional
+    public void updateteacher(Teacher teacher){
+        teacherDao.updateteacher(teacher);
+        UserInfo userInfo = teacher.getUserInfo();
+        userInfo.setUserId(teacher.getTc_userId());
+        teacherDao.updateTeachertoUser(userInfo);
     }
 
 }

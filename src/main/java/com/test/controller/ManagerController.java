@@ -1,9 +1,11 @@
 package com.test.controller;
 
 import com.test.config.PasswordUtil;
-import com.test.domain.*;
+import com.test.domain.Manager;
+import com.test.domain.Page;
+import com.test.domain.Search;
+import com.test.domain.UserInfo;
 import com.test.service.ManagerService;
-import com.test.service.TeacherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +38,7 @@ public class ManagerController {
     }
 
     @RequestMapping(value = "/managerList",produces = "text/html;charset=UTF-8")
-    public String showTeacherList(Model model, Page page, Search search,
+    public String showManagerList(Model model, Page page, Search search,
                                   @RequestParam(value = "title",required = false)String title,
                                   @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
                                   @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
@@ -74,10 +76,13 @@ public class ManagerController {
 
     @RequestMapping(value = "/addmanager",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String addTeacher(@ModelAttribute Manager manager) {
+    public String addManager(@ModelAttribute Manager manager) {
         logger.info("before:"+manager.toString());
         try {
-            manager.setUserInfo(new UserInfo(manager.getManagerName(), PasswordUtil.generate("12345678"),manager.getUserInfo().getUserEmail() , 3));
+           manager.setUserInfo(new UserInfo(manager.getManagerName(),
+                                            PasswordUtil.generate("12345678"),
+                                            manager.getUserInfo().getMobilePhone(),
+                                            manager.getUserInfo().getUserEmail() , 3));
             logger.info("after: " + manager.toString());
             managerService.addManager(manager);
         }catch (Exception e)
@@ -86,5 +91,37 @@ public class ManagerController {
             return "添加失败";
         }
         return "添加成功";
+    }
+
+    @RequestMapping(value = "/deletemanager",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deleteManager(@ModelAttribute Manager manager) {
+        logger.info("before:"+manager.toString());
+        try {
+            managerService.deletemanager(manager);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
+    }
+
+    @RequestMapping(value = "/modifymanager",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String modifymManager(@ModelAttribute Manager manager) {
+        logger.info("before:"+manager.toString());
+        try {
+           managerService.updatemanager(manager);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("修改失败"+e.toString());
+            return "修改失败"+e;
+        }
+        logger.info("修改成功");
+        return "修改成功";
     }
 }

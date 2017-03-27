@@ -92,4 +92,36 @@ public class StudentController {
         }
         return "添加成功";
     }
+
+    @RequestMapping(value = "/deletestudent",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deleteStudent(@ModelAttribute Student student) {
+        logger.info(student.toString());
+        try {
+            studentService.deletestudent(student);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
+    }
+
+    @RequestMapping(value = "/modifystudent",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String modifyStudent(@ModelAttribute Student student) {
+        logger.info(student.toString());
+        try {
+            studentService.updatestudent(student);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("修改失败"+e.toString());
+            return "修改失败"+e;
+        }
+        logger.info("修改成功");
+        return "修改成功";
+    }
 }

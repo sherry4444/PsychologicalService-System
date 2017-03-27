@@ -89,7 +89,7 @@
     </select>
 
     <insert id="TeachertoUser" parameterType="com.test.domain.UserInfo" >
-        insert into ps_user(userName,Password,userEmail) value(#{userName},#{Password},#{userEmail})
+        insert into ps_user(userName,Password,userEmail,role) value(#{userName},#{Password},#{userEmail},#{role})
     </insert>
 
     <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">
@@ -100,4 +100,52 @@
         INSERT INTO ps_teacher(teacherName,tc_userId)
         VALUE (#{teacherName},#{tc_userId})
     </insert>
+
+    <delete id="deleteteacher" parameterType="com.test.domain.Teacher">
+        DELETE FROM ps_teacher WHERE teacherId = #{teacherId}
+    </delete>
+
+    <delete id="deleteteacherinUser" parameterType="com.test.domain.Teacher">
+        DELETE FROM ps_user WHERE userId = #{tc_userId}
+    </delete>
+
+    <delete id="deleteUserinTeacher" parameterType="com.test.domain.Teacher">
+        DELETE FROM ps_teacher WHERE tc_userId = #{tc_userId}
+    </delete>
+
+    <update id="updateTeachertoUser" parameterType="com.test.domain.UserInfo" >
+        UPDATE ps_user
+        <set>
+            <if test="userName != null">
+                userName = #{userName},
+            </if>
+            <if test="userEmail != null">
+                userEmail = #{userEmail},
+            </if>
+            <if test="mobilePhone != null">
+                mobilePhone = #{mobilePhone},
+            </if>
+        </set>
+        WHERE userId = #{userId}
+    </update>
+
+    <update id="updateteacher" parameterType="com.test.domain.Teacher">
+        UPDATE ps_teacher
+        <set>
+            <if test="teacherName != null">
+                teacherName = #{teacherName},
+            </if>
+        </set>
+        WHERE teacherId = #{teacherId}
+    </update>
+
+    <update id="updateUserinTeacher" parameterType="com.test.domain.Teacher">
+        UPDATE ps_teacher
+        <set>
+            <if test="teacherName != null">
+                teacherName = #{teacherName},
+            </if>
+        </set>
+        WHERE tc_userId = #{tc_userId}
+    </update>
 </mapper>

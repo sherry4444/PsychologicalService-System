@@ -2,6 +2,7 @@ package com.test.dao;
 
 
 import com.test.domain.Manager;
+import com.test.domain.Student;
 import com.test.domain.Teacher;
 import com.test.domain.UserInfo;
 import org.apache.ibatis.annotations.Param;
@@ -21,4 +22,16 @@ public interface ManagerDao {
     void ManagertoUser(UserInfo userInfo);
     Integer findmanagerid(UserInfo userInfo);
     void addmanager(Manager manager);
+
+    void deletemanager(Manager manager);
+
+    void deletemanagerinUser(Manager manager);
+
+    void updatemanager(Manager manager);
+
+    void updatemanagertoUser(UserInfo userInfo);
+
+    void deleteUserinManager(Manager manager);
+
+    void updateUserinManager(Manager manager);
  }

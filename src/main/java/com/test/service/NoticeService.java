@@ -16,4 +16,10 @@ public interface NoticeService {
     int countNotice(String title);
 
     void addnotice(Notice notice);
+
+    void deletenotice(Notice notice);
+
+    void updatenotice(Notice notice);
+
+    void batchDeleteNotice(String[] ids);
 }

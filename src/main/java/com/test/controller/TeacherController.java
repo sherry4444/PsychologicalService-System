@@ -81,4 +81,36 @@ public class TeacherController {
         }
         return "添加成功";
     }
+
+    @RequestMapping(value = "/deleteteacher",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deleteTeacher(@ModelAttribute Teacher teacher) {
+        logger.info("before:"+teacher.toString());
+        try {
+            teacherService.deleteteacher(teacher);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
+    }
+
+    @RequestMapping(value = "/modifyteacher",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String modifyTeacher(@ModelAttribute Teacher teacher) {
+        logger.info("before:"+teacher.toString());
+        try {
+           teacherService.updateteacher(teacher);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("修改失败"+e.toString());
+            return "修改失败"+e;
+        }
+        logger.info("修改成功");
+        return "修改成功";
+    }
 }
