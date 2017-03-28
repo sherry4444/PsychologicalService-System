@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <script type="text/javascript" src="../../../resources/js/userList.js"></script>
     <title>manager&userList</title>
 </head>
 
@@ -63,6 +64,49 @@
                     <div class="panel-heading"></div>
                     <div class="panel-body">
                         <div class="middlebody col-md-12 column">
+
+                            <div class="col-md-12 column">
+                                <div class="panel-group" id="panel-567310">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a class="panel-title collapsed" data-toggle="collapse"
+                                               data-parent="#panel-567310" href="#panel-element-650746">添加</a>
+                                        </div>
+                                        <div id="panel-element-650746" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <form role="form" class="form-inline" >
+                                                    <div class="form-group">
+                                                        <label for="exampleInput1">姓名</label>
+                                                        <input type="text" class="form-control" id="exampleInput1" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput2">密码</label>
+                                                        <input type="text" class="form-control" id="exampleInput2" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput3">邮箱</label>
+                                                        <input type="text" class="form-control" id="exampleInput3" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput4">电话</label>
+                                                        <input type="text" class="form-control" id="exampleInput4" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInput5">角色</label>
+                                                        <select id="exampleInput5" class="form-control">
+                                                            <option value = 0>普通用户</option>
+                                                            <option value = 1>学生</option>
+                                                            <option value = 2>教师</option>
+                                                            <option value = 3>管理员</option>
+                                                        </select>
+                                                    </div>
+                                                    <button type="button" onclick="addUser()" class="btn btn-default">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- <form class="righttable " align="center" method="get" id="mainform" th:action="@{/userList}">-->
                             <!--上面搜索栏+排序-->
@@ -162,9 +206,85 @@
                                                     <td th:text="${user.userName}">jack</td>
                                                     <td th:text="${user.createTime}">2016-11-22</td>
                                                     <td th:text="${user.rolename} == null?'0':${user.rolename}">45</td>
-                                                    <td><a onclick="" th:userId="${user.userId}" id="userId"
-                                                           class="label label-warning"
-                                                           th:href="@{/userList?(title=${user.userName})}">查看方案</a></td>
+                                                    <td>
+                                                        <a class="label label-default"
+                                                           th:userid="${user.userId}"
+                                                           th:role="${user.role}"
+                                                           onclick="deleteUser(this)">删除</a>
+                                                        <a class="label label-info" data-toggle="modal" data-target="#myModal">修改</a>
+                                                        <!-- 模态框（Modal） -->
+                                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                        <h4 class="modal-title" id="myModalLabel">修改</h4>
+                                                                    </div>
+                                                                    <div class="modal-body row">
+                                                                        <form enctype="multipart/form-data" method="post">
+                                                                            <div class="modal-body row">
+                                                                                <div class="md-col hidden">
+                                                                                    <label for="modifyInput1"
+                                                                                           class="control-label col-md-2">用户ID</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput1"
+                                                                                               th:value="${user.userId}"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput2"
+                                                                                           class="control-label col-md-2">用户姓名</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput2"
+                                                                                               th:placeholder="${user.userName}"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput3"
+                                                                                           class="control-label col-md-2">用户密码</label>
+                                                                                    <div class="col-md-10">
+                                                                                <textarea class="form-control"
+                                                                                          id="modifyInput3"
+                                                                                          th:text="${user.Password}"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput4"
+                                                                                           class="control-label col-md-2">用户电话</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput4"
+                                                                                               th:placeholder="${user.mobilePhone}"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput5"
+                                                                                           class="control-label col-md-2">角色</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <select id="modifyInput5" class="form-control">
+                                                                                            <option value = 0>普通用户</option>
+                                                                                            <option value = 1>学生</option>
+                                                                                            <option value = 2>教师</option>
+                                                                                            <option value = 3>管理员</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                        <button type="button" class="btn btn-primary" onclick="modifyUser();">提交</button>
+                                                                    </div>
+                                                                </div><!-- /.modal-content -->
+                                                            </div><!-- /.modal -->
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>

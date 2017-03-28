@@ -114,6 +114,10 @@ public class StudentController {
     public String modifyStudent(@ModelAttribute Student student) {
         logger.info(student.toString());
         try {
+            if (student.getUserInfo().getPassword() != null) {
+                student.getUserInfo().setPassword(PasswordUtil.generate(student.getUserInfo().getPassword()));
+            }
+            student.getUserInfo().setRole(1);
             studentService.updatestudent(student);
         }catch (Exception e)
         {

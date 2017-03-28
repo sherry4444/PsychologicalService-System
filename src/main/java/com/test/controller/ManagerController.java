@@ -79,10 +79,10 @@ public class ManagerController {
     public String addManager(@ModelAttribute Manager manager) {
         logger.info("before:"+manager.toString());
         try {
-           manager.setUserInfo(new UserInfo(manager.getManagerName(),
-                                            PasswordUtil.generate("12345678"),
-                                            manager.getUserInfo().getMobilePhone(),
-                                            manager.getUserInfo().getUserEmail() , 3));
+            if (manager.getUserInfo().getPassword() != null)
+            {
+                manager.getUserInfo().setPassword(PasswordUtil.generate(manager.getUserInfo().getPassword()));
+            }
             logger.info("after: " + manager.toString());
             managerService.addManager(manager);
         }catch (Exception e)
@@ -114,7 +114,11 @@ public class ManagerController {
     public String modifymManager(@ModelAttribute Manager manager) {
         logger.info("before:"+manager.toString());
         try {
-           managerService.updatemanager(manager);
+            if (manager.getUserInfo().getPassword() != null)
+            {
+               manager.getUserInfo().setPassword(PasswordUtil.generate(manager.getUserInfo().getPassword()));
+            }
+            managerService.updatemanager(manager);
         }catch (Exception e)
         {
             e.printStackTrace();

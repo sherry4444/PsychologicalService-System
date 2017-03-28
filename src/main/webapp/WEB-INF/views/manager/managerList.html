@@ -142,8 +142,86 @@
                                                     <td th:text="${user.managerName}">userID</td>
                                                     <td th:text="${user.userInfo.mobilePhone}">2016-11-22</td>
                                                     <td th:text="${user.userInfo.userEmail}">45</td>
-                                                    <td><a class="label label-warning"
-                                                           th:href="@{/managerList?(title=${user.managerName})}">查看方案</a></td>
+                                                    <td>
+                                                        <a class="label label-default"
+                                                           th:managerid="${user.managerId}"
+                                                           th:mg_userid="${user.mg_userId}"
+                                                           onclick="deletemanager(this)">删除</a>
+                                                        <a class="label label-info edit"
+                                                           th:id="${user.managerId}"
+                                                           th:userid="${user.mg_userId}"
+                                                           th:name = "${user.managerName}"
+                                                           th:email ="${user.userInfo.userEmail}"
+                                                           th:mobilePhone ="${user.userInfo.mobilePhone}"
+                                                        >修改</a>
+
+                                                        <!-- 模态框（Modal） -->
+                                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                        <h4 class="modal-title" id="myModalLabel">修改</h4>
+                                                                    </div>
+                                                                    <div class="modal-body row">
+                                                                        <form enctype="multipart/form-data" method="post">
+                                                                            <div class="modal-body row">
+                                                                                <div class="md-col hidden">
+                                                                                    <label for="modifyInput1"
+                                                                                           class="control-label col-md-2">管理员ID</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput1"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput2"
+                                                                                           class="control-label col-md-2">管理员姓名</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput2"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput3"
+                                                                                           class="control-label col-md-2">邮箱</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <textarea class="form-control"
+                                                                                                  id="modifyInput3">
+                                                                                        </textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput4"
+                                                                                           class="control-label col-md-2">电话</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput4"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="md-col">
+                                                                                    <label for="modifyInput5"
+                                                                                           class="control-label col-md-2">用户ID</label>
+                                                                                    <div class="col-md-10">
+                                                                                        <input type="text"
+                                                                                               class="form-control"
+                                                                                               id="modifyInput5"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                        <button type="button" class="btn btn-primary" onclick="modifymanager();">提交</button>
+                                                                    </div>
+                                                                </div><!-- /.modal-content -->
+                                                            </div><!-- /.modal -->
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>

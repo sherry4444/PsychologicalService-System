@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
+
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.test.dao.TeacherDao">
@@ -22,7 +23,7 @@
         <result column="userEmail" property="userInfo.userEmail"/>
     </resultMap>
 
-    <sql id="teacherColumns"> a.teacherId,a.teacherName,b.mobilePhone,b.userEmail</sql>
+    <sql id="teacherColumns"> a.teacherId,a.teacherName,b.mobilePhone,b.userEmail,a.tc_userId</sql>
 
     <select id="findteacherAll" resultMap="TeacherResultMap" parameterType="java.util.Map" >
         SELECT <include refid="teacherColumns"/> FROM ps_teacher a
@@ -89,7 +90,7 @@
     </select>
 
     <insert id="TeachertoUser" parameterType="com.test.domain.UserInfo" >
-        insert into ps_user(userName,Password,userEmail,role) value(#{userName},#{Password},#{userEmail},#{role})
+        insert into ps_user(userName,Password,userEmail,mobilePhone,role) value(#{userName},#{Password},#{userEmail},#{mobilePhone},#{role})
     </insert>
 
     <select id="finduserid" parameterType="com.test.domain.UserInfo" resultType="Integer">

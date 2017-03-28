@@ -148,7 +148,10 @@
                                                     </td>
                                                     <td th:text="${user.noticeContent}">45</td>
                                                     <td>
-                                                        <a class="label label-default" >删除</a>
+                                                        <a class="label label-default"
+                                                           th:noticeId="${user.noticeId}"
+                                                           th:noticeImage="${user.noticeImage}"
+                                                           onclick="deletenotice(this)">删除</a>
                                                         <a class="label label-info" data-toggle="modal" data-target="#myModal">修改</a>
 
                                                         <!-- 模态框（Modal） -->
@@ -161,7 +164,7 @@
                                                                     </div>
                                                                     <form enctype="multipart/form-data" method="post">
                                                                         <div class="modal-body row">
-                                                                            <div class="md-col">
+                                                                            <div class="md-col hidden">
                                                                                 <label for="exampleInput1"
                                                                                        class="control-label col-md-2">ID</label>
                                                                                 <div class="col-md-10">
@@ -213,7 +216,7 @@
                                                                     </form>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                                                        <button type="button" class="btn btn-primary" onclick="modifynotice();">提交更改</button>
+                                                                        <button type="button" class="btn btn-primary" onclick="modifynotice()">提交更改</button>
                                                                     </div>
                                                                 </div><!-- /.modal-content -->
                                                             </div><!-- /.modal -->

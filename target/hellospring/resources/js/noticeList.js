@@ -20,7 +20,7 @@ function addnotice() {
         success: function (data) {
             alert(data);
             console.log("over..");
-            //setTimeout("location.reload()",100);//页面刷新
+            setTimeout("location.reload()",100);//页面刷新
         },
         error: function (data) {
             alert("错误！！"+data);
@@ -28,11 +28,10 @@ function addnotice() {
     });
 }
 
-function deletenotice() {
-    debugger;
+function deletenotice(node) {
     var formData = new FormData();
-    formData.append("noticeId",noticeId);
-    formData.append("noticeImage",noticeImage);
+    formData.append("noticeId",$(node).attr("noticeId"));
+    formData.append("noticeImage",$(node).attr("noticeImage"));
     console.log(formData);
     $.ajax({
         url: "/deletenotice",
@@ -45,7 +44,7 @@ function deletenotice() {
         success: function (data) {
             alert(data);
             console.log("over..");
-            //setTimeout("location.reload()",100);//页面刷新
+            setTimeout("location.reload()",100);//页面刷新
         },
         error: function (data) {
             alert("错误！！"+data);
@@ -53,8 +52,7 @@ function deletenotice() {
     });
 }
 
-function moodifynotice() {
-    debugger;
+function modifynotice() {
     var formData = new FormData();
     formData.append("noticeId",document.getElementById("modifyInput1").value);
     formData.append("noticeTitle",document.getElementById("modifyInput2").value);
@@ -72,7 +70,7 @@ function moodifynotice() {
         success: function (data) {
             alert(data);
             console.log("over..");
-            //setTimeout("location.reload()",100);//页面刷新
+            setTimeout("location.reload()",100);//页面刷新
         },
         error: function (data) {
             alert("错误！！"+data);

@@ -1,5 +1,6 @@
 package com.test.controller;
 
+import com.test.config.PasswordUtil;
 import com.test.dao.ManagerDao;
 import com.test.dao.StudentDao;
 import com.test.dao.TeacherDao;
@@ -86,6 +87,9 @@ public class UserController {
     public String addUser(@ModelAttribute UserInfo userInfo){
         logger.info("addUser"+userInfo.toString());
         try {
+            if (userInfo.getPassword() != null) {
+                userInfo.setPassword(PasswordUtil.generate(userInfo.getPassword()));
+            }
             userService.addUserInfo(userInfo);
             Integer userid = userService.finduserid(userInfo);
             if(userInfo.getRole() == 1)
@@ -158,6 +162,9 @@ public class UserController {
     public String modifyUser(@ModelAttribute UserInfo userInfo) {
         logger.info("modifyUser "+userInfo.toString());
         try {
+            if (userInfo.getPassword() != null) {
+                userInfo.setPassword(PasswordUtil.generate(userInfo.getPassword()));
+            }
             userService.updateUser(userInfo);
             if(userInfo.getRole() == 1)
             {

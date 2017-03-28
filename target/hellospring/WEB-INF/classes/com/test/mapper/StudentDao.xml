@@ -23,9 +23,12 @@
         <result column="majorId" property="majorId"/>
         <result column="collegeName" property="collegeName"/>
         <result column="majorName" property="majorName"/>
+        <result column="mobilePhone" property="userInfo.mobilePhone"/>
+        <result column="userEmail" property="userInfo.userEmail"/>
     </resultMap>
 
-    <sql id="studentColumns">a.studentId,a.studentName,a.studentNumber,a.stu_userId,b.collegeName,d.majorName</sql>
+    <sql id="studentColumns">a.studentId,a.studentName,a.studentNumber,a.stu_userId,b.collegeName,d.majorName,
+                             f.userEmail,f.mobilePhone,a.collegeId,a.majorId</sql>
     <sql id="insertColumns">studentName,studentNumber,stu_userId,collegeId,majorId</sql>
 
 
@@ -33,6 +36,7 @@
         SELECT <include refid="studentColumns"/> FROM ps_student a
         LEFT JOIN ps_college b on a.collegeId = b.collegeId
         LEFT JOIN ps_major d on a.majorId = d.majorId
+        LEFT JOIN ps_user f on a.stu_userId = f.userId
         <where>
             <if test="title != null">
                 and a.studentId like '%${title}%'

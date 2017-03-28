@@ -20,7 +20,7 @@
         <result column="userEmail" property="userInfo.userEmail"/>
     </resultMap>
 
-    <sql id="managerColumns"> a.managerId,a.managerName,b.mobilePhone,b.userEmail</sql>
+    <sql id="managerColumns"> a.managerId,a.managerName,b.mobilePhone,b.userEmail,a.mg_userId</sql>
 
 
     <select id="findmanagerAll" resultMap="ManagerResultMap" parameterType="java.util.Map" >

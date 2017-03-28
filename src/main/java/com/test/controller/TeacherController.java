@@ -71,7 +71,10 @@ public class TeacherController {
     public String addTeacher(@ModelAttribute Teacher teacher) {
         logger.info("before:"+teacher.toString());
         try {
-            teacher.setUserInfo(new UserInfo(teacher.getTeacherName(), PasswordUtil.generate("12345678"),teacher.getUserInfo().getUserEmail() , 2));
+            if (teacher.getUserInfo().getPassword() != null) {
+                teacher.getUserInfo().setPassword(PasswordUtil.generate(teacher.getUserInfo().getPassword()));
+            }
+            teacher.getUserInfo().setRole(2);
             logger.info("after: " + teacher.toString());
             teacherService.addTeacher(teacher);
         }catch (Exception e)
@@ -103,6 +106,10 @@ public class TeacherController {
     public String modifyTeacher(@ModelAttribute Teacher teacher) {
         logger.info("before:"+teacher.toString());
         try {
+            if (teacher.getUserInfo().getPassword() != null) {
+                teacher.getUserInfo().setPassword(PasswordUtil.generate(teacher.getUserInfo().getPassword()));
+            }
+            teacher.getUserInfo().setRole(2);
            teacherService.updateteacher(teacher);
         }catch (Exception e)
         {
