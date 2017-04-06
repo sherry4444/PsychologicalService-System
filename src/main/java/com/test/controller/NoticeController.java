@@ -144,4 +144,45 @@ public class NoticeController {
         logger.info("修改成功");
         return "修改成功";
     }
+
+    @RequestMapping(value = "/notice",produces = "text/html;charset=UTF-8")
+    public String showNotice(Model model, Page page, Search search,
+                                 @RequestParam(value = "title",required = false)String title,
+                                 @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
+                                 @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
+                                 @RequestParam(value = "num",required=false)Integer num
+            ,HttpServletRequest request){
+
+        if (title != null) {
+            try {
+                if (title != null && title.equals(new String(title.getBytes("ISO-8859-1"), "ISO-8859-1"))) {
+                    title = new String(title.getBytes("ISO-8859-1"), "utf-8");
+                }
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (num != null) {page.setPageNumber(num);} else {num=page.getPageNumber();}
+        totalNumber = noticeService.countNotice(title);
+        page.setCurrentPage(currentPage);
+        page.setTotalNumber(totalNumber);
+        logger.info(page.toString());
+        Map<String,Object> parameter = new HashMap<String, Object>();
+        parameter.put("title",title);
+        parameter.put("page",page);
+        parameter.put("flag",flag);
+        logger.info("page:"+page.toString()+"\n search:"+search.toString());
+        logger.info(noticeService.findnoticeAll(parameter).toString());
+        model.addAttribute("noticeList",noticeService.findnoticeAll(parameter));
+        model.addAttribute("num", num);
+        model.addAttribute("page",page);
+        model.addAttribute("flag",flag);
+        model.addAttribute("title",title);
+        model.addAttribute("keywords","noticeList");
+
+        String realPath = request.getSession().getServletContext().getRealPath("");
+        model.addAttribute("realPath",realPath);
+        return "front/notice";
+    }
 }

@@ -2,10 +2,7 @@ package com.test.controller;
 
 
 import com.test.config.PasswordUtil;
-import com.test.domain.Page;
-import com.test.domain.Search;
-import com.test.domain.Student;
-import com.test.domain.UserInfo;
+import com.test.domain.*;
 import com.test.service.CollegeMajorService;
 import com.test.service.StudentService;
 import org.slf4j.Logger;
@@ -127,5 +124,74 @@ public class StudentController {
         }
         logger.info("修改成功");
         return "修改成功";
+    }
+
+    @RequestMapping(value = "/collegemajor",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String collegemajor(Model model) {
+        String collegemajor = null;
+        model.addAttribute("college",collegeMajorService.findcollegeAll(collegemajor));
+        model.addAttribute("major",collegeMajorService.findmajorAll(collegemajor));
+        return "manager/collegemajor";
+    }
+
+
+    @RequestMapping(value = "/addcollege",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String addcollege(@ModelAttribute College college) {
+        try {
+           collegeMajorService.addcollege(college);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("添加失败"+e.toString());
+            return "添加失败"+e;
+        }
+        logger.info("添加成功");
+        return "添加成功";
+    }
+
+    @RequestMapping(value = "/deletecollege",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deletecollege(@ModelAttribute College college) {
+        try {
+            collegeMajorService.deletecollege(college);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
+    }
+
+    @RequestMapping(value = "/addmajor",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String addmajor(@ModelAttribute Major major) {
+        try {
+            collegeMajorService.addmajor(major);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("添加失败"+e.toString());
+            return "添加失败"+e;
+        }
+        logger.info("添加成功");
+        return "添加成功";
+    }
+
+    @RequestMapping(value = "/deletemajor",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deletemajor(@ModelAttribute Major major) {
+        try {
+            collegeMajorService.deletemajor(major);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败"+e.toString());
+            return "删除失败"+e;
+        }
+        logger.info("删除成功");
+        return "删除成功";
     }
 }

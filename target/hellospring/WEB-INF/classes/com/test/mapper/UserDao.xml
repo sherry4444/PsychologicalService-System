@@ -113,4 +113,15 @@
         </set>
         WHERE userId = #{userId}
     </update>
+
+    <update id="modifypassword" parameterType="com.test.domain.UserInfo">
+        UPDATE ps_user
+        <set>
+            <if test="Password != null">
+                Password = #{Password}
+            </if>
+        </set>
+        WHERE userEmail = #{userEmail}
+    </update>
+
 </mapper>

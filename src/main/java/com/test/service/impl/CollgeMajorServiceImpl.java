@@ -24,21 +24,28 @@ public class CollgeMajorServiceImpl implements CollegeMajorService {
     private CollegeMajorDao collegeMajorDao;
 
     @Transactional
-    public List<College> findcollegeAll(String title){return collegeMajorDao.findcollegeAll(title);};
+    public List<College> findcollegeAll(String title){return collegeMajorDao.findcollegeAll(title);}
 
     @Transactional
-    public void addcollege(College college){collegeMajorDao.addcollege(college);};
+    public void addcollege(College college){collegeMajorDao.addcollege(college);}
 
     @Transactional
-    public void updatecollege(College college){collegeMajorDao.updatecollege(college);};
+    public void deletecollege(College college){collegeMajorDao.deletecollege(college);}
 
     @Transactional
-    public List<Major> findmajorAll(String title){return collegeMajorDao.findmajorAll(title);};
+    public void updatecollege(College college){collegeMajorDao.updatecollege(college);}
 
     @Transactional
-    public void addmajor(Major major){ collegeMajorDao.addmajor(major);};
+    public List<Major> findmajorAll(String title){return collegeMajorDao.findmajorAll(title);}
 
     @Transactional
-    public void updatemajor(Major major){collegeMajorDao.addmajor(major);};
+    public void addmajor(Major major){ collegeMajorDao.addmajor(major);}
+
+    @Transactional
+    public void deletemajor(Major major){ collegeMajorDao.deletemajor(major);}
+
+
+    @Transactional
+    public void updatemajor(Major major){collegeMajorDao.updatemajor(major);}
 
 }

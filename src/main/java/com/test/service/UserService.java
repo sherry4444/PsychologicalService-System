@@ -24,4 +24,6 @@ public interface UserService {
     void updateUser(UserInfo userInfo);
 
     Integer finduserid(UserInfo userInfo);
+
+    void modifypassword(UserInfo userInfo);
 }

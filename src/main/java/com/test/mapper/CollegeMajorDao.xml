@@ -37,6 +37,10 @@
         INSERT INTO ps_college(collegeName) VALUES (#{collegeName})
     </insert>
 
+    <delete id="deletecollege" parameterType="com.test.domain.College">
+        DELETE FROM ps_college WHERE collegeId = #{collegeId}
+    </delete>
+
     <update id="updatecollege" parameterType="com.test.domain.College">
        UPDATE ps_college SET collegeName = #{collegeName} WHERE collegeId = #{collegeId}
     </update>
@@ -53,6 +57,10 @@
     <insert id="addmajor" parameterType="com.test.domain.Major">
         INSERT INTO ps_major(majorName) VALUES (#{majorName})
     </insert>
+
+    <delete id="deletemajor" parameterType="com.test.domain.Major">
+        DELETE FROM ps_major WHERE majorId = #{majorId}
+    </delete>
 
     <update id="updatemajor" parameterType="com.test.domain.Major">
         UPDATE ps_major SET majorName = #{majorName} WHERE majorId = #{majorId}

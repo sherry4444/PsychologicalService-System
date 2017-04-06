@@ -91,26 +91,32 @@ function modifymanager() {
 
 
 function deletemanager(node) {
-    //debugger;
-    var formData = new FormData();
-    formData.append("managerId", $(node).attr("managerid"));
-    formData.append("mg_userId", $(node).attr("mg_userid"));
-    console.log(formData);
-    $.ajax({
-        url: "/deletemanager",
-        type: "post",
-        data: formData,
-        //async: false,
-        cache:false,
-        contentType: false,
-        processData: false,
-        success: function (data) {
-            alert(data);
-            console.log("删除学生信息成功");
-            //setTimeout("location.reload()",100);//页面刷新
-        },
-        error: function (data) {
-            alert("错误！！"+data);
-        }
-    });
+    var r = confirm("确认删除");
+    if (r) {
+        //debugger;
+        var formData = new FormData();
+        formData.append("managerId", $(node).attr("managerid"));
+        formData.append("mg_userId", $(node).attr("mg_userid"));
+        console.log(formData);
+        $.ajax({
+            url: "/deletemanager",
+            type: "post",
+            data: formData,
+            //async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert(data);
+                console.log("删除学生信息成功");
+                //setTimeout("location.reload()",100);//页面刷新
+            },
+            error: function (data) {
+                alert("错误！！" + data);
+            }
+        });
+    }
+    else {
+        return false;
+    }
 }

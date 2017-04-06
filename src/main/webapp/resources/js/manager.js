@@ -84,7 +84,6 @@ function numsearch(node,num) {
 
 
 function change(node) {
-
     var r=confirm("确认操作？");
     if (r)
     {

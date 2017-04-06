@@ -24,4 +24,7 @@ public interface CollegeMajorDao {
     void updatemajor(Major major);
 
 
- }
+    void deletecollege(College college);
+
+    void deletemajor(Major major);
+}
