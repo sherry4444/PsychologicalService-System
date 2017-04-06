@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <title>manager&collegemajor</title>
+    <script type="text/javascript" src="../../../resources/js/collegemajor.js"></script>
+</head>
+
+<body>
+<div class="navbar navbar-inverse" th:replace="fragments/header :: header">
+    heah
+</div>
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div th:replace="fragments/leftmanager :: leftmanager"></div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-default">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h3 data-th-text="管理员页面"></h3>
+                    </div>
+
+                    <div class="heading-elements">
+                        <div class="heading-btn-group hidden">
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-calculator text-primary"></i> <span>Invoices</span></a>
+                            <a href="#" class="btn btn-link btn-float has-text"><i
+                                    class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb" style="float: left;">
+                        <li class="active"><a href="#"><i class="icon-arrow-right8 position-left"></i>公告列表</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <!-- /page header -->
+
+            <div class="content">
+                <div class="panel">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <div class="middlebody col-md-12 column">
+
+                                    <div class="col-md-6 column">
+                                        <div class="col-md-12 column">
+                                            <div class="panel-group" id="panel-567310">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <a class="panel-title collapsed" data-toggle="collapse"
+                                                           data-parent="#panel-567310" href="#panel-element-650746">添加</a>
+                                                    </div>
+                                                    <div id="panel-element-650746" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <form class="form-inline row" >
+                                                                <div class="form-group">
+                                                                    <label for="exampleInput1">学院名</label>
+                                                                    <input type="text" class="form-control" id="collegeInput" />
+                                                                </div>
+                                                                <button type="button" onclick="addcollege()" class="btn btn-default">Submit</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 column">
+                                            <table class="table-condensed">
+                                                <tr th:each="user,userStat:${college}" >
+                                                    <td><p th:text="${user.collegeName}"></p></td>
+                                                    <td><a th:collegeid="${user.collegeId}" onclick="deletecollege(this);" class="icon-trash"></a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 column">
+                                        <div class="col-md-12 column">
+                                            <div class="panel-group" id="panel-5673101">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <a class="panel-title collapsed" data-toggle="collapse"
+                                                           data-parent="#panel-5673101" href="#panel-element-650745">添加</a>
+                                                    </div>
+                                                    <div id="panel-element-650745" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <form class="form-inline row" >
+                                                                <div class="form-group">
+                                                                    <label for="majorInput">专业名</label>
+                                                                    <input type="text" class="form-control" id="majorInput" />
+                                                                </div>
+                                                                <button type="button" onclick="addmajor();" class="btn btn-default">Submit</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 column">
+                                            <table class="table-condensed">
+                                                <tr th:each="user,userStat:${major}">
+                                                    <td><p th:text="${user.majorName}"></p></td>
+                                                    <td><a th:majorid="${user.majorId}" onclick="deletemajor(this)" class="icon-trash"></a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                        </div>
+
+                    </div><!-- panel-body-->
+                </div> <!--panel-->
+            </div><!-- content-->
+
+            <!--页脚-->
+            <div th:replace="fragments/footer :: footer" class="col-lg-12">
+                &copy; 2013 The Static Templates
+            </div>
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+</div>
+<!-- /page container -->
+
+</body>
+</html>
+
+
+
+

@@ -103,26 +103,32 @@ function modifystudent() {
 
 
 function deletestudent(user) {
-    //debugger;
-    var formData = new FormData();
-    formData.append("studentId", $(user).attr("studentid"));
-    formData.append("stu_userId", $(user).attr("stu_userid"));
-    console.log(formData);
-    $.ajax({
-        url: "/deletestudent",
-        type: "post",
-        data: formData,
-        //async: false,
-        cache:false,
-        contentType: false,
-        processData: false,
-        success: function (data) {
-            alert(data);
-            console.log("删除学生信息成功");
-            //setTimeout("location.reload()",100);//页面刷新
-        },
-        error: function (data) {
-            alert("错误！！"+data);
-        }
-    });
+    var r = confirm("确认删除");
+    if (r) {
+        //debugger;
+        var formData = new FormData();
+        formData.append("studentId", $(user).attr("studentid"));
+        formData.append("stu_userId", $(user).attr("stu_userid"));
+        console.log(formData);
+        $.ajax({
+            url: "/deletestudent",
+            type: "post",
+            data: formData,
+            //async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert(data);
+                console.log("删除学生信息成功");
+                //setTimeout("location.reload()",100);//页面刷新
+            },
+            error: function (data) {
+                alert("错误！！" + data);
+            }
+        });
+    }
+    else {
+        return false;
+    }
 }

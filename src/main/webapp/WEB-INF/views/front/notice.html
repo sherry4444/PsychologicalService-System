@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <script type="text/javascript" src="../../../resources/js/noticeList.js"></script>
+    <title>Title</title>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet"/>
+    <link rel='stylesheet' href='../../../resources/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href="../../../resources/css/components.css"/>
+    <link rel='stylesheet' href="../../../resources/css/jquery-ui.css"/>
+    <link rel="stylesheet" href="../../../resources/css/styles.css" />
+    <link rel='stylesheet' href="../../../resources/css/core.css"/>
+    <link rel='stylesheet' href="../../../resources/css/pagination.css"/>
+    <link rel='stylesheet' href="../../../resources/css/manager.css"/>
+    <!--<script src="../../../resources/js/jquery-3.1.1.min.js"></script>-->
+    <script src="../../../resources/js/jquery.min.js"></script>
+    <script src='../../../resources/js/bootstrap.min.js'></script>
+    <script src="../../../resources/js/manager.js"></script>
+    <script src="../../../resources/js/app.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-8 column col-md-offset-2">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="page-header">
+                                <h1>
+                                    校園心裏輔導系統 <small>站內公告</small>
+                                </h1>
+
+                            </div>
+                            <hr>
+                            </div>
+                        <div class="col-md-12 column">
+                            <a class="btn btn-default btn-primary" type="button">信息修改</a>
+                            <a class="btn btn-default btn-info" type="button">站內公告</a>
+                            <a class="btn btn-default btn-success" type="button">聊天室</a>
+                            <a class="btn btn-default btn-warning" type="button">心理測試</a>
+                            <a class="btn btn-default btn-danger" type="button">在線預約</a>
+                        </div>
+                        </div>
+                    </br>
+
+                    <div class="row clearfix" th:each="user,userStat:${noticeList}">
+
+                        <div class="col-md-12 column ">
+                                <div class="media well">
+                <a class="pull-left" href="#"> <img th:src="${user.noticeImage}" class="img-circle" onload="AutoResizeImage(50,50,this)"></a>
+                <div class="media-body">
+                    <h4 class="media-heading" th:text="${user.noticeTitle}">
+                        Nested media heading
+                    </h4>
+                    <!--<p th:text="${user.noticeContent}">Cras sit amet nibh libero,
+                        in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>-->
+                    <div class="media">
+                        <a class="pull-left" href="#"><img th:src="${user.noticeImage}" onload="AutoResizeImage(250,250,this)"></a>
+                        <div class="media-body">
+                            <!--<h4 class="media-heading" th:text="${user.noticeTitle}">
+                                Nested media heading
+                            </h4> -->
+                            <p th:text="${user.noticeContent}">Cras sit amet nibh libero,
+                                in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        </div>
+                    </div>
+                </div>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="header">
+    <h1 class="text&#45;&#45;center">Image caption on hover state</h1>
+    <h2 class="text&#45;&#45;center">Hover over Figaro</h2>
+</div>
+
+    <div class="wrapper" th:each="user,userStat:${noticeList}">
+        <div class="caption" th:data-title="${user.noticeTitle}" th:data-description="${user.noticeContent}">
+            <img th:src="${user.noticeImage}" alt="css-tooltip" onload="AutoResizeImage(150,150,this)" />
+        </div>
+    </div>-->
+
+<!--</div>-->
+</body>
+</html>
