@@ -5,9 +5,56 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <script type="text/javascript" src="../../../resources/js/testlink.js"></script>
     <title>PS&psychtest</title>
 </head>
 <body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-8 column col-md-offset-2">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="page-header">
+                                <h1>
+                                    校園心裏輔導系統 <small>站內公告</small>
+                                </h1>
+
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-md-12 column">
+                            <a class="btn btn-default btn-primary" type="button">信息修改</a>
+                            <a class="btn btn-default btn-info" type="button">站內公告</a>
+                            <a class="btn btn-default btn-success" type="button">聊天室</a>
+                            <a class="btn btn-default btn-warning" type="button">心理測試</a>
+                            <a class="btn btn-default btn-danger" type="button">在線預約</a>
+                        </div>
+                    </div>
+                    </br>
+
+                    <div class="row clearfix" th:each="user,userStat:${testlinkList}">
+
+                        <div class="col-md-12 column ">
+                            <div class="media well">
+                                <a class="pull-left" href="#"> <img th:src="${user.linkImg}" class="img-circle" onload="AutoResizeImage(50,50,this)"></a>
+                                <div class="media-body">
+                                    <h4 class="media-heading" th:text="${user.linkTitle}">
+                                        Nested media heading
+                                    </h4>
+                                    <div class="media">
+                                        <a class="pull-left" th:href="${user.linkPath}"><img th:src="${user.linkImg}" onload="AutoResizeImage(250,250,this)"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

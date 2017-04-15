@@ -1,7 +1,6 @@
 package com.test.dao;
 
 
-import com.test.domain.Student;
 import com.test.domain.Teacher;
 import com.test.domain.UserInfo;
 import org.apache.ibatis.annotations.Param;
@@ -33,4 +32,6 @@ public interface TeacherDao {
     void deleteUserinTeacher(Teacher teacher);
 
     void updateUserinTeacher(Teacher teacher);
- }
+
+    List<Teacher> findteacher();
+}

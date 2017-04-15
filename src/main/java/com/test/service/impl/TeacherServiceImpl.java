@@ -51,4 +51,9 @@ public class TeacherServiceImpl implements TeacherService {
         teacherDao.updateTeachertoUser(userInfo);
     }
 
+    @Transactional
+    public List<Teacher> findteacher(){
+        return teacherDao.findteacher();
+    }
+
 }

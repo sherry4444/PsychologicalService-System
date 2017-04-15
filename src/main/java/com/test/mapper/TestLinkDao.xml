@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.TestLinkDao">
+
+
+    <!--/*
+     private Integer testlinkId;
+    private String linkTitle;
+    private String linkPath;
+    private String linkImg;
+    */-->
+
+    <resultMap type="com.test.domain.TestLink" id="TestLinkResultMap">
+        <id column="testlinkId" property="testlinkId"/>
+        <result column="linkTitle" property="linkTitle"/>
+        <result column="linkPath" property="linkPath"/>
+        <result column="linkImg" property="linkImg"/>
+    </resultMap>
+
+    <sql id="linkColumns"> testlinkId,linkTitle,linkPath,linkImg</sql>
+
+
+    <select id="findlinkAll" resultMap="TestLinkResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="linkColumns"/> FROM ps_testlink
+        <where>
+            <if test="title != null">
+                and testlinkId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or linkTitle like '%${title}%'
+            </if>
+        </where>
+        GROUP BY testlinkId
+        <if test="flag == '2'.toString()">
+            ORDER BY testlinkId ASC
+        </if>
+        <if test="flag == '3'.toString()">
+            ORDER BY testlinkId DESC
+        </if>
+        <if test="flag == '1'.toString()">
+            ORDER BY linkTitle ASC
+        </if>
+        <if test="flag == '0'.toString()">
+            ORDER BY linkTitle DESC
+        </if>
+        limit #{page.dbIndex},#{page.dbNumber}
+    </select>
+
+    <select id="countlink" parameterType="java.lang.String" resultType="int">
+        select count(*) from ps_testlink
+        <where>
+            <if test="title != null">
+                and testlinkId like '%${title}%'
+            </if>
+            <if test="title != null">
+                or linkTitle like '%${title}%'
+            </if>
+        </where>
+    </select>
+
+    <insert id="addlink" parameterType="com.test.domain.TestLink">
+        INSERT INTO ps_testlink(linkTitle,linkPath,linkImg)
+        VALUES (#{linkTitle},#{linkPath},#{linkImg})
+    </insert>
+
+    <delete id="deletelink" parameterType="com.test.domain.TestLink">
+        DELETE FROM ps_testlink WHERE testlinkId = #{testlinkId
+    </delete>
+
+    <delete id="batchDeletelink" parameterType="java.util.Map">
+        delete from ps_testlink where testlinkId in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

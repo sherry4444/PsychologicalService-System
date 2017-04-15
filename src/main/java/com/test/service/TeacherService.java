@@ -21,4 +21,6 @@ public interface TeacherService {
     void deleteteacher(Teacher teacher);
 
     void updateteacher(Teacher teacher);
+
+    List<Teacher> findteacher();
 }
