@@ -1,6 +1,7 @@
 package com.test.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import com.test.commons.Filefunction;
 import com.test.commons.HttpInfo;
 import com.test.config.PasswordUtil;
@@ -104,7 +105,7 @@ public class NoticeController {
 
     @RequestMapping(value = "/deletenotice",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String deleteTeacher(@ModelAttribute Notice notice,HttpServletRequest request) {
+    public String deletenotice(@ModelAttribute Notice notice,HttpServletRequest request,Model model) {
         logger.info("before:"+notice.toString());
         try {
             filefunction.filedelete(notice.getNoticeImage(),request);
@@ -121,7 +122,7 @@ public class NoticeController {
 
     @RequestMapping(value = "/modifynotice",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String modifyTeacher(@ModelAttribute Notice notice,
+    public String modifynotice(@ModelAttribute Notice notice,
                                 @RequestParam(value = "Img",required = false)MultipartFile myfile,
                                 HttpServletRequest request) {
         logger.info("before:"+notice.toString());
@@ -133,7 +134,11 @@ public class NoticeController {
             if(myfile != null) {
                 imgPath = filefunction.fileupoload(myfile, request);
                 notice.setNoticeImage(HttpInfo.IMG_URL + imgPath);
+            }else {
+                notice.setNoticeImage(null);
             }
+            if(notice.getNoticeTitle() == null) notice.setNoticeTitle(null);
+            if (notice.getNoticeContent() == null) notice.setNoticeContent(null);
             noticeService.updatenotice(notice);
         }catch (Exception e)
         {

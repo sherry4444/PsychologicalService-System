@@ -140,11 +140,13 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr th:each="user,userStat:${noticeList}">
+                                                <tr th:each="user,userStat:${noticeList}" id="refresh">
                                                     <td th:text="${user.noticeId}">userID</td>
                                                     <td th:text="${user.noticeTitle}">2016-11-22</td>
                                                     <td>
-                                                        <img th:src="${user.noticeImage}" class="img-thumbnail">
+                                                        <img th:src="${user.noticeImage}" class="img-thumbnail showimg"
+                                                             th:img="${user.noticeImage}"
+                                                             onload="AutoResizeImage(250,250,this)">
                                                     </td>
                                                     <td th:text="${user.noticeContent}">45</td>
                                                     <td>
@@ -152,7 +154,12 @@
                                                            th:noticeId="${user.noticeId}"
                                                            th:noticeImage="${user.noticeImage}"
                                                            onclick="deletenotice(this)">删除</a>
-                                                        <a class="label label-info" data-toggle="modal" data-target="#myModal">修改</a>
+                                                        <a class="label label-info edit"
+                                                           th:id="${user.noticeId}"
+                                                           th:title="${user.noticeTitle}"
+                                                           th:content = "${user.noticeContent}"
+                                                           th:img ="${user.noticeImage}"
+                                                        >修改</a>
 
                                                         <!-- 模态框（Modal） -->
                                                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -165,53 +172,48 @@
                                                                     <form enctype="multipart/form-data" method="post" class="form-horizontal">
                                                                         <div class="modal-body row">
                                                                             <div class="md-col hidden">
-                                                                                <label for="exampleInput1"
+                                                                                <label for="modifyInput1"
                                                                                        class="control-label col-md-2">ID</label>
                                                                                 <div class="col-md-10">
                                                                                     <input type="text"
                                                                                            class="form-control"
-                                                                                           id="modifyInput1"
-                                                                                           th:value="${user.noticeId}"/>
+                                                                                           id="modifyInput1"/>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="md-col">
-                                                                                <label for="exampleInput1"
+                                                                                <label for="modifyInput2"
                                                                                        class="control-label col-md-2">标题</label>
                                                                                 <div class="col-md-10">
                                                                                     <input type="text"
                                                                                            class="form-control"
-                                                                                           id="modifyInput2"
-                                                                                           th:placeholder="${user.noticeTitle}"/>
+                                                                                           id="modifyInput2"/>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="md-col">
-                                                                                <label for="exampleInput2"
+                                                                                <label for="modifyInput3"
                                                                                        class="control-label col-md-2">内容</label>
                                                                                 <div class="col-md-10">
                                                                                 <textarea class="form-control"
-                                                                                          id="modifyInput3"
-                                                                                          th:text="${user.noticeContent}"></textarea>
+                                                                                          id="modifyInput3" ></textarea>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="md-col">
-                                                                                <label for="exampleInput2"
-                                                                                       class="control-label col-md-2">图片</label>
+                                                                                <label for="modifyInput4"
+                                                                                       class="control-label col-md-2">原图片</label>
+                                                                                <div class="col-md-10">
+                                                                                    <img  class="img-thumbnail" id="modifyInput4" onload="AutoResizeImage(100,100,this)"/>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="md-col">
+                                                                                <label for="modifyInput5"
+                                                                                       class="control-label col-md-2">新图片</label>
                                                                                 <div class="col-md-10">
                                                                                     <input type="file"
                                                                                            class="file col-md-12 form-control"
-                                                                                           id="modifyInput4"/>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="md-col hidden">
-                                                                                <label for="exampleInput2"
-                                                                                       class="control-label col-md-2">原图片地址</label>
-                                                                                <div class="col-md-10">
-                                                                                    <input type="text"
-                                                                                           th:value="${user.noticeImage}"
-                                                                                           class="file col-md-12 "
                                                                                            id="modifyInput5"/>
                                                                                 </div>
                                                                             </div>
+
                                                                         </div>
                                                                     </form>
                                                                     <div class="modal-footer">
@@ -293,7 +295,20 @@
 </div>
 <!-- /page container -->
 
-</body>
-</html>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModalimg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body row">
+                <img id="showimg" class="img-thumbnail">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
 </body>
 </html>

@@ -2,6 +2,36 @@
  * Created by Administrator on 2017/3/17.
  */
 
+
+;(function ($) {
+    $(function () {
+        $(".edit").on("click",function () {
+            cleanedit();
+            var id= $(this).attr("id");
+            var title = $(this).attr("title");
+            var content = $(this).attr("content");
+            var img = $(this).attr("img");
+
+
+            $('#modifyInput1').attr("value",id);
+            $('#modifyInput2').attr("placeholder",title);
+            $('#modifyInput3').attr("placeholder",content);
+            $('#modifyInput4').attr("src",img);
+
+
+            $("#myModal").modal('show');
+        });
+
+        cleanedit=function () {
+            $('#modifyInput1').attr("value","");
+            $('#modifyInput2').attr("placeholder","");
+            $('#modifyInput3').attr("placeholder","");
+            $('#modifyInput4').attr("src","");
+        };
+
+    });
+})(jQuery);
+
 function addnotice() {
     //debugger;
     var formData = new FormData();
@@ -63,7 +93,8 @@ function modifynotice() {
     formData.append("noticeId",document.getElementById("modifyInput1").value);
     formData.append("noticeTitle",document.getElementById("modifyInput2").value);
     formData.append("noticeContent",document.getElementById("modifyInput3").value);
-    formData.append("Img",$('#modifyInput4')[0].files[0]);
+    formData.append("noticeImage",document.getElementById("modifyInput4").value);
+    formData.append("Img",$('#modifyInput5')[0].files[0]);
     console.log(formData);
     $.ajax({
         url: "/modifynotice",
@@ -85,31 +116,3 @@ function modifynotice() {
 }
 
 
-function AutoResizeImage(maxWidth,maxHeight,objImg){
-    //alert("autoresizeimage");
-    //debugger;
-    var img = new Image();
-    img.src = objImg.src;
-    var hRatio;
-    var wRatio;
-    var Ratio = 1;
-    var w = img.width;
-   var h = img.height;
-    wRatio = maxWidth / w;
-    hRatio = maxHeight / h;
-   if (maxWidth ==0 && maxHeight==0){
-        Ratio = 1;
-       }else if (maxWidth==0){//
-      if (hRatio<1) Ratio = hRatio;
-        }else if (maxHeight==0){
-        if (wRatio<1) Ratio = wRatio;
-       }else if (wRatio<1 || hRatio<1){
-       Ratio = (wRatio<=hRatio?wRatio:hRatio);
-       }
-   if (Ratio<1){
-        w = w * Ratio;
-       h = h * Ratio;
-        }
-   objImg.height = h;
-   objImg.width = w;
-}

@@ -14,13 +14,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav ">
                     <li class="active">
-                    <a  th:text="|用户总数：2333|" class="header-wrap">Link</a>
+                    <a  th:text="|总数：${page.totalNumber}|" class="header-wrap">Link</a>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="模糊搜索"
-                               name="title" th:value="${title}" th:id="title"/>
+                               name="title" th:value="${title}" id="title"/>
                         <input class="hidden" th:value="${flag}" name="flag" id="flag"/>
                         <input class="hidden" th:value="${num}" name="num" id="num"/>
                     </div>
@@ -28,14 +28,9 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a th:text="|${num}条/页|">Link</a>
-                    </li>
-                    <li>
-                        <select  class="btn btn-ms btn-default"
-                                 name="num"
-                      
-                        >
-                            <option >选择页数</option>
+                        <select class="btn btn-ms btn-default numchange"
+                                th:url="${keywords}">
+                            <option th:text="|${num}条/页|">选择页数</option>
                             <option value=10>10</option>
                             <option value=50>50</option>
                             <option value=100>100</option>

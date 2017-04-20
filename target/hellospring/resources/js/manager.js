@@ -40,6 +40,23 @@ var token = $("meta[name='_csrf']").attr("content");
             adsorption();
         }
 
+        $(".showimg").on("click",function () {
+                var showimg = $('#showimg');
+                showimg.attr("src","");
+                var img = $(this).attr("img");
+                showimg.attr("src",img);
+                $("#myModalimg").modal('show');
+            }
+        );
+
+        $(".numchange").on("change",function () {
+            var url = $(this).attr("url");
+            var num = $(this).val();
+            location.href = encodeURI(url+"?num=" + num);
+            $(this).val(num);
+        }
+        );
+
     });
 })(jQuery);
 
@@ -83,6 +100,7 @@ function numsearch(node,num) {
  }
 
 
+/*
 function change(node) {
     var r=confirm("确认操作？");
     if (r)
@@ -115,4 +133,35 @@ function change(node) {
     {
         return false;
     }
+}
+*/
+
+
+function AutoResizeImage(maxWidth,maxHeight,objImg){
+    //alert("autoresizeimage");
+    //debugger;
+    var img = new Image();
+    img.src = objImg.src;
+    var hRatio;
+    var wRatio;
+    var Ratio = 1;
+    var w = img.width;
+    var h = img.height;
+    wRatio = maxWidth / w;
+    hRatio = maxHeight / h;
+    if (maxWidth ==0 && maxHeight==0){
+        Ratio = 1;
+    }else if (maxWidth==0){//
+        if (hRatio<1) Ratio = hRatio;
+    }else if (maxHeight==0){
+        if (wRatio<1) Ratio = wRatio;
+    }else if (wRatio<1 || hRatio<1){
+        Ratio = (wRatio<=hRatio?wRatio:hRatio);
+    }
+    if (Ratio<1){
+        w = w * Ratio;
+        h = h * Ratio;
+    }
+    objImg.height = h;
+    objImg.width = w;
 }
