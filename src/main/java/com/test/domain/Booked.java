@@ -15,6 +15,7 @@ public class Booked {
     private	String	bookReason;//预约原因
     private	String	feedback;//反馈信息
     private	Timestamp submitTime;//提交时间
+    private String stateName;//预约状态名称
 
     public Booked() {
     }
@@ -32,6 +33,12 @@ public class Booked {
     }
 
     public void setBookState(Integer bookState) {
+        switch (bookState){
+            case 0:stateName="预约中";break;
+            case 1:stateName="预约成功";break;
+            case 2:stateName="预约失败";break;
+        }
+        this.stateName = stateName;
         this.bookState = bookState;
     }
 
@@ -81,6 +88,15 @@ public class Booked {
 
     public void setSubmitTime(Timestamp submitTime) {
         this.submitTime = submitTime;
+    }
+
+    public String getStateName() {
+        return stateName;
+    }
+
+    public void setStateName(String stateName) {
+
+        this.stateName = stateName;
     }
 
     @Override

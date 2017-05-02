@@ -42,6 +42,11 @@ public class ModifyDataController {
         return "/login/modifydata";
     }
 
+    @RequestMapping(value = "/forgetpw",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String forgetPassword_get(){
+        logger.info("modifydata get 跳转");
+        return "/login/forgetpassword";
+    }
 
     @RequestMapping(value = "/forgetPassword",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     public void forgetPassword(@ModelAttribute UserInfo userInfo,HttpServletRequest request){
@@ -54,7 +59,7 @@ public class ModifyDataController {
     @RequestMapping(value = "/modifyPassword",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
     public String modifyPassword(){
         logger.info("modifyPassword get 跳转");
-        return "/login/modifydata";
+        return "/login/modifypassword";
     }
 
     @RequestMapping(value = "/modifyPassword",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")

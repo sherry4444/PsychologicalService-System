@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +32,8 @@ public class ManagerController {
 
     private int totalNumber;
 
+    HttpSession session ;
+
 
     @RequestMapping(value = "/managerhome",method = RequestMethod.GET)
     public String managerhome(){
@@ -38,11 +42,14 @@ public class ManagerController {
     }
 
     @RequestMapping(value = "/managerList",produces = "text/html;charset=UTF-8")
-    public String showManagerList(Model model, Page page, Search search,
+    public String showManagerList(Model model, Page page, Search search,HttpServletRequest request,
                                   @RequestParam(value = "title",required = false)String title,
                                   @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
                                   @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
                                   @RequestParam(value = "num",required=false)Integer num){
+       /* session = request.getSession();
+        String sourceOnline  = session.getAttribute("name").toString();
+        logger.info("name:"+sourceOnline);*/
 
         if (title != null) {
             try {

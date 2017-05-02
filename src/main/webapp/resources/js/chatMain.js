@@ -18,13 +18,13 @@ $(function(){
      * 点击发送按钮
      */
     $("#btnSend").bind("click",function(){
-        var $content = $("#txtContent")
+        var $content = $("#txtContent");
         if($content.val()!=""){
-            sendContent($content.val())
+            sendContent($content.val());
         }else{
-            alert("发送内容不能为空")
-            $content.foucus()
-            return false
+            alert("发送内容不能为空");
+            $content.foucus();
+            return false;
         }
     })
     /**
@@ -32,7 +32,7 @@ $(function(){
      */
     $("table tr td img").bind("click",function(){
         var strContent = $("#txtContent").val()+"<:"+this.id+":>"
-        $("#txtContent").val(strContent)
+        $("#txtContent").val(strContent);
     })
 });
 
@@ -49,10 +49,10 @@ function sendContent(content){
         success:function(data){
             if(data=="success"){
                 getMessageList();
-                $("#txtContent").val("")
+                $("#txtContent").val("");
             }else{
                 alert("发送失败");
-                return false
+                return false;
             }
         }
     })
@@ -69,7 +69,7 @@ function getMessageList(){
         success:function(data){
             $("#divContent").html(data);
         }
-    })
+    });
     autoUpdContent(); //定时获取聊天信息
 }
 
@@ -82,9 +82,10 @@ function getOnlineList(){
         url:"getOnlineList",
         dataType:"text",
         success:function(data){
-            $("#divOnLine").html(data)
+            $("#divOnLine").html(data);
         }
-    })
+    });
+    autoUpdContent(); //定时获取聊天信息
 }
 
 /**
@@ -95,13 +96,13 @@ function initFace(){
     for(var i=1;i<=10;i++){
         strHTML += "<img src='/chatroom/static/pic/"+i+".gif' id='"+i+"'/>"
     }
-    $("#divFace").html(strHTML)
+    $("#divFace").html(strHTML);
 }
 
 /**
  * 定时返回聊天内容和在线人数
  */
 function autoUpdContent(){
-    setTimeout(getMessageList,5000)
-    setTimeout(getOnlineList,6000)
+    setTimeout(getMessageList,5000);
+    setTimeout(getOnlineList,6000);
 }

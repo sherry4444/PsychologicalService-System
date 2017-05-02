@@ -12,6 +12,23 @@
 
 <div class="container">
     <div class="row clearfix">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="page-header">
+                    <h1>
+                        校園心裏輔導系統
+                        <small>信息完善</small>
+                    </h1>
+
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-12 column">
+                <div class="navbar navbar-inverse" th:replace="fragments/headmanager :: headmanager">
+                </div>
+            </div>
+        </div>
+        </br>
         <div class="col-md-12 column">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -22,8 +39,7 @@
                 <div class="panel-body">
                     <ul id="myTab" class="nav nav-tabs">
                         <li class="active"><a href="#home" data-toggle="tab">信息完善</a></li>
-                        <li><a href="#find" data-toggle="tab">密码找回</a></li>
-                        <li><a href="#modify" data-toggle="tab">密码找回</a></li>
+                        <li><a href="#modify" data-toggle="tab">修改密码</a></li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade in active" id="home">
@@ -65,7 +81,7 @@
                             </form>
                             <!-- End Signup Form -->
                         </div>
-                        <div class="tab-pane fade" id="find">
+                       <!-- <div class="tab-pane fade" id="find">
                             <form role="form" class="form-horizontal" method="post" action="/forgetPassword">
                                 <input type="hidden" name="token" value="${token}"/>
                                 <div class="form-group">
@@ -77,7 +93,7 @@
                                     <input type="submit" value="提交" class="btn btn-default">
                                 </div>
                             </form>
-                        </div>
+                        </div>-->
                         <!-- End Signup Form -->
                         <div class="tab-pane fade" id="modify">
                             <form role="form" class="form-horizontal" >

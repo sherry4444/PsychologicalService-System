@@ -6,7 +6,6 @@
     <div th:replace="fragments/resourceLink :: resourceLink"></div>
     <link href="../../../resources/css/fileinput.min.css">
     <script type="text/javascript" src="../../../resources/js/fileinput.min.js"></script>
-    <script type="text/javascript" src="../../../resources/js/testlink.js"></script>
     <title>manager&testlinkList</title>
 </head>
 
@@ -53,7 +52,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb" style="float: left;">
-                        <li class="active"><a href="#"><i class="icon-arrow-right8 position-left"></i>链接列表</a></li>
+                        <li class="active"><a href="#"><i class="icon-arrow-right8 position-left"></i>预约列表</a></li>
 
                     </ul>
 
@@ -98,12 +97,14 @@
                             </div>
 
                             <!--上面搜索栏+排序-->
-                            <form  th:href="@{/testlinkList}" method="post" name="searchform" th:replace="fragments/searchbox :: searchbox"></form>
+                            <form  th:href="@{/bookedList}" method="post" name="searchform" th:replace="fragments/searchbox :: searchbox"></form>
 
                             <!--noticeList列表表格-->
                             <div class="col-md-12 column">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tab1" data-toggle="tab">链接列表</a></li>
+                                    <li class="active"><a href="#tab1" data-toggle="tab">预约中</a></li>
+                                    <li class="active"><a href="#tab2" data-toggle="tab">预约失败</a></li>
+                                    <li class="active"><a href="#tab3" data-toggle="tab">预约成功</a></li>
                                 </ul>
                                 <div class="tab-content col-lg-12 col-xs-12 col-sm-12 col-md-12">
                                     <div class="tab-pane fade in active" id="tab1">
@@ -113,26 +114,38 @@
                                                 <thead>
                                                 <tr>
                                                     <th>
-                                                        <a th:href="@{/testlinkList?(flag=(${flag} != 4)?4:5,title=${title},num=${num})}"
-                                                           class="label label-success">ID</a>
-                                                        <i th:class="${flag} == 4?'icon-arrow-up-right3':'hidden'"></i>
-                                                        <i th:class="${flag} == 5?'icon-arrow-down-right3':'hidden'"></i>
-                                                    </th>
-                                                    <th>
-                                                        <a th:href="@{/testlinkList?(flag=(${flag} != 2)?2:3,title=${title},num=${num})}"
-                                                           class="label label-success">标题</a>
-                                                        <i th:class="${flag} == 2?'icon-arrow-up-right3':'hidden'"></i>
-                                                        <i th:class="${flag} == 3?'icon-arrow-down-right3':'hidden'"></i>
-                                                    </th>
-                                                    <th>
-                                                        <a th:href="@{/testlinkList?(flag=(${flag} != 0)?0:1,title=${title},num=${num})}"
-                                                           class="label label-success">图片</a>
+                                                        <a th:href="@{/bookedList?(flag=(${flag} != 4)?4:5,title=${title},num=${num})}"
+                                                           class="label label-success">申请时间</a>
                                                         <i th:class="${flag} == 1?'icon-arrow-up-right3':'hidden'"></i>
                                                         <i th:class="${flag} == 0?'icon-arrow-down-right3':'hidden'"></i>
                                                     </th>
                                                     <th>
-                                                        <a th:href="@{/testlinkList?(flag=(${flag} != 6)?6:7,title=${title},num=${num})}"
-                                                           class="label label-success">链接</a>
+                                                        <a th:href="@{/bookedList?(flag=(${flag} != 4)?4:5,title=${title},num=${num})}"
+                                                           class="label label-success">预约人</a>
+                                                        <i th:class="${flag} == 4?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 5?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <th>
+                                                        <a th:href="@{/bookedList?(flag=(${flag} != 2)?2:3,title=${title},num=${num})}"
+                                                           class="label label-success">被预约老师</a>
+                                                        <i th:class="${flag} == 2?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 3?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <th>
+                                                        <a th:href="@{/bookedList?(flag=(${flag} != 0)?0:1,title=${title},num=${num})}"
+                                                           class="label label-success">预约时间</a>
+                                                        <i th:class="${flag} == 11?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 10?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <th>
+                                                        <a th:href="@{/bookedList?(flag=(${flag} != 6)?6:7,title=${title},num=${num})}"
+                                                           class="label label-success">预约原因</a>
+                                                        <i th:class="${flag} == 8?'icon-arrow-up-right3':'hidden'"></i>
+                                                        <i th:class="${flag} == 9?'icon-arrow-down-right3':'hidden'"></i>
+                                                    </th>
+                                                    <th>
+                                                        <a th:href="@{/bookedList?(flag=(${flag} != 6)?6:7,title=${title},num=${num})}"
+                                                           class="label label-success">预约状态</a>
                                                         <i th:class="${flag} == 6?'icon-arrow-up-right3':'hidden'"></i>
                                                         <i th:class="${flag} == 7?'icon-arrow-down-right3':'hidden'"></i>
                                                     </th>
@@ -140,18 +153,18 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr th:each="user,userStat:${testlinkList}">
-                                                    <td th:text="${user.testlinkId}">userID</td>
-                                                    <td th:text="${user.linkTitle}">2016-11-22</td>
-                                                    <td>
-                                                        <img th:src="${user.linkImg}" class="img-thumbnail showimg" th:img="${user.linkImg}" onload="AutoResizeImage(250,250,this)">
-                                                    </td>
-                                                    <td th:text="${user.linkPath}">45</td>
+                                                <tr th:each="user,userStat:${bookedList}">
+                                                    <td th:text="${user.submitTime}">45</td>
+                                                    <td th:text="${user.bookUserName}">userID</td>
+                                                    <td th:text="${user.bebookedUserName}">2016-11-22</td>
+                                                    <td th:text="${user.bookTime}">45</td>
+                                                    <td th:text="${user.bookReason}">userID</td>
+                                                    <td th:text="${user.stateName}">2016-11-22</td>
                                                     <td>
                                                         <a class="label label-default"
                                                            th:linkId="${user.testlinkId}"
                                                            th:linkImg="${user.linkImg}"
-                                                           onclick="deletelink(this)">删除</a>
+                                                           onclick="audit(this)">审核</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -164,12 +177,12 @@
                                                 <ul class="pagination pagination-sm">
                                                     <!--前一页-->
                                                     <li><a th:if="${page.currentPage} gt 1"
-                                                           th:href="@{/testlinkList?(currentPage=${page.currentPage-1},flag=${flag},num=${num},title=${title})}">&laquo;</a>
+                                                           th:href="@{/bookedList?(currentPage=${page.currentPage-1},flag=${flag},num=${num},title=${title})}">&laquo;</a>
                                                     </li>
                                                     <!--首页-->
                                                     <li th:class="${page.currentPage le 1} ? 'disabled' : ''">
                                                         <a th:if="${page.currentPage != 1}"
-                                                           th:href="@{${keywords != null? '/testlinkList' : '/testlinkList'}(currentPage=1,keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">首页</a>
+                                                           th:href="@{${keywords != null? '/bookedList' : '/bookedList'}(currentPage=1,keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">首页</a>
                                                         <a th:if="${page.currentPage == 1}" href="javascript:void(0);">首页</a>
                                                     </li>
                                                     <!--动态生成中间的页码格子-->
@@ -180,20 +193,20 @@
                                                             <text th:text="${pageNo+1}"></text>
                                                         </a>
                                                         <a th:if="${not (page.currentPage eq (pageNo+1))}"
-                                                           th:href="@{${keywords != null ? '/testlinkList' : '/testlinkList'}(currentPage=${pageNo+1},keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">
+                                                           th:href="@{${keywords != null ? '/bookedList' : '/bookedList'}(currentPage=${pageNo+1},keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">
                                                             <text th:text="${pageNo+1}"></text>
                                                         </a>
                                                     </li>
                                                     <!--尾页-->
                                                     <li th:class="${page.currentPage ge page.totalPage} ? 'disabled' : ''">
                                                         <a th:if="${page.currentPage != page.totalPage}"
-                                                           th:href="@{${keywords != null? '/testlinkList' : '/testlinkList'}(currentPage=${page.totalPage},keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">末页</a>
+                                                           th:href="@{${keywords != null? '/bookedList' : '/bookedList'}(currentPage=${page.totalPage},keywords=${keywords != null}?${keywords}:'',flag=${flag},num=${num},title=${title})}">末页</a>
                                                         <a th:if="${page.currentPage == page.totalPage}"
                                                            href="javascript:void(0);">末页</a>
                                                     </li>
                                                     <!--下一页-->
                                                     <li><a th:if="${page.currentPage} lt ${page.totalPage}"
-                                                           th:href="@{/testlinkList?(currentPage=${page.nextPage},flag=${flag},num=${num},title=${title})}">&raquo;</a>
+                                                           th:href="@{/bookedList?(currentPage=${page.nextPage},flag=${flag},num=${num},title=${title})}">&raquo;</a>
                                                     </li>
                                                 </ul>
                                             </div>

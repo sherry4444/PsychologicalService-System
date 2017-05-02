@@ -25,16 +25,26 @@
         <result column="bookReason" property="bookReason"/>
         <result column="feedback" property="feedback"/>
         <result column="submitTime" property="submitTime"/>
+        <result column="studentName" property="bookUserName"/>
+        <result column="teacherName" property="bebookedUserName"/>
     </resultMap>
 
-    <sql id="linkColumns">bookState,bookUserId,bebookedUserId,bookTime,bookReason,feedback,submitTime</sql>
+    <sql id="linkColumns">bookState,bookUserId,bebookedUserId,bookTime,bookReason,feedback,submitTime,studentName,teacherName</sql>
 
 
     <select id="findBookedAll" resultMap="BookedResultMap" parameterType="java.util.Map" >
         SELECT <include refid="linkColumns"/> FROM ps_booked
+        LEFT JOIN ps_student ON studentId = bookUserId
+        LEFT JOIN ps_teacher ON teacherId = bebookedUserId
         <where>
-            <if test="title != null">
-                and bookState like '%${title}%'
+            <if test="bookState != null">
+                and bookState = #{booked.bookState}
+            </if>
+            <if test="bookUserId != null">
+                and bookUserId = #{booked.bookUserId}
+            </if>
+            <if test="bebookedUserId != null">
+                and bebookedUserId = #{booked.bebookedUserId}
             </if>
             <if test="title != null">
                 or bookUserId like '%${title}%'
@@ -106,6 +116,5 @@
         </set>
         WHERE bookId = #{bookId}
     </update>
-
 
 </mapper>

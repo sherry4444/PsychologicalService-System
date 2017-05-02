@@ -38,20 +38,18 @@
                         <div class="col-md-12 column">
                             <div class="page-header">
                                 <h1>
-                                    校園心裏輔導系統 <small>站內公告</small>
+                                    校園心裏輔導系統
+                                    <small>站內公告</small>
                                 </h1>
 
                             </div>
                             <hr>
-                            </div>
+                        </div>
                         <div class="col-md-12 column">
-                            <a class="btn btn-default btn-primary" type="button">信息修改</a>
-                            <a class="btn btn-default btn-info" type="button">站內公告</a>
-                            <a class="btn btn-default btn-success" type="button">聊天室</a>
-                            <a class="btn btn-default btn-warning" type="button">心理測試</a>
-                            <a class="btn btn-default btn-danger" type="button">在線預約</a>
+                            <div class="navbar navbar-inverse" th:replace="fragments/headmanager :: headmanager">
+                            </div>
                         </div>
-                        </div>
+                    </div>
                     </br>
 
                     <div class="row clearfix" th:each="user,userStat:${noticeList}">

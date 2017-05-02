@@ -66,6 +66,8 @@ public class BookedController {
         page.setTotalNumber(totalNumber);
         logger.info(page.toString());
         Map<String,Object> parameter = new HashMap<String, Object>();
+        Booked booked = new Booked();
+        parameter.put("booked",booked);
         parameter.put("title",title);
         parameter.put("page",page);
         parameter.put("flag",flag);
@@ -152,7 +154,7 @@ public class BookedController {
 
 
     @RequestMapping(value = "/booked",produces = "text/html;charset=UTF-8")
-    public String showBooked(Model model, Page page,
+    public String showBooked(Model model, Page page,Booked booked,
                              @RequestParam(value = "title",required = false)String title,
                              @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
                              @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
@@ -174,6 +176,8 @@ public class BookedController {
         page.setTotalNumber(totalNumber);
         logger.info(page.toString());
         Map<String,Object> parameter = new HashMap<String, Object>();
+        //Booked booked = new Booked();
+        parameter.put("booked",booked);
         parameter.put("title",title);
         parameter.put("page",page);
         parameter.put("flag",flag);
@@ -187,6 +191,9 @@ public class BookedController {
 
         model.addAttribute("teacherList",teacherService.findteacher());
 
-        return "front/booked";
+        return "front/onlinebook";
     }
 }
+
+
+
