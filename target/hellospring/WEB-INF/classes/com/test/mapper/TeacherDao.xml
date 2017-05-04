@@ -26,7 +26,8 @@
     <sql id="teacherColumns"> a.teacherId,a.teacherName,b.mobilePhone,b.userEmail,a.tc_userId</sql>
 
     <select id="findteacher" resultMap="TeacherResultMap" >
-        SELECT <include refid="teacherColumns"/> FROM ps_teacher
+        SELECT <include refid="teacherColumns"/> FROM ps_teacher a
+        LEFT JOIN ps_user b on a.tc_userId = b.userId
     </select>
 
     <select id="findteacherAll" resultMap="TeacherResultMap" parameterType="java.util.Map" >

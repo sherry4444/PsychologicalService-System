@@ -16,6 +16,7 @@
     private	Timestamp submitTime;//提交时间
     */-->
 
+
     <resultMap type="com.test.domain.Booked" id="BookedResultMap">
         <id column="bookId" property="bookId"/>
         <result column="bookState" property="bookState"/>
@@ -29,42 +30,44 @@
         <result column="teacherName" property="bebookedUserName"/>
     </resultMap>
 
-    <sql id="linkColumns">bookState,bookUserId,bebookedUserId,bookTime,bookReason,feedback,submitTime,studentName,teacherName</sql>
+    <sql id="linkColumns">a.bookState,a.bookUserId,a.bebookedUserId,a.bookTime,
+        a.bookReason,a.feedback,a.submitTime,b.userName as studentName,
+        d.userName as teacherName</sql>
 
 
-    <select id="findBookedAll" resultMap="BookedResultMap" parameterType="java.util.Map" >
-        SELECT <include refid="linkColumns"/> FROM ps_booked
-        LEFT JOIN ps_student ON studentId = bookUserId
-        LEFT JOIN ps_teacher ON teacherId = bebookedUserId
+    <select id="findbookedAll" resultMap="BookedResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="linkColumns"/> FROM ps_booked a
+        LEFT JOIN ps_user b ON b.userId = a.bookUserId
+        LEFT JOIN ps_user d ON d.userId = a.bebookedUserId
         <where>
             <if test="bookState != null">
-                and bookState = #{booked.bookState}
+                and a.bookState = #{booked.bookState}
             </if>
             <if test="bookUserId != null">
-                and bookUserId = #{booked.bookUserId}
+                and a.bookUserId = #{booked.bookUserId}
             </if>
             <if test="bebookedUserId != null">
-                and bebookedUserId = #{booked.bebookedUserId}
+                and a.bebookedUserId = #{booked.bebookedUserId}
             </if>
             <if test="title != null">
-                or bookUserId like '%${title}%'
+                or a.bookUserId like '%${title}%'
             </if>
             <if test="title != null">
-                or bebookedUserId like '%${title}%'
+                or a.bebookedUserId like '%${title}%'
             </if>
         </where>
-        GROUP BY bookId
+        GROUP BY a.bookId
         <if test="flag == '2'.toString()">
-            ORDER BY bookState ASC
+            ORDER BY a.bookState ASC
         </if>
         <if test="flag == '3'.toString()">
-            ORDER BY bookState DESC
+            ORDER BY a.bookState DESC
         </if>
         <if test="flag == '1'.toString()">
-            ORDER BY submitTime ASC
+            ORDER BY a.submitTime ASC
         </if>
         <if test="flag == '0'.toString()">
-            ORDER BY submitTime DESC
+            ORDER BY a.submitTime DESC
         </if>
         limit #{page.dbIndex},#{page.dbNumber}
     </select>
@@ -93,15 +96,15 @@
         DELETE FROM ps_booked WHERE bookId = #{bookId}
     </delete>
 
-   <update id="changeBookedState" parameterType="com.test.domain.Booked">
-       UPDATE ps_booked
-       <set>
-           <if test="#{bookState} != null">
+    <update id="changeBookedState" parameterType="com.test.domain.Booked">
+        UPDATE ps_booked
+        <set>
+            <if test="#{bookState} != null">
                 bookState = #{bookState}
-           </if>
-       </set>
-       WHERE bookId = #{bookId}
-   </update>
+            </if>
+        </set>
+        WHERE bookId = #{bookId}
+    </update>
 
 
     <update id="feedbackBooked" parameterType="com.test.domain.Booked">

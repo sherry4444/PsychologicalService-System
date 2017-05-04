@@ -24,4 +24,9 @@ public interface UserDao {
     void updateUser(UserInfo userInfo);
 
     void modifypassword();
+
+    //shiro
+    UserInfo findUserByUsername(String userEmail);
+    String findRoles(String userEmail);
+    String findPermissions(String userEmail);
 }

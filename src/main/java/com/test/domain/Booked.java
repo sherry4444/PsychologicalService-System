@@ -10,7 +10,9 @@ public class Booked {
     private	Integer	bookId;//预约ID
     private	Integer	bookState;//预约状态
     private	Integer	bookUserId;//预约者
+    private String bookUserName;//预约者名字
     private	Integer	bebookedUserId;//被预约的老师
+    private String bebookedUserName;//被预约的老师名字
     private Timestamp bookTime;//预约时间
     private	String	bookReason;//预约原因
     private	String	feedback;//反馈信息
@@ -99,17 +101,36 @@ public class Booked {
         this.stateName = stateName;
     }
 
+    public String getBookUserName() {
+        return bookUserName;
+    }
+
+    public void setBookUserName(String bookUserName) {
+        this.bookUserName = bookUserName;
+    }
+
+    public String getBebookedUserName() {
+        return bebookedUserName;
+    }
+
+    public void setBebookedUserName(String bebookedUserName) {
+        this.bebookedUserName = bebookedUserName;
+    }
+
     @Override
     public String toString() {
         return "Booked{" +
                 "bookId=" + bookId +
-                ", bookState='" + bookState + '\'' +
+                ", bookState=" + bookState +
                 ", bookUserId=" + bookUserId +
+                ", bookUserName='" + bookUserName + '\'' +
                 ", bebookedUserId=" + bebookedUserId +
+                ", bebookedUserName='" + bebookedUserName + '\'' +
                 ", bookTime=" + bookTime +
                 ", bookReason='" + bookReason + '\'' +
                 ", feedback='" + feedback + '\'' +
                 ", submitTime=" + submitTime +
+                ", stateName='" + stateName + '\'' +
                 '}';
     }
 }
