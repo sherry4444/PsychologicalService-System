@@ -2,6 +2,7 @@ package com.test.controller;
 
 import com.test.commons.HttpClientUtil;
 import com.test.commons.MailUtils;
+import com.test.config.PasswordUtil;
 import com.test.domain.UserInfo;
 import com.test.service.UserService;
 import org.junit.Test;
@@ -63,7 +64,7 @@ public class ModifyDataController {
 
     @RequestMapping(value = "/forgetPassword",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String forgetPassword(@ModelAttribute UserInfo userInfo,HttpServletRequest request){
+    public String forgetPassword_post(@ModelAttribute UserInfo userInfo,HttpServletRequest request){
         logger.info("忘记密码_提交邮箱 post 跳转");
         UserInfo getuser = userService.finduserByName(userInfo);
         if(getuser != null) {
@@ -88,7 +89,11 @@ public class ModifyDataController {
         try {
             UserInfo checkuser  = userService.finduserByName(userInfo);
             if (checkuser == null) {return "不存在此用户";}
-            userService.modifypassword(userInfo);
+            System.out.println("========modifyPassword post controller=========== "+userInfo.toString());
+            if(userInfo.getUserEmail()!=null && userInfo.getPassword()!=null) {
+                userInfo.setPassword(PasswordUtil.generate(userInfo.getPassword()));
+                userService.modifypassword(userInfo);
+            }
         }catch (Exception e)
         {
             e.printStackTrace();

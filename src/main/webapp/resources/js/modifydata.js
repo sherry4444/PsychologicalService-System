@@ -144,8 +144,8 @@
 function modifyPassword() {
     //debugger;
         var formData = new FormData();
-        formData.append("userName", document.getElementById("modifyinput1").value);
-        formData.append("Password", document.getElementById("modifyInput2").value);
+        formData.append("userEmail", document.getElementById("modifyinput1").value);
+        formData.append("Password", document.getElementById("modifyinput2").value);
         console.log(formData);
         $.ajax({
             url: "/modifyPassword",
@@ -157,7 +157,7 @@ function modifyPassword() {
             processData: false,
             success: function (data) {
                 alert(data);
-                console.log("修改密码成功");
+                //console.log("修改密码成功");
                 //setTimeout("location.reload()",100);//页面刷新
             },
             error: function (data) {
@@ -181,10 +181,12 @@ function forgetPass(){
         contentType: false,
         processData: false,
         success: function (data) {
+            $("#message").append(data);
             alert(data);
             //setTimeout("location.reload()",100);//页面刷新
         },
         error: function (data) {
+            $("#message").append(data);
             alert("错误！！" + data);
         }
     });

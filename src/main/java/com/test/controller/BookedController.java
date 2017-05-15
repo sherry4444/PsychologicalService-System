@@ -85,6 +85,7 @@ public class BookedController {
         return "manager/bookedList";
     }
 
+
     @RequestMapping(value = "/addbooked",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
     public String addTeacher(@ModelAttribute Booked booked) {
@@ -119,7 +120,6 @@ public class BookedController {
 
 
     @RequestMapping(value = "/bookedsuccess,",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-
     @ResponseBody
     public String bookedsuccess() {
         try {

@@ -98,33 +98,28 @@
     <update id="updateUser" parameterType="com.test.domain.UserInfo" >
         UPDATE ps_user
         <set>
-            <trim prefix="" suffix="" prefixOverrides="" suffixOverrides=",">
-                <if test="userName != null and userName.length > 0">
-                    userName = #{userName},
-                </if>
-                <if test="userEmail != null and userEmail.length > 0">
-                    userEmail = #{userEmail},
-                </if>
-                <if test="mobilePhone != null and mobilePhone.length > 0">
-                    mobilePhone = #{mobilePhone},
-                </if>
-                <if test="role != null and role.length > 0">
-                    role = #{role},
-                </if>
-            </trim>
+            <if test="userName != null and userName.length > 0">
+                userName = #{userName},
+            </if>
+            <if test="userEmail != null and userEmail.length > 0">
+                userEmail = #{userEmail},
+            </if>
+            <if test="mobilePhone != null and mobilePhone.length > 0">
+                mobilePhone = #{mobilePhone},
+            </if>
+            <if test="role != null and role.length > 0">
+                role = #{role},
+            </if>
         </set>
         WHERE userId = #{userId}
     </update>
 
     <update id="modifypassword" parameterType="com.test.domain.UserInfo">
         UPDATE ps_user
-        <set>
-            <trim prefix="" suffix="" prefixOverrides="" suffixOverrides=",">
-                <if test="Password != null and Password.length > 0">
-                    Password = #{Password}
-                </if>
-            </trim>
-        </set>
+        SET
+            <if test="Password != null and Password.length() > 0">
+                Password = #{Password}
+            </if>
         WHERE userEmail = #{userEmail}
     </update>
 

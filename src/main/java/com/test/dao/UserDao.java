@@ -23,7 +23,7 @@ public interface UserDao {
     void deleteUser(UserInfo userInfo);
     void updateUser(UserInfo userInfo);
 
-    void modifypassword();
+    void modifypassword(UserInfo userInfo);
 
     //shiro
     UserInfo findUserByUsername(String userEmail);

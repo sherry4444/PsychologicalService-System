@@ -47,6 +47,6 @@ public class UserServiceImpl implements UserService{
     public Integer finduserid(UserInfo userInfo){ return userDao.finduserid(userInfo);}
 
     @Transactional
-    public void modifypassword(UserInfo userInfo){ userDao.modifypassword();}
+    public void modifypassword(UserInfo userInfo){userDao.modifypassword(userInfo);}
 
 }

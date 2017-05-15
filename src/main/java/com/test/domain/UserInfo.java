@@ -1,5 +1,7 @@
 package com.test.domain;
 
+import com.test.config.PasswordUtil;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 

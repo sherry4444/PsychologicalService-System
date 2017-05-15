@@ -129,11 +129,11 @@ public class MailUtils {
     }
 
     ////////////////////////////////////////////////////////
-    public static void main(String[] a) {
+ /*   public static void main(String[] a) {
         System.out.println("开始");
         sendBy163("15627236812@163.com");
         //sendBySina("597356241@qq.com");
         System.out.println("end");
 
-    }
+    }*/
 }

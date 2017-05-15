@@ -116,6 +116,10 @@
   <error-page>
     <location>/generalError</location>
   </error-page>
+  <error-page>
+    <exception-type>javax.mail.SendFailedException</exception-type>
+    <location>/WEB-INF/views/error/SendFailedException.html</location>
+  </error-page>
 
 
 

@@ -16,17 +16,21 @@
     <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet"/>
     <link rel='stylesheet' href='../../../resources/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href="../../../resources/css/bootstrap-datetimepicker.min.css"/>
     <link rel='stylesheet' href="../../../resources/css/components.css"/>
     <link rel='stylesheet' href="../../../resources/css/jquery-ui.css"/>
     <link rel="stylesheet" href="../../../resources/css/styles.css" />
     <link rel='stylesheet' href="../../../resources/css/core.css"/>
     <link rel='stylesheet' href="../../../resources/css/pagination.css"/>
     <link rel='stylesheet' href="../../../resources/css/manager.css"/>
-    <!--<script src="../../../resources/js/jquery-3.1.1.min.js"></script>-->
-    <script src="../../../resources/js/jquery.min.js"></script>
+    <script src="../../../resources/js/jquery-3.1.1.min.js"></script>
+    <!--<script src="../../../resources/js/jquery.min.js"></script>-->
     <script src='../../../resources/js/bootstrap.min.js'></script>
     <script src="../../../resources/js/manager.js"></script>
-    <script src="../../../resources/js/app.js"></script>
+   <!-- <script src="../../../resources/js/app.js"></script>-->
+    <script src="../../../resources/js/booked.js"></script>
+
+    <script src="../../../resources/js/bootstrap-datetimepicker.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -57,7 +61,7 @@
                     <div class="row clearfix">
                         <div class="col-md-12 column">
                             <form role="form">
-                                <div class="form-grou"> <div class="row clearfix">
+                                <div class="form-group">
                                     <label for="exampleInput1">预约人ID</label>
                                     <input type="text" class="form-control" id="exampleInput1"/>
                                 </div>
@@ -72,14 +76,29 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput3">预约时间</label>
-                                    <input type="datetime" class="form-control" id="exampleInput3"/>
+                                    <input type="text" id="exampleInput3" data-date-format="yyyy-mm-dd hh:mm:ss">
+                                    <!--<input type="datetime" class="form-control" id="exampleInput3"/>-->
+                                    <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                        <input class="span2" size="16" type="text" value="12-02-2012">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                    </div>
                                 </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Date Picking</label>
+                                        <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                            <input size="16" type="text" value="" readonly>
+                                            <span class="add-on"><i class="icon-remove"></i></span>
+                                            <span class="add-on"><i class="icon-th"></i></span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input2" value="" /><br/>
+                                    </div>
 
                                 <div class="form-group">
                                     <label for="exampleInput4">简要描述咨询内容</label>
                                     <textarea type="text" class="form-control" id="exampleInput4"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="button" class="btn btn-default" onclick="book()">Submit</button>
                             </form>
                             <table class="table">
                                 <thead>
