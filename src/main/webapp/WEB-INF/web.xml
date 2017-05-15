@@ -93,7 +93,7 @@
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 
-
+<!--
   <error-page>
     <error-code>404</error-code>
     <location>/WEB-INF/views/error/404.html</location>
@@ -109,6 +109,12 @@
   <error-page>
     <exception-type>org.apache.commons.fileupload.FileUploadException</exception-type>
     <location>/WEB-INF/views/error/FileUploadError.html</location>
+  </error-page>-->
+
+
+  <!-- Map all errors to Spring MVC handler method. See CustomErrorController.generalError() -->
+  <error-page>
+    <location>/generalError</location>
   </error-page>
 
 

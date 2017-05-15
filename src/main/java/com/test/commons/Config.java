@@ -10,10 +10,11 @@ import java.util.Properties;
 public class Config {
     private Properties cfg = new Properties();
     public Config(){}
-    //从src开始的全路径
+    //从src/main/resources/开始
     public Config(String file){
         try {
-            File f = new File(file);
+            ClassLoader classLoader = getClass().getClassLoader();
+            File f = new File(classLoader.getResource(file).getFile());
             cfg.load(new FileInputStream(f));
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,10 +36,8 @@ public class Config {
      * @param p
      */
 //	public static void main(String [] p){
-//		Config con = new Config("mysql.properties");
-//		System.out.println(con.getString("Driver"));
-//		System.out.println(con.getString("User"));
-//		System.out.println(con.getString("Pass"));
-//		System.out.println(con.getString("URL"));
+//		Config con = new Config("Mail.properties");
+//		System.out.println(con.getString("mail.transport.protocol"));
+//		System.out.println(con.getString("mail.debug"));
 //	}
 }

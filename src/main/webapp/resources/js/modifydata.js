@@ -144,7 +144,7 @@
 function modifyPassword() {
     //debugger;
         var formData = new FormData();
-        formData.append("userName", document.getElementById("modifyInput1").value);
+        formData.append("userName", document.getElementById("modifyinput1").value);
         formData.append("Password", document.getElementById("modifyInput2").value);
         console.log(formData);
         $.ajax({
@@ -164,5 +164,29 @@ function modifyPassword() {
                 alert("错误！！" + data);
             }
         });
+
+}
+
+
+function forgetPass(){
+    var formData = new FormData();
+    formData.append("userEmail", document.getElementById("userEmailinput").value);
+    console.log(formData);
+    $.ajax({
+        url: "/forgetPassword",
+        type: "post",
+        data: formData,
+        //async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            alert(data);
+            //setTimeout("location.reload()",100);//页面刷新
+        },
+        error: function (data) {
+            alert("错误！！" + data);
+        }
+    });
 
 }

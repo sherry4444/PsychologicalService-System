@@ -4,6 +4,7 @@ import com.test.commons.HttpClientUtil;
 import com.test.commons.MailUtils;
 import com.test.domain.UserInfo;
 import com.test.service.UserService;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import sun.net.www.http.HttpClient;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.security.spec.ECField;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,8 +39,18 @@ public class ModifyDataController {
     }
 
     @RequestMapping(value = "/modifydata",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public String modifydata_post(){
+    public String modifydata_post(@ModelAttribute UserInfo userInfo){
         logger.info("modifydata post 跳转");
+        try {
+            Integer checkuserid  = userService.finduserid(userInfo);
+            if (checkuserid == null) {return "不存在此用户";}
+            else {
+            userService.updateUser(userInfo);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+            return "修改失败";
+        }
         return "/login/modifydata";
     }
 
@@ -48,11 +60,18 @@ public class ModifyDataController {
         return "/login/forgetpassword";
     }
 
+
     @RequestMapping(value = "/forgetPassword",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public void forgetPassword(@ModelAttribute UserInfo userInfo,HttpServletRequest request){
-        logger.info("forgetPassword post 跳转");
-        MailUtils mailUtils = new MailUtils();
-        mailUtils.sendMail(request,"suguihao@chinasie.com");
+    @ResponseBody
+    public String forgetPassword(@ModelAttribute UserInfo userInfo,HttpServletRequest request){
+        logger.info("忘记密码_提交邮箱 post 跳转");
+        UserInfo getuser = userService.finduserByName(userInfo);
+        if(getuser != null) {
+            MailUtils.sendByQQ(request, userInfo.getUserEmail());
+            return "请登录该邮箱完成修改密码";
+        }else {
+            return "不存在该邮箱用户";
+        }
     }
 
 

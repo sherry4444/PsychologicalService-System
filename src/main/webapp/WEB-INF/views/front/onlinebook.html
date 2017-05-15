@@ -38,113 +38,92 @@
                         <div class="col-md-12 column">
                             <div class="page-header">
                                 <h1>
-                                    校園心裏輔導系統 <small>在线预约</small>
+                                    校園心裏輔導系統
+                                    <small>在线预约</small>
                                 </h1>
 
                             </div>
                             <hr>
-                            </div>
+                        </div>
                         <div class="row clearfix">
                             <div class="col-md-12 column">
                                 <div class="navbar navbar-inverse" th:replace="fragments/headmanager :: headmanager">
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                     </br>
 
-                    <div class="container">
-                        <div class="row clearfix">
-                            <div class="col-md-12 column">
-                                <div class="carousel slide" id="carousel-364262">
-                                    <ol class="carousel-indicators">
-                                        <li class="active" data-slide-to="0" data-target="#carousel-364262">
-                                        </li>
-                                        <li data-slide-to="1" data-target="#carousel-364262">
-                                        </li>
-                                        <li data-slide-to="2" data-target="#carousel-364262">
-                                        </li>
-                                    </ol>
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img alt="" src="v3/default.jpg" />
-                                            <div class="carousel-caption">
-                                                <h4>
-                                                    First Thumbnail label
-                                                </h4>
-                                                <p>
-                                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div> <a class="left carousel-control" href="#carousel-364262" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-364262" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <form role="form">
+                                <div class="form-grou"> <div class="row clearfix">
+                                    <label for="exampleInput1">预约人ID</label>
+                                    <input type="text" class="form-control" id="exampleInput1"/>
                                 </div>
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label for="Input4">Email address</label>
-                                        <select id="Input4" class="form-control">
-                                            <option data-th-each="tag,tagsIndex:${teacherList}"
-                                                    data-th-value="${tag.teacherId}"
-                                                    data-th-text="${tag.teacherName}">老师
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label><input type="password" class="form-control" id="exampleInputPassword1" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile" />
-                                        <p class="help-block">
-                                            Example block-level help text here.
-                                        </p>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" />Check me out</label>
-                                    </div> <button type="submit" class="btn btn-default">Submit</button>
-                                </form>
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>
-                                            申请时间
-                                        </th>
-                                        <th>
-                                            预约老师
-                                        </th>
-                                        <th>
-                                            预约咨询时间
-                                        </th>
-                                        <th>
-                                            预约状态
-                                        </th>
-                                        <th>
-                                            反馈信息
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr th:each="user,userStat:${bookedList}">
-                                        <td th:text="${user.submitTime}">
-                                            1
-                                        </td>
-                                        <td th:text="${user.bebookedUserName}">
-                                            TB - Monthly
-                                        </td>
-                                        <td th:text="${user.bookTime}">
-                                            01/04/2012
-                                        </td>
-                                        <td th:text="${user.stateName}">
-                                            Default
-                                        </td>
-                                        <td th:text="${user.bookReason}">
-                                            Default
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <div class="form-group">
+                                    <label for="exampleInput2">选择预约的老师</label>
+                                    <select id="exampleInput2" class="form-control">
+                                        <option data-th-each="tag,tagsIndex:${teacherList}"
+                                                data-th-value="${tag.teacherId}"
+                                                data-th-text="${tag.teacherName}">老师
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInput3">预约时间</label>
+                                    <input type="datetime" class="form-control" id="exampleInput3"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInput4">简要描述咨询内容</label>
+                                    <textarea type="text" class="form-control" id="exampleInput4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        申请时间
+                                    </th>
+                                    <th>
+                                        预约老师
+                                    </th>
+                                    <th>
+                                        预约咨询时间
+                                    </th>
+                                    <th>
+                                        预约状态
+                                    </th>
+                                    <th>
+                                        反馈信息
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="user,userStat:${bookedList}">
+                                    <td th:text="${user.submitTime}">
+                                        1
+                                    </td>
+                                    <td th:text="${user.bebookedUserName}">
+                                        TB - Monthly
+                                    </td>
+                                    <td th:text="${user.bookTime}">
+                                        01/04/2012
+                                    </td>
+                                    <td th:text="${user.stateName}">
+                                        Default
+                                    </td>
+                                    <td th:text="${user.bookReason}">
+                                        Default
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

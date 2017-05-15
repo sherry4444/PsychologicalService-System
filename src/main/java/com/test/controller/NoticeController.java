@@ -82,7 +82,7 @@ public class NoticeController {
 
     @RequestMapping(value = "/addnotice",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String addTeacher(@ModelAttribute Notice notice,
+    public String addnotice(@ModelAttribute Notice notice,
                              @RequestParam(value = "Img",required = false)MultipartFile myfile
                              ,HttpServletRequest request) {
         logger.info("before:"+notice.toString());

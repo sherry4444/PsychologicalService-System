@@ -98,18 +98,20 @@
     <update id="updateUser" parameterType="com.test.domain.UserInfo" >
         UPDATE ps_user
         <set>
-            <if test="userName != null">
-                userName = #{userName},
-            </if>
-            <if test="userEmail != null">
-                userEmail = #{userEmail},
-            </if>
-            <if test="mobilePhone != null">
-                mobilePhone = #{mobilePhone},
-            </if>
-            <if test="role != null">
-                role = #{role},
-            </if>
+            <trim prefix="" suffix="" prefixOverrides="" suffixOverrides=",">
+                <if test="userName != null and userName.length > 0">
+                    userName = #{userName},
+                </if>
+                <if test="userEmail != null and userEmail.length > 0">
+                    userEmail = #{userEmail},
+                </if>
+                <if test="mobilePhone != null and mobilePhone.length > 0">
+                    mobilePhone = #{mobilePhone},
+                </if>
+                <if test="role != null and role.length > 0">
+                    role = #{role},
+                </if>
+            </trim>
         </set>
         WHERE userId = #{userId}
     </update>
@@ -117,9 +119,11 @@
     <update id="modifypassword" parameterType="com.test.domain.UserInfo">
         UPDATE ps_user
         <set>
-            <if test="Password != null">
-                Password = #{Password}
-            </if>
+            <trim prefix="" suffix="" prefixOverrides="" suffixOverrides=",">
+                <if test="Password != null and Password.length > 0">
+                    Password = #{Password}
+                </if>
+            </trim>
         </set>
         WHERE userEmail = #{userEmail}
     </update>

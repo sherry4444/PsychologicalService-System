@@ -5,6 +5,7 @@ import com.test.config.PasswordUtil;
 import com.test.config.Token;
 import com.test.domain.UserInfo;
 import com.test.service.UserService;
+import org.apache.http.HttpRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,8 +73,8 @@ public class LoginController {
             application.setAttribute("onLine", onLine);
             logger.info("onLine："+onLine);
             model.addAttribute("user",userInfo1);
-            return "front/index";
-
+            return init(model,userInfo1);
+            //return "redirct:/index";
         }
         else {
             logger.info("登录失败："+PasswordUtil.verify(userInfo.getPassword(),userInfo1.getPassword()));
@@ -94,13 +95,17 @@ public class LoginController {
 
     @Token(remove = true)
     @RequestMapping(value = "/signup",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public String signup_post(UserInfo userInfo){
+    public String signup_post(Model model,UserInfo userInfo){
         logger.info("signup post 跳转");
         userInfo.setPassword(PasswordUtil.generate(userInfo.getPassword()));
         userInfo.setRole(0);
         logger.info("add "+userInfo.toString());
-        userService.addUserInfo(userInfo);
-        return "front/index";
+        try {
+            userService.addUserInfo(userInfo);
+        }catch (Exception e){
+            return "login/signup";
+        }
+        return init(model,userInfo);
     }
 
     @RequestMapping(value = "/success",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
