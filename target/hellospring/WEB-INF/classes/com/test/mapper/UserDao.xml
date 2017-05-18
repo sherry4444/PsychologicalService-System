@@ -32,7 +32,7 @@
     </resultMap>
 
     <sql id="userColumns"> userId,userName,Password,salt,mobilePhone,userEmail,modifyTime,state,role </sql>
-    <sql id="findByName"> userName,Password,salt,role</sql>
+    <sql id="findByName"> userId,userName,Password,salt,role</sql>
 
     <select id="finduserByName" resultMap="UserResultMap" parameterType="com.test.domain.UserInfo">
         SELECT <include refid="findByName"/> FROM ps_user WHERE userEmail=#{userEmail}
@@ -107,7 +107,7 @@
             <if test="mobilePhone != null and mobilePhone.length > 0">
                 mobilePhone = #{mobilePhone},
             </if>
-            <if test="role != null and role.length > 0">
+            <if test="role != null and role.length() > 0">
                 role = #{role},
             </if>
         </set>

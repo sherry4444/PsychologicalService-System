@@ -30,7 +30,7 @@
         <result column="teacherName" property="bebookedUserName"/>
     </resultMap>
 
-    <sql id="linkColumns">a.bookState,a.bookUserId,a.bebookedUserId,a.bookTime,
+    <sql id="linkColumns">a.bookState,a.bookUserId,a.bebookedUserId,a.bookTime,a.bookId,
         a.bookReason,a.feedback,a.submitTime,b.userName as studentName,
         d.userName as teacherName</sql>
 
@@ -40,23 +40,22 @@
         LEFT JOIN ps_user b ON b.userId = a.bookUserId
         LEFT JOIN ps_user d ON d.userId = a.bebookedUserId
         <where>
-            <if test="bookState != null">
+            <if test="booked.bookState != null">
                 and a.bookState = #{booked.bookState}
             </if>
-            <if test="bookUserId != null">
+            <if test="booked.bookUserId != null">
                 and a.bookUserId = #{booked.bookUserId}
             </if>
-            <if test="bebookedUserId != null">
+            <if test="booked.bebookedUserId != null">
                 and a.bebookedUserId = #{booked.bebookedUserId}
             </if>
-            <if test="title != null">
-                or a.bookUserId like '%${title}%'
+            <if test="title != null and title.length() > 0">
+                and a.bookReason like '%${title}%'
             </if>
-            <if test="title != null">
-                or a.bebookedUserId like '%${title}%'
+            <if test="title != null and title.length() > 0">
+                or a.feedback like '%${title}%'
             </if>
         </where>
-        GROUP BY a.bookId
         <if test="flag == '2'.toString()">
             ORDER BY a.bookState ASC
         </if>
@@ -72,52 +71,67 @@
         limit #{page.dbIndex},#{page.dbNumber}
     </select>
 
-    <select id="countBooked" parameterType="java.lang.String" resultType="int">
-        select count(*) from ps_booked
+    <select id="countBooked" parameterType="java.util.Map" resultType="int">
+        select COUNT(bookId) from ps_booked a
+        LEFT JOIN ps_user b ON b.userId = a.bookUserId
+        LEFT JOIN ps_user d ON d.userId = a.bebookedUserId
         <where>
-            <if test="title != null">
-                and bookState like '%${title}%'
+            <if test="booked.bookState != null">
+                and bookState = #{booked.bookState}
             </if>
-            <if test="title != null">
-                or bookUserId like '%${title}%'
+            <if test="booked.bookUserId != null">
+                and bookUserId = #{booked.bookUserId}
             </if>
-            <if test="title != null">
-                or bebookedUserId like '%${title}%'
+            <if test="booked.bebookedUserId != null">
+                and bebookedUserId = #{booked.bebookedUserId}
+            </if>
+            <if test="title != null and title.length() > 0">
+                and a.bookReason like '%${title}%'
+            </if>
+            <if test="title != null and title.length() > 0">
+                or a.feedback like '%${title}%'
             </if>
         </where>
     </select>
 
     <insert id="addBooked" parameterType="com.test.domain.Booked">
-        INSERT INTO ps_booked(bookState,bookUserId,bebookedUserId,bookTime,bookReason)
-        VALUES (#{bookState},#{bookUserId},#{bebookedUserId},#{bookTime},#{bookReason})
+        INSERT INTO ps_booked(bookState,bookUserId,bebookedUserId,bookTime,bookReason,submitTime)
+        VALUES (#{bookState},#{bookUserId},#{bebookedUserId},#{bookTime},#{bookReason},now())
     </insert>
 
     <delete id="deleteBooked" parameterType="com.test.domain.Booked">
         DELETE FROM ps_booked WHERE bookId = #{bookId}
     </delete>
 
-    <update id="changeBookedState" parameterType="com.test.domain.Booked">
+    <update id="finishState" parameterType="com.test.domain.Booked" >
         UPDATE ps_booked
-        <set>
-            <if test="#{bookState} != null">
-                bookState = #{bookState}
-            </if>
-        </set>
-        WHERE bookId = #{bookId}
+        SET bookState = 4
+        WHERE bookState &lt; #{bookState} and bookUserId = #{bookUserId} and submitTime-now() &gt; 7
     </update>
 
 
-    <update id="feedbackBooked" parameterType="com.test.domain.Booked">
+    <update id="changeBookedState" parameterType="com.test.domain.Booked">
         UPDATE ps_booked
         <set>
-            <if test="#{bookState} != null">
-                bookState = #{bookState}
+            <if test="bookState != null">
+                bookState = #{bookState},
             </if>
-            <if test="#{feedback} != null">
+            <if test="feedback != null">
                 feedback = #{feedback}
             </if>
         </set>
         WHERE bookId = #{bookId}
     </update>
+
+    <select id="findhadfinish" parameterType="com.test.domain.Booked" resultType="int">
+        SELECT COUNT(bookId) from ps_booked
+        WHERE
+        <if test="bookState != null">
+            bookState &lt; #{bookState}
+        </if>
+        <if test="bookUserId != null">
+            and bookUserId = #{bookUserId}
+        </if>
+    </select>
 
 </mapper>

@@ -17,7 +17,9 @@ public interface BookedDao {
 
     List<Booked> findbookedAll(Map<String, Object> parameter);
 
-    int countBooked(@Param("title") String title);
+    int countBooked(Map<String,Object> parameter);
+
+    int findhadfinish(Booked booked);
 
     void addBooked(Booked booked);
 
@@ -26,4 +28,6 @@ public interface BookedDao {
     void changeBookedState(Booked booked);
 
     void feedbackBooked(Booked booked);
+
+    void finishState(Booked booked);
 }

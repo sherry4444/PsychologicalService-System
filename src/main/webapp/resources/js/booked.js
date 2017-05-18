@@ -2,9 +2,84 @@
  * Created by Administrator on 2017/3/17.
  */
 
+
+;(function ($) {
+    $(function () {
+        $(".audit").on("click",function () {
+            cleanedit();
+            var id= $(this).attr("id");
+            $('#modifyInput1').attr("value",id);
+            $("#myModal").modal('show');
+        });
+
+        cleanedit=function () {
+            $('#modifyInput1').attr("value","");
+        };
+
+
+        $(".finish").on("click",function () {
+            var formData = new FormData();
+            formData.append("bookId", $(this).attr("id"));
+            formData.append("bookState", 4);
+            $.ajax({
+                url: "/finishbook",
+                type: "post",
+                data: formData,
+                //async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    alert(data);
+                    //console.log("over..");
+                    //setTimeout("location.reload()",100);//页面刷新
+                },
+                error: function (data) {
+                    alert("错误！！" + data);
+                }
+            });
+        });
+
+    });
+})(jQuery);
+
+function modifystate() {
+
+    var status = $('input:radio[name="modifyInput2"]:checked').val();
+    if(status == null){
+        alert("请选择");
+        return false;
+    }
+    else {
+        var formData = new FormData();
+        formData.append("bookId", document.getElementById("modifyInput1").value);
+        formData.append("bookState", status);
+        formData.append("feedback", document.getElementById("modifyInput3").value);
+        console.log(formData);
+        $.ajax({
+            url: "/modifystate",
+            type: "post",
+            data: formData,
+            //async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert(data);
+                //console.log("over..");
+                //setTimeout("location.reload()",100);//页面刷新
+            },
+            error: function (data) {
+                alert("错误！！" + data);
+            }
+        });
+    }
+}
+
 function book() {
     var formData = new FormData();
     formData.append("bookUserId",document.getElementById("exampleInput1").value);
+    formData.append("bookState", 1);
     formData.append("bebookedUserId",document.getElementById("exampleInput2").value);
     formData.append("bookTime",document.getElementById("exampleInput3").value);
     formData.append("bookReason",document.getElementById("exampleInput4").value);

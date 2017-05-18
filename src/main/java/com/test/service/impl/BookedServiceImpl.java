@@ -28,7 +28,12 @@ public class BookedServiceImpl implements BookedService {
     public List<Booked> findBookedAll(Map<String,Object> parameter){ return bookedDao.findbookedAll(parameter);}
 
     @Transactional
-    public int countBooked(String title){ return bookedDao.countBooked(title);}
+    public int countBooked(Map<String,Object> parameter){ return bookedDao.countBooked(parameter);}
+
+    @Transactional
+    public int findhadfinish(Booked booked){
+        bookedDao.finishState(booked);
+        return bookedDao.findhadfinish(booked);}
 
     @Transactional
     public void addBooked(Booked booked){ bookedDao.addBooked(booked);}
@@ -42,5 +47,8 @@ public class BookedServiceImpl implements BookedService {
 
     @Transactional
     public void feedbackBooked(Booked booked){ bookedDao.feedbackBooked(booked);}
+
+    @Transactional
+    public void finishState(Booked booked){ bookedDao.finishState(booked);}
 
 }

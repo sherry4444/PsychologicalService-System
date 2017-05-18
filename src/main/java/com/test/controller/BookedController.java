@@ -4,10 +4,7 @@ package com.test.controller;
 import com.test.commons.Filefunction;
 import com.test.commons.HttpInfo;
 import com.test.dao.TeacherDao;
-import com.test.domain.Booked;
-import com.test.domain.Page;
-import com.test.domain.Search;
-import com.test.domain.TestLink;
+import com.test.domain.*;
 import com.test.service.BookedService;
 import com.test.service.TeacherService;
 import com.test.service.TestLinkService;
@@ -21,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,6 +46,7 @@ public class BookedController {
                                @RequestParam(value = "title",required = false)String title,
                                @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
                                @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
+                                 @RequestParam(value = "state",required=false,defaultValue = "1")Integer state,
                                @RequestParam(value = "num",required=false)Integer num
                               ,HttpServletRequest request){
 
@@ -59,16 +59,18 @@ public class BookedController {
                 e.printStackTrace();
             }
         }
-
-        if (num != null) {page.setPageNumber(num);} else {num=page.getPageNumber();}
-        totalNumber = bookedService.countBooked(title);
-        page.setCurrentPage(currentPage);
-        page.setTotalNumber(totalNumber);
-        logger.info(page.toString());
-        Map<String,Object> parameter = new HashMap<String, Object>();
         Booked booked = new Booked();
+        booked.setBookState(state);
+        Map<String,Object> parameter = new HashMap<String, Object>();
         parameter.put("booked",booked);
         parameter.put("title",title);
+        if (num != null) {page.setPageNumber(num);} else {num=page.getPageNumber();}
+        totalNumber = bookedService.countBooked(parameter);
+        page.setCurrentPage(currentPage);
+        page.setTotalNumber(totalNumber);
+        logger.info(page.toString()+"/n============================/n"+booked.toString()+"/n/n/n/n");
+
+
         parameter.put("page",page);
         parameter.put("flag",flag);
         logger.info("page:"+page.toString()+"\n search:"+search.toString());
@@ -77,6 +79,7 @@ public class BookedController {
         model.addAttribute("num", num);
         model.addAttribute("page",page);
         model.addAttribute("flag",flag);
+        model.addAttribute("state",state);
         model.addAttribute("title",title);
         model.addAttribute("keywords","bookedList");
 
@@ -88,12 +91,21 @@ public class BookedController {
 
     @RequestMapping(value = "/addbooked",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String addTeacher(@ModelAttribute Booked booked) {
+    public String addbooked(@ModelAttribute Booked booked) {
         logger.info("before:"+booked.toString());
-
         try {
-            booked.setBookState(1);
-            bookedService.addBooked(booked);
+            //booked.setBookState(1);
+
+            Booked findhad = new Booked();
+            findhad.setBookState(3);
+            findhad.setBookUserId(booked.getBookUserId());
+            System.out.print("=findhad.toString()==========:    "+findhad.toString());
+            int findnum = bookedService.findhadfinish(findhad);
+            if (findnum > 0){
+                return "有未完成的预约，添加失败";
+            }else if(findnum == 0) {
+                bookedService.addBooked(booked);
+            }
         }catch (Exception e)
         {
             e.printStackTrace();
@@ -119,66 +131,61 @@ public class BookedController {
     }
 
 
-    @RequestMapping(value = "/bookedsuccess,",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/modifystate",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String bookedsuccess() {
+    public String modifystate(Booked booked) {
         try {
-            Booked booked = new Booked();
-            booked.setBookState(2);
             bookedService.changeBookedState(booked);
         }catch (Exception e)
         {
             e.printStackTrace();
-            logger.info("修改失败"+e.toString());
-            return "修改失败"+e;
+            logger.info("审核失败"+e.toString());
+            return "审核失败"+e;
         }
-        logger.info("修改成功");
-        return "修改成功";
+        logger.info("审核成功");
+        return "审核成功";
     }
 
-    @RequestMapping(value = "/bookedfail",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/finishbook",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public String bookedfail(@ModelAttribute Booked booked) {
+    public String finishbook(@ModelAttribute Booked booked) {
         try {
-            booked.setBookState(3);
-            bookedService.feedbackBooked(booked);
+            bookedService.changeBookedState(booked);
         }catch (Exception e)
         {
             e.printStackTrace();
-            logger.info("修改失败"+e.toString());
-            return "修改失败"+e;
+            logger.info("结束失败"+e.toString());
+            return "结束失败"+e;
         }
-        logger.info("修改成功");
-        return "修改成功";
+        logger.info("结束成功");
+        return "结束成功";
     }
 
 
     @RequestMapping(value = "/booked",produces = "text/html;charset=UTF-8")
-    public String showBooked(Model model, Page page,Booked booked,
-                             @RequestParam(value = "title",required = false)String title,
+    public String showBooked(Model model, Page page,Booked booked,HttpServletRequest request,
                              @RequestParam(value = "currentPage",defaultValue = "1",required=false)int currentPage,
                              @RequestParam(value = "flag",required=false,defaultValue = "0")Integer flag,
                              @RequestParam(value = "num",required=false)Integer num){
+        HttpSession session = request.getSession();
+        UserInfo userInfo = (UserInfo)session.getAttribute("user");
+        System.out.println("==========session: "+(String)session.getAttribute("name")+
+        "/n =================== userInfo : "+userInfo.toString());
+        //String title = userInfo.getUserId().toString();
+        String title = "";
 
-        if (title != null) {
-            try {
-                if (title != null && title.equals(new String(title.getBytes("ISO-8859-1"), "ISO-8859-1"))) {
-                    title = new String(title.getBytes("ISO-8859-1"), "utf-8");
-                }
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-        }
+        booked.setBookUserId(userInfo.getUserId());
+        Map<String,Object> parameter = new HashMap<String, Object>();
+        parameter.put("booked",booked);
+        parameter.put("title",title);
 
         if (num != null) {page.setPageNumber(num);} else {num=page.getPageNumber();}
-        totalNumber = bookedService.countBooked(title);
+        totalNumber = bookedService.countBooked(parameter);
         page.setCurrentPage(currentPage);
         page.setTotalNumber(totalNumber);
         logger.info(page.toString());
-        Map<String,Object> parameter = new HashMap<String, Object>();
-        //Booked booked = new Booked();
-        parameter.put("booked",booked);
-        parameter.put("title",title);
+
+
         parameter.put("page",page);
         parameter.put("flag",flag);
         logger.info(bookedService.findBookedAll(parameter).toString());

@@ -15,7 +15,9 @@ public interface BookedService {
 
     List<Booked> findBookedAll(Map<String, Object> parameter);
 
-    int countBooked(String title);
+    int countBooked(Map<String,Object> parameter);
+
+    int findhadfinish(Booked booked);
 
     void addBooked(Booked booked);
 
@@ -24,4 +26,6 @@ public interface BookedService {
     void changeBookedState(Booked booked);
 
     void feedbackBooked(Booked booked);
+
+    void finishState(Booked booked);
 }

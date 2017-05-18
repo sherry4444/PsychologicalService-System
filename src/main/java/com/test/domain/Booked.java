@@ -13,7 +13,7 @@ public class Booked {
     private String bookUserName;//预约者名字
     private	Integer	bebookedUserId;//被预约的老师
     private String bebookedUserName;//被预约的老师名字
-    private Timestamp bookTime;//预约时间
+    private String bookTime;//预约时间
     private	String	bookReason;//预约原因
     private	String	feedback;//反馈信息
     private	Timestamp submitTime;//提交时间
@@ -36,9 +36,11 @@ public class Booked {
 
     public void setBookState(Integer bookState) {
         switch (bookState){
-            case 0:stateName="预约中";break;
-            case 1:stateName="预约成功";break;
-            case 2:stateName="预约失败";break;
+            case 0:stateName="预约";break;
+            case 1:stateName="预约中";break;
+            case 2:stateName="预约成功";break;
+            case 3:stateName="预约失败";break;
+            case 4:stateName="预约结束";break;
         }
         this.stateName = stateName;
         this.bookState = bookState;
@@ -60,11 +62,11 @@ public class Booked {
         this.bebookedUserId = bebookedUserId;
     }
 
-    public Timestamp getBookTime() {
+    public String getBookTime() {
         return bookTime;
     }
 
-    public void setBookTime(Timestamp bookTime) {
+    public void setBookTime(String bookTime) {
         this.bookTime = bookTime;
     }
 

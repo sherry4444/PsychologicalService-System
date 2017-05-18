@@ -31,6 +31,14 @@
     <script src="../../../resources/js/booked.js"></script>
 
     <script src="../../../resources/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel='stylesheet' href="../../../resources/css/bootstrap-datetimepicker.min.css"/>
+    <script src="../../../resources/js/moment-with-locales.js"></script>
+    <script src="../../../resources/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../resources/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+    <script>
+
+    </script>
 </head>
 <body>
 <div class="container">
@@ -61,39 +69,28 @@
                     <div class="row clearfix">
                         <div class="col-md-12 column">
                             <form role="form">
-                                <div class="form-group">
+                                <div class="form-group hidden">
                                     <label for="exampleInput1">预约人ID</label>
-                                    <input type="text" class="form-control" id="exampleInput1"/>
+                                    <input type="text" class="form-control" id="exampleInput1" th:value="${session.user.userId}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput2">选择预约的老师</label>
                                     <select id="exampleInput2" class="form-control">
                                         <option data-th-each="tag,tagsIndex:${teacherList}"
-                                                data-th-value="${tag.teacherId}"
-                                                data-th-text="${tag.teacherName}">老师
+                                                data-th-value="${tag.tc_userId}"
+                                                data-th-text="|${tag.teacherName} -----  ${tag.userInfo.mobilePhone}|">老师
                                         </option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInput3">预约时间</label>
-                                    <input type="text" id="exampleInput3" data-date-format="yyyy-mm-dd hh:mm:ss">
-                                    <!--<input type="datetime" class="form-control" id="exampleInput3"/>-->
-                                    <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input type="text" class="form-control" id="exampleInput3" />
+                                   <!-- <div class="input-append date" id="exampleInput3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                         <input class="span2" size="16" type="text" value="12-02-2012">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
-                                    </div>
+                                    </div>-->
                                 </div>
-                                    <div class="control-group">
-                                        <label class="control-label">Date Picking</label>
-                                        <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                            <input size="16" type="text" value="" readonly>
-                                            <span class="add-on"><i class="icon-remove"></i></span>
-                                            <span class="add-on"><i class="icon-th"></i></span>
-                                        </div>
-                                        <input type="hidden" id="dtp_input2" value="" /><br/>
-                                    </div>
-
                                 <div class="form-group">
                                     <label for="exampleInput4">简要描述咨询内容</label>
                                     <textarea type="text" class="form-control" id="exampleInput4"></textarea>
@@ -121,7 +118,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="user,userStat:${bookedList}">
+                                <tr th:each="user,userStat:${bookedlist}">
                                     <td th:text="${user.submitTime}">
                                         1
                                     </td>

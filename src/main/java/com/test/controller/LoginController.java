@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -28,6 +29,7 @@ import java.util.Date;
  * Created by Administrator on 2017/3/13.
  */
 @Controller
+@SessionAttributes("user")
 public class LoginController {
 
     //获取session
@@ -62,6 +64,7 @@ public class LoginController {
         {
             logger.info("登录成功："+PasswordUtil.verify(userInfo.getPassword(),userInfo1.getPassword()));
             session = request.getSession();
+            session.setAttribute("user", userInfo1); // 保存当前登录的用户名
             session.setAttribute("name", userInfo1.getUserName()); // 保存当前登录的用户名
             //
             application = request.getSession().getServletContext();
@@ -73,7 +76,7 @@ public class LoginController {
             application.setAttribute("onLine", onLine);
             logger.info("onLine："+onLine);
             model.addAttribute("user",userInfo1);
-            return init(model,userInfo1);
+            return init(model,userInfo1,request);
             //return "redirct:/index";
         }
         else {
@@ -95,7 +98,7 @@ public class LoginController {
 
     @Token(remove = true)
     @RequestMapping(value = "/signup",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public String signup_post(Model model,UserInfo userInfo){
+    public String signup_post(Model model,UserInfo userInfo,HttpServletRequest request){
         logger.info("signup post 跳转");
         userInfo.setPassword(PasswordUtil.generate(userInfo.getPassword()));
         userInfo.setRole(0);
@@ -105,7 +108,8 @@ public class LoginController {
         }catch (Exception e){
             return "login/signup";
         }
-        return init(model,userInfo);
+        model.addAttribute("user",userInfo);
+        return init(model,userInfo,request);
     }
 
     @RequestMapping(value = "/success",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
@@ -114,12 +118,25 @@ public class LoginController {
         return "front/index";
     }
 
-    @RequestMapping(value = "/index",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
-    public String init(Model model,UserInfo userInfo){
+    @RequestMapping(value = "/index",produces = "text/html;charset=UTF-8")
+    public String init(Model model, UserInfo userInfo,HttpServletRequest request){
         logger.info("success get 跳转");
+        if (userInfo == null) {
+            HttpSession session = request.getSession();
+            userInfo = (UserInfo) session.getAttribute("user");
+        }
         model.addAttribute("user",userInfo);
         return "front/index";
     }
+
+    @RequestMapping(value = "/logout")
+    public String logout(){
+        logger.info("logout 跳转");
+        session.removeAttribute("name");
+        session.removeAttribute("user");
+        return "login/login";
+    }
+
 
 
 

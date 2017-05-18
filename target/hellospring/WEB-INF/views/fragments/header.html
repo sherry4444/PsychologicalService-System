@@ -106,8 +106,9 @@
 				<p class="navbar-text"  >
 					<span class="label bg-success">线上</span>
 				</p>
-				<p class="navbar-text"  sec:authorize="hasAnyRole('ROLE_ADMIN')">
-					<a class="label bg-success" th:href="@{/}">切换</a>
+				<!--<p class="navbar-text"  sec:authorize="hasAnyRole('ROLE_ADMIN')">-->
+				<p class="navbar-text" >
+					<a class="label bg-success" th:href="@{/index}">切换</a>
 				</p>
 				<div class="navbar-right">
 					<ul class="nav navbar-nav">
@@ -120,11 +121,12 @@
 							</a>
 
 							<ul class="dropdown-menu dropdown-menu-right">
-								<li><a th:href="@{/qualifyUserInfo}"><i class="icon-user-plus"></i> 我的信息</a></li>
+								<li><a th:href="@{/modifydata}"><i class="icon-user-plus"></i> 我的信息</a></li>
+								<li><a th:text="${session.user.userName}"></a></li>
 								<!--<li th:if="${session.Update != null}"><a href="#"><i class="icon-coins"></i>我的余额</a></li>
 								<li th:if="${session.Update != null}"><a href="#"><i class="icon-cog5"></i>充值/提现</a></li>-->
-								<li><a href="/logout" th:href="@{#}" onclick="$('#form').submit();"><i class="icon-switch2"></i> 退出</a>
-									<form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>
+								<li><a  th:href="@{/logout}" onclick="$('#form').submit();"><i class="icon-switch2"></i> 退出</a>
+									<!--<form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>-->
 								</li>
 							</ul>
 						</li>
