@@ -96,10 +96,15 @@ function deletearticle(node) {
     }
 }
 
+Date.prototype.toLocaleString = function() {
+    return this.getFullYear() + "年" + (this.getMonth() + 1) + "月" + this.getDate() + "日 ";
+};
+
 function viewComment(node) {
-    var commentlist = document.getElementById("commentList").value;
+
+    var commentList = $("#commentList");
         $.ajax({
-            url: "/viewComment/"+$(node).attr("id"),
+            url: "/viewComment/"+$(node).attr("article_id"),
             type: "get",
             //data: ,
             //async: false,
@@ -107,14 +112,15 @@ function viewComment(node) {
             contentType: false,
             processData: false,
             success: function (data) {
-                console.log(data);
-                console.log("json: "+JSON.parse(data));
-
-                //console.log("data.list[0]:"+data.list[0]);
-                alert(data.userName);
+                //console.log(data);
+                //清空
+                //document.getElementById('commentList').innerHTML = "";
+                $('#comment_context').attr("value","");
+                commentList.empty();
                 //显示出
                 for (var i = 0; i < data.list.length; i++) {
-                    commentlist.append('<span >'+data.list[i].userName+'</span> <p>'+data.list[i].context+'</p><span th:text="${comment.createTime}" class="pull-right">'+data.list[i].createTime+'</span> <hr>');
+                    var unixTimestamp = new Date(data.list[i].createTime).toLocaleString();
+                    commentList.append('<span >'+data.list[i].userName+'</span> <p>'+data.list[i].context+'</p><span  class="pull-right">'+unixTimestamp+'</span> <hr>');
                 }
 
             },
@@ -143,7 +149,8 @@ function comment(node) {
         processData: false,
         success: function (data) {
             alert(data);
-            setTimeout("location.reload()",100);//页面刷新
+            viewComment(node);
+            //setTimeout("location.reload()",100);//页面刷新
         },
         error: function (data) {
             alert("错误！！"+data);

@@ -87,6 +87,18 @@
 		</property>
 	</bean>
 
+
+	<!-- 启动JSON格式的配置 -->
+	<!--<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">-->
+		<!--&lt;!&ndash; 解决 HttpMediaTypeNotAcceptableException: Could not find acceptable representation &ndash;&gt;-->
+		<!--<property name="supportedMediaTypes">-->
+			<!--<list>-->
+				<!--<value>text/html;charset=UTF-8</value>-->
+			<!--</list>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+
 	<!-- 拦截器配置 -->
 	<!--<mvc:interceptors>-->
 		<!--&lt;!&ndash; 配置Token拦截器，防止用户重复提交数据 &ndash;&gt;-->

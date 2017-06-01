@@ -41,15 +41,16 @@ public class ArticleController{
     Filefunction filefunction = new Filefunction();
 
     private int totalNumber;
-//    application/json;
-    @RequestMapping(value = "/viewComment/{id}",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+
+    @RequestMapping(value = "/viewComment/{id}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public String addArticle(@PathVariable("id")Integer id) {
+    public Map<String,Object> addArticle(@PathVariable("id")Integer id) {
         Comment comment = new Comment();
         comment.setArticleId(id);
         Map<String,Object> map = new HashMap<String, Object>();
-        map.put("list",commentService.findCommentAll(comment));
-        return map.toString();
+        List<Comment> list = commentService.findCommentAll(comment);
+        map.put("list",list);
+        return map;
     }
 
     @RequestMapping(value = "/addcomment",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
