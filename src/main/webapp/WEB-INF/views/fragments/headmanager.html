@@ -6,13 +6,14 @@
 <body>
 <div th:fragment="headmanager" th:align="center">
     <div class="row clearfix">
-        <p th:text="${session.user.userName}" class="hidden"></p>
+        <p th:text="${session.name}" class="hidden"></p>
         <div class="col-md-12 column">
             <a href="/index" class="btn btn-default btn-default" type="button">首页</a>
             <a href="/modifydata" class="btn btn-default btn-primary" type="button">信息修改</a>
             <a href="/notice" class="btn btn-default btn-info" type="button">站内公告</a>
             <a href="/chatMain" class="btn btn-default btn-success" type="button">聊天室</a>
             <a href="/psychtest" class="btn btn-default btn-warning" type="button">心理测试</a>
+            <a href="/article" class="btn btn-default btn-primary" type="button">更多文章</a>
             <a href="/booked" class="btn btn-default btn-danger" type="button">在线预约</a>
             <a href="/logout" class="btn btn-default btn-default" type="button">退出</a>
         </div>

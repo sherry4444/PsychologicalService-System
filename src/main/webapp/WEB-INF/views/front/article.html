@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/resourceLink :: resourceLink"></div>
+    <title>showArticle</title>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-8 column col-md-offset-2">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="page-header">
+                                <h1>
+                                    校園心裏輔導系統
+                                    <small>Article</small>
+                                </h1>
+
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-md-12 column">
+                            <div class="navbar navbar-inverse" th:replace="fragments/headmanager :: headmanager">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row clearfix col-md-8">
+                        <div class="col-md-12" th:each="article,articleStat:${articleList}">
+                            <div id="articleone">
+                                <h2 th:text="${article.article_name}" class="column"></h2>
+                                <div class="column">
+                                    <span class="label label-success">作者</span>
+                                    <strong th:text="${article.article_author}" class="column "></strong>
+                                    <p th:text="${article.article_createTime}" class="pull-right column"
+                                       data-options="field:'validityDate',width:157,align:'center',formatter:function(data){
+                                       if(data==null||data==''){}else{return format(data,'yyyy-MM-dd');}}"></p>
+                                </div>
+                                <a th:href="@{showarticle/}+${article.article_id}" for="articleone">详细</a>
+                            </div>
+                            <hr>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row clearfix col-md-4 pull-right" style="margin-top: 20px;">
+                        <div class="col-md-12" th:each="article,articleStat:${articleList}">
+                            <p th:text="${article.article_name}" class="column" ></p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!--页脚-->
+                <div th:replace="fragments/footer :: footer" class="col-lg-12">
+                    &copy; 2017 The Static Templates
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

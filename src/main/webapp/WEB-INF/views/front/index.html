@@ -29,15 +29,16 @@
 <div class="title header-wrap1">
     <div id="look11">
         <h2><strong>校园心理辅导系统</strong></h2>
-        <h1 th:text="${session.user.userName}!=null?'hello,'+${session.user.userName}+'!':'Hello,pls login!'"></h1>
+        <h1 th:text="${session.name}!=null?'hello,'+${session.name}+'!':'Hello,pls login!'"></h1>
         <h4>chose u want:</h4>
-        <a th:class="${user.userName!=null?'hidden':''}" href="/login">登录</a>
-        <a href="/modifydata">完善信息</a>
-        <a th:class="${user.role==3?'':'hidden'}" href="/managerhome">管理页面</a>
-        <a href="/notice">站內公告</a>
-        <a href="/psychtest">心理测试</a>
-        <a th:href="@{/booked}">在线预约</a>
-        <a href="/logout">退出</a>
+        <a href="login" th:class="${session.name!=null?'hidden':''}">登录</a>
+        <a href="modifydata">完善信息</a>
+        <a href="managerhome" th:class="${session.role==3?'':'hidden'}" >管理页面</a>
+        <a href="notice">站內公告</a>
+        <a href="psychtest">心理测试</a>
+        <a href="article" >更多文章</a>
+        <a href="booked" th:class="${session.name!=null?'':'hidden'}">在线预约</a>
+        <a href="logout" th:class="${session.name!=null?'':'hidden'}">退出</a>
     </div>
 </div>
 
@@ -50,8 +51,8 @@
             <h1>心理社区</h1>
             <p>
                 心理是指人内在符号活动梳理的过程和结果。具体是指生物对客观物质世界的主观反映心理的表现形式叫做心理现象，包括心理过程和心理特性，人的心理活动都有一个发生，发展，消失的过程。人们在活动的时候，通过各种感官认识外部世界事物，通过头脑的活动思考着事物的因果关系，并伴随着喜、怒、哀、惧等情感体验。这折射着一系列心理现象的整个过程就是心理过程。按其性质可分为三个方面，即认识过程、情感过程和意志过程，简称知、情、意。 </p>
-            <a href="/chatMain">聊天室</a>
-            <a href="/moreKnowledge">更多相关</a>
+            <a href="chatMain">聊天室</a>
+            <a href="moreKnowledge">更多相关</a>
         </div>
     </div>
 </div>
@@ -67,7 +68,7 @@
                 锻练提升相应的专项能力，能够使被测验人全面提升身心素质，充分整合自身优势，
                 在促进自身发展和社会贡献方面发挥极大的作用。 </p>
             <a href="http://mbit01.sinaapp.com/">MBIT职业测试</a>
-            <a href="/morePsychtest">更多相关</a>
+            <a href="morePsychtest">更多相关</a>
         </div>
     </div>
 </div>

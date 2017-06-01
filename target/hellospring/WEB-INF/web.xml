@@ -93,6 +93,25 @@
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 
+  <!-- 添加 Shiro 相关配置 -->
+ <!-- <listener>
+    <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+  </listener>
+
+  <filter>
+    <filter-name>ShiroFilter</filter-name>
+    <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ShiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>-->
+
 <!--
   <error-page>
     <error-code>404</error-code>
@@ -120,6 +139,9 @@
     <exception-type>javax.mail.SendFailedException</exception-type>
     <location>/WEB-INF/views/error/SendFailedException.html</location>
   </error-page>
+
+
+
 
 
 

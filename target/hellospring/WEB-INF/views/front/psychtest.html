@@ -32,13 +32,11 @@
                     </div>
                     </br>
 
-                    <div class="row clearfix" th:each="user,userStat:${testlinkList}">
-
-                        <div class="col-md-12 column ">
-                            <div class="media well">
+                    <div class="" th:each="user,userStat:${testlinkList}">
+                        <div class="col-md-4" style="margin-bottom: 10px;">
+                            <div class="media well" style="height: 100px;">
                                 <!--<a class="pull-left" href="#"> <img th:src="${user.linkImg}" class="img-circle" onload="AutoResizeImage(50,50,this)"></a>-->
-
-                                <div class="media-body">
+                                <div class="media-body ">
                                     <div class="media">
                                         <a class="pull-left" th:href="@{${user.linkPath}}">
                                             <img th:src="${user.linkImg}" onload="AutoResizeImage(60,60,this)" class="img-circle" >
@@ -53,7 +51,14 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
+
+            </div>
+            <!--页脚-->
+            <div th:replace="fragments/footer :: footer" class="col-lg-12">
+                &copy; 2017 The Static Templates
             </div>
         </div>
     </div>

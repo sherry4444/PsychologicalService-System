@@ -8,7 +8,7 @@
 		<div class="navbar navbar-inverse" th:fragment="header">
 			<div class="navbar-header">
 				<a class="navbar-brand">
-					<img th:src="@{/resources/img/logo.png}" />
+					<img th:src="@{resources/img/logo.png}" />
 				</a>
 				<ul class="nav navbar-nav visible-xs-block">
 					<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -108,7 +108,7 @@
 				</p>
 				<!--<p class="navbar-text"  sec:authorize="hasAnyRole('ROLE_ADMIN')">-->
 				<p class="navbar-text" >
-					<a class="label bg-success" th:href="@{/index}">切换</a>
+					<a class="label bg-success" th:href="@{index}">切换</a>
 				</p>
 				<div class="navbar-right">
 					<ul class="nav navbar-nav">
@@ -122,7 +122,7 @@
 
 							<ul class="dropdown-menu dropdown-menu-right">
 								<li><a th:href="@{/modifydata}"><i class="icon-user-plus"></i> 我的信息</a></li>
-								<li><a th:text="${session.user.userName}"></a></li>
+								<li><a th:text="${session.name}"></a></li>
 								<!--<li th:if="${session.Update != null}"><a href="#"><i class="icon-coins"></i>我的余额</a></li>
 								<li th:if="${session.Update != null}"><a href="#"><i class="icon-cog5"></i>充值/提现</a></li>-->
 								<li><a  th:href="@{/logout}" onclick="$('#form').submit();"><i class="icon-switch2"></i> 退出</a>

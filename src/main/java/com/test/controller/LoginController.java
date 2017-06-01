@@ -66,6 +66,9 @@ public class LoginController {
             session = request.getSession();
             session.setAttribute("user", userInfo1); // 保存当前登录的用户名
             session.setAttribute("name", userInfo1.getUserName()); // 保存当前登录的用户名
+            session.setAttribute("role", userInfo1.getRole());
+            session.setAttribute("id", userInfo1.getUserId());
+            session.setAttribute("rolename", userInfo1.getRolename());
             //
             application = request.getSession().getServletContext();
             if (application.getAttribute("onLine") == null) {

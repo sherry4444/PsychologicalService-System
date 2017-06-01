@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.CommentDao">
+
+
+    <!--/*
+    commentId
+    articleId
+    context
+    userId
+    userName
+    createTime
+    */-->
+
+    <resultMap type="com.test.domain.Comment" id="CommentResultMap">
+        <id column="commentId" property="commentId"/>
+        <result column="articleId" property="articleId"/>
+        <result column="context" property="context"/>
+        <result column="userName" property="userName"/>
+        <result column="userId" property="userId"/>
+        <result column="createTime" property="createTime"/>
+    </resultMap>
+
+    <sql id="CommentColumns"> commentId,articleId,context,userId,userName,createTime</sql>
+
+    <select id="findCommentAll" resultMap="CommentResultMap" parameterType="com.test.domain.Comment">
+        SELECT <include refid="CommentColumns"/> FROM ps_comment
+        <where>
+            <if test="articleId!= null">
+                and articleId = #{articleId}
+            </if>
+        </where>
+        GROUP BY commentId
+        ORDER BY createTime DESC
+    </select>
+
+    <select id="countComment" parameterType="java.lang.String" resultType="int">
+        select count(commentId) from ps_comment
+        <where>
+            <if test="comment.articleId!= null">
+                and articleId = #{articleId}
+            </if>
+            <if test="title != null">
+                or context like '%${title}%'
+            </if>
+        </where>
+    </select>
+
+    <insert id="addComment" parameterType="com.test.domain.Comment">
+        INSERT INTO ps_comment(articleId,context,userId,userName,createTime)
+        VALUES (#{articleId},#{context},#{userId},#{userName},now())
+    </insert>
+
+    <delete id="deleteComment" parameterType="com.test.domain.Comment">
+        DELETE FROM ps_comment WHERE commentId = #{commentId}
+    </delete>
+
+    <delete id="batchDeleteComment">
+        delete from ps_comment where commentId in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+</mapper>

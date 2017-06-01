@@ -65,4 +65,18 @@ public class Filefunction {
         logger.info("删除成功: "+filepath);
     }
 
+
+
+    public void filedelete(String filepath)
+    {
+        try{
+            //删除文件
+            FileUtils.deleteQuietly(new File(filepath));
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            logger.info("删除失败："+filepath);
+        }
+        logger.info("删除成功: "+filepath);
+    }
 }

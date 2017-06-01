@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.ArticleDao">
+
+
+    <!--/*
+      private Integer article_id;
+    private String article_name;
+    private String article_author;
+    private String article_path;
+    private Data article_createTime;
+
+    */-->
+
+    <resultMap type="com.test.domain.Article" id="ArticleResultMap">
+        <id column="article_id" property="article_id"/>
+        <result column="article_name" property="article_name"/>
+        <result column="article_author" property="article_author"/>
+        <result column="article_path" property="article_path"/>
+        <result column="article_createTime" property="article_createTime"/>
+    </resultMap>
+
+    <sql id="ArticleColumns"> article_id,article_name,article_author,article_path,article_createTime</sql>
+
+    <select id="findArticle" resultMap="ArticleResultMap" parameterType="java.lang.Integer" >
+        SELECT <include refid="ArticleColumns"/> FROM ps_article WHERE article_id = #{id}
+    </select>
+
+    <select id="findArticleAll" resultMap="ArticleResultMap" parameterType="java.util.Map" >
+        SELECT <include refid="ArticleColumns"/> FROM ps_article
+        <where>
+            <if test="title != null">
+                and article_id like '%${title}%'
+            </if>
+            <if test="title != null">
+                or article_name like '%${title}%'
+            </if>
+        </where>
+        GROUP BY article_id
+        <if test="flag == '1'.toString()">
+            ORDER BY article_createTime ASC
+        </if>
+        <if test="flag == '0'.toString()">
+            ORDER BY article_createTime DESC
+        </if>
+        <if test="flag == '2'.toString()">
+            ORDER BY article_name ASC
+        </if>
+        <if test="flag == '3'.toString()">
+            ORDER BY article_name DESC
+        </if>
+        <if test="flag == '4'.toString()">
+            ORDER BY article_id ASC
+        </if>
+        <if test="flag == '5'.toString()">
+            ORDER BY article_id DESC
+        </if>
+        <if test="flag == '6'.toString()">
+            ORDER BY article_author ASC
+        </if>
+        <if test="flag == '7'.toString()">
+            ORDER BY article_author DESC
+        </if>
+        limit #{page.dbIndex},#{page.dbNumber}
+    </select>
+
+    <select id="countArticle" parameterType="java.lang.String" resultType="int">
+        select count(*) from ps_article
+        <where>
+            <if test="title != null">
+                and article_id like '%${title}%'
+            </if>
+            <if test="title != null">
+                or article_name like '%${title}%'
+            </if>
+        </where>
+    </select>
+
+    <insert id="addArticle" parameterType="com.test.domain.Article">
+        INSERT INTO ps_article(article_name,article_author,article_path,article_createTime)
+        VALUES (#{article_name},#{article_author},#{article_path},now())
+    </insert>
+
+    <delete id="deleteArticle" parameterType="com.test.domain.Article">
+        DELETE FROM ps_article WHERE article_id = #{article_id}
+    </delete>
+
+    <delete id="batchDeleteArticle">
+        delete from ps_article where article_id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="updateArticle" parameterType="com.test.domain.Article">
+        UPDATE ps_article
+        <set>
+            <if test="article_name != null">
+                article_name = #{article_name},
+            </if>
+            <if test="article_author != null">
+                article_author = #{article_author},
+            </if>
+            <if test="ArticleImage != null">
+                article_path = #{article_path},
+            </if>
+        </set>
+        WHERE article_id = #{article_id}
+    </update>
+
+</mapper>
